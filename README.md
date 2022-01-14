@@ -1,24 +1,21 @@
-# l-ui
+# luck组件库
 
-## Project setup
-```
-npm install
-```
+### 快速开始
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+#### 1.安装组件库
+```bash
+npm i luck-ui
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+#### 2.引用组件库
+```javascript
+//全部yinru
+import 'luck-ui/dist/css/index.css'
+import LuckUI from 'luck-ui'
+Vue.use(LuckUI)
 
-### Lints and fixes files
+//按需引入
+import 'luck-ui/dist/css/test.css'
+import {test} from 'luck-ui'
+Vue.use(test)
 ```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
