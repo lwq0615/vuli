@@ -3,6 +3,9 @@ const sass = require('gulp-sass')(require('sass'))
 const minifyCSS = require('gulp-minify-css')
 
 gulp.task('sass',async function(){
+    gulp.src("components/css/**/*.css")
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('dist/css'))
     return gulp.src("components/css/**/*.scss")
     .pipe(sass())
     .pipe(minifyCSS())

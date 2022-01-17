@@ -1,7 +1,15 @@
-import test from './test'
+import button from './button'
+import select from './select'
+import slide from './slide'
+import tabs from './tabs'
+import tabPanel from './tab-panel'
 
 const components = {
-    test
+    button,
+    select,
+    slide,
+    tabs,
+    tabPanel
 }
 
 const install  = function(Vue){
@@ -9,7 +17,7 @@ const install  = function(Vue){
         return 
     }
     Object.keys(components).forEach(key => {
-        Vue.components(components[key].name,components[key])
+        Vue.component(components[key].name,components[key])
     })
 }
 

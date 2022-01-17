@@ -3,7 +3,10 @@ module.exports = {
     themeConfig: {
         sidebar: [
             '/',
-            '/componentDocs/test'
+            '/componentDocs/button',
+            '/componentDocs/select',
+            '/componentDocs/tabs',
+            '/componentDocs/slide'
         ]
     }
 }

@@ -1,0 +1,23 @@
+.l-tabs_container{
+    display: inline-block;
+    padding-top: 10px;
+    height: auto;
+    .tab{
+        display: flex;
+        justify-content: flex-start;
+        color: #606266;
+        .tab-item{
+            padding: 5px 15px;
+            cursor: pointer;
+            border-bottom: 2px solid #e4e7ed;
+            user-select: none;
+        }
+        .tab-item:hover{
+            color: #E44258;
+        }
+        .tab-item-active{
+            color: #E44258;
+            border-bottom: 2px solid #E44258;
+        }
+    }
+}

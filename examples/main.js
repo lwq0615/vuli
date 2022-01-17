@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import '../components/css/test.scss'
-import test from '../components/lib/test/index.js'
+import '../components/css/index.scss'
+import dom from '../components/lib/index.js'
 
-Vue.use(test)
+Vue.use(dom)
 
 Vue.config.productionTip = false
 
