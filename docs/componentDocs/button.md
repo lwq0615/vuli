@@ -1,8 +1,9 @@
-# button
+# button按钮
 
-### 按钮
+### 
 
 #### 示例
+###
 <l-button color="primary">按钮</l-button>
 <l-button color="success">按钮</l-button>
 <l-button color="info">按钮</l-button>
@@ -10,7 +11,7 @@
 <l-button color="error">按钮</l-button>
 
 #### 代码
-```vue
+```html
 <l-button color="primary">按钮</l-button>
 <l-button color="success">按钮</l-button>
 <l-button color="info">按钮</l-button>

@@ -1,17 +1,20 @@
-# select
+# select下拉框
 
-### 下拉框
+### 
 
 #### 示例
+###
 <l-select
-    :options="[{label:'李伟强',value:1},{label:'李伟强2',value:2}]"
-    :openSearch="false"
+    :options="[{label:'泉州',value:1},{label:'漳州',value:2}]"
+    :openSearch="true"
 ></l-select>
 
+###
+###
 #### 代码
-```vue
+```html
 <l-select
-    :options="[{label:'李伟强',value:1},{label:'李伟强2',value:2}]"
+    :options="[{label:'泉州',value:1},{label:'漳州',value:2}]"
     v-model="value"
     :openSearch="false"
 ></l-select>
@@ -20,8 +23,8 @@
 #### Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
+| value / v-model | 绑定值 | String,Number | 否 | -- | --|
 | options | 下拉框列表 | Array | 是 | null | --|
-| value / v-model | 绑定值 | -- | 否 | -- | --|
 | width | 组件宽度 | String | 否 | 200px | --|
 | deleteBtn | 是否显示清空按钮 | Boolean | 否 | true | -- |
 | openSearch | 是否开启搜索 | Boolean | 否 | true | --|
@@ -31,5 +34,5 @@
 #### Events
 | 事件名 | 触发条件 | 参数 |
 |  ---  | ---  | ---  | 
-| change | 下拉框值改变 | 选中的value |
+| change | 下拉框值改变 | 改变前后的值 |
 

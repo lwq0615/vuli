@@ -1,6 +1,4 @@
-
 export default {
-
     option: [
         {
             name: "name",

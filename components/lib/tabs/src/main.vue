@@ -5,7 +5,7 @@
   >
     <div class="tab">
       <div
-        :class="`tab-item ${activeName === item.name ? 'tab-item-active' : ''}`"
+        :class="`tab-item ${activeValue === item.name ? 'tab-item-active' : ''}`"
         :ref="item.name"
         v-for="(item, index) in tabs"
         :key="index"
@@ -30,34 +30,27 @@ export default {
     value: {
       type: [String, Number],
       default: null,
-    },
-    default: {
-      type: [String, Number],
-      default: null,
-    },
+    }
   },
   model: {
     prop: "value",
-    event: "tabChange",
+    event: "model",
   },
   watch: {
     value: {
-      handler(newVal, oldVal) {
-        if (newVal !== oldVal) {
-          this.tabChange(newVal);
-        }
+      handler(newVal) {
+        this.tabChange(newVal);
       },
     },
   },
   data() {
     return {
       tabs: [],
-      activeName: null,
+      activeValue: null
     };
   },
-  created() {
-    // this.tabs = this.getTabs()
-    this.activeName = this.default;
+  created(){
+    this.activeValue = this.value
   },
   methods: {
     loadTab(tabItem) {
@@ -88,10 +81,11 @@ export default {
       this.tabChange(name);
     },
     tabChange(name) {
-      if (this.activeName !== name) {
-        this.$emit("tabChange", name);
+      if (this.activeValue !== name) {
+        this.$emit('change',{newVal:name,oldVal:this.activeValue})
+        this.activeValue = name
+        this.$emit("model", name);
       }
-      this.activeName = name;
     },
   },
 };

@@ -5,7 +5,7 @@
             :placeholder="tempLabel || '请选择'"
             @click="selectClick()"
             v-model="form.label"
-            :style="`background-color:${disable ? 'F5F7FA' : '#fff'}`"
+            :style="`background-color:${disable ? '#F5F7FA' : '#fff'}`"
             @input="searchInput"
             v-show="openSearch"
             :title="form.label"
@@ -50,7 +50,10 @@ export default {
     name: 'lSelect',
     props:{
         options: Array,
-        value: null,
+        value: {
+            type: [String,Number],
+            default: null
+        },
         width: {
             type: String,
             default: '200px'
@@ -70,18 +73,7 @@ export default {
     },
     model:{
         prop: 'value',
-        event: 'change'
-    },
-    watch:{
-        value:{
-            handler(newVal){
-                for(let item of this.options){
-                    if(item.value == newVal){
-                        this.checkOption(item)
-                    }
-                }
-            }
-        }
+        event: 'model'
     },
     data(){
         return {
@@ -93,6 +85,24 @@ export default {
             tempLabel: null,
             search: '',
             searchData: []
+        }
+    },
+    watch:{
+        value:{
+            handler(newVal){
+                for(let item of this.options){
+                    if(item.value === newVal){
+                        this.checkOption(item)
+                    }
+                }
+            }
+        }
+    },
+    created(){
+        for(let item of this.options){
+            if(item.value === this.value){
+                this.form = {...item}
+            }
         }
     },
     methods:{
@@ -117,19 +127,32 @@ export default {
             }
         },
         checkOption(option){
-            this.form = {...option}
-            this.showOptions = false
-            this.tempLabel = ''
-            this.search = ''
-            this.$emit('change',option.value)
+            if(option){
+                if(option.value !== this.form.value){
+                    this.$emit('change',{newVal:option.value,oldVal:this.form.value})
+                    this.form = {...option}
+                    this.$emit('model',option.value)
+                }
+                this.showOptions = false
+                this.tempLabel = ''
+                this.search = ''
+            }else{
+                if(this.form.value !== null){
+                    this.$emit('change',{newVal:null,oldVal:this.form.value})
+                }
+                this.form = {
+                    label: null,
+                    value: null
+                }
+                this.$emit('model',null)
+            }
         },
         deleteCheck(e){
             e.stopPropagation()
             if(this.disable){
                 return
             }
-            this.form = {}
-            this.$emit('change',null)
+            this.checkOption(null)
         },
         searchInput(e){
             this.search = e.target.value

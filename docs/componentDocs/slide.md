@@ -1,12 +1,13 @@
-# slide
+# slide轮播图
 
-### 轮播图
+### 
 
 #### 示例
+###
 <l-slide :imgs="['/luck-ui/1.JPG','/luck-ui/2.jpg','/luck-ui/3.jpg']"></l-slide>
 
 #### 代码
-```vue
+```html
 <l-slide :imgs="['/luck-ui/1.JPG','/luck-ui/2.jpg','/luck-ui/3.jpg']"></l-slide>
 ```
 

@@ -8,22 +8,26 @@ export default {
   props: {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     label: {
       type: String,
-      default: "",
+      default: ""
     },
   },
   created() {
-    this.$parent.loadTab({ name: this.name, label: this.label });
+    if(this.$parent.$options._componentTag === 'l-tabs'){
+      this.$parent.loadTab({ name: this.name, label: this.label });
+    }
   },
   destroyed() {
-    this.$parent.delTab({ name: this.name, label: this.label });
+    if(this.$parent.$options._componentTag === 'l-tabs'){
+      this.$parent.delTab({ name: this.name, label: this.label });
+    }
   },
   computed: {
     show() {
-      return this.$parent.activeName === this.name;
+      return this.$parent.activeValue === this.name;
     },
   },
 };

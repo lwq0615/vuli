@@ -18,9 +18,9 @@ module.exports = {
     entry: list,
     mode: 'development',
     output: {
-        filename: '[name].umd.js',
+        filename: '[name].js',
         path: path.resolve(__dirname,'dist/lib'),
-        library: 'mui',
+        library: 'luck-ui',
         libraryTarget: 'umd'
     },
     plugins: [
