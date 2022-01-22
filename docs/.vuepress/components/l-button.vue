@@ -52,5 +52,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './button.scss';
+.l-button_button{
+   border-radius: 6px;
+   border: 1px solid #e4e7ed;
+   cursor: pointer;
+}
 </style>>

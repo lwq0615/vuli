@@ -10,6 +10,7 @@ module.exports = {
             '/componentDocs/radio',
             '/componentDocs/progress',
             '/componentDocs/switch',
+            '/componentDocs/message',
             '/componentDocs/slide'
         ]
     }

@@ -117,5 +117,46 @@ export default {
 
 
 <style lang="scss" scoped>
-@import './slide.scss';
+
+.l-slide_container {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    .showBox{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+    }
+    .imgBox {
+        width: 300%;
+        height: 100%;
+        display: flex;
+        transform: translateX(-33.33%);
+        .img {
+            width: 33.3%;
+            flex-grow: 1;
+            height: 100%;
+        }
+    }
+    .icon{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background-color: rgba($color: #ffffff, $alpha: 0.8);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #E44258;
+        cursor: pointer;
+        z-index: 3;
+        user-select: none;
+    }
+}
 </style>>

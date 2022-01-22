@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <l-button @click="test1" color="error">按钮</l-button>
+    <l-button @click="test1" color="error" style="float: left;">按钮</l-button>
 
     <!-- <l-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></l-slide> -->
 
@@ -45,7 +45,7 @@ export default {
   data(){
     return {
       option,
-      value: '1',
+      value: 1,
       radios: [{label:'第一个',value: 1},{label:'第二个',value: 2}]
     }
   },
@@ -54,7 +54,13 @@ export default {
       console.log(e)
     },
     test1(){
-     console.log(option)
+      this.$message.info({
+        content:"失败了,这是一条失败的消息",
+        close: true,
+        onClose(e){
+          console.log(e)
+        }
+      })
     }
   }
 }

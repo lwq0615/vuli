@@ -108,5 +108,29 @@ export default {
 
 
 <style lang="scss" scoped>
-@import './switch.scss';
+.l-switch_container{
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    .switch{
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        border-radius: 100px;
+        display: flex;
+        transition: all ease 0.3s;
+        .span{
+            flex: 1;
+            transition: all ease 0.3s;
+        }
+        .icon{
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background-color: white;
+            margin: 2px;
+            transition: all ease 0.3s;
+        }
+    }
+}
 </style>>

@@ -1,0 +1,24 @@
+.l-message_container {
+    position: absolute;
+    background-color: transparent;
+    .l-message {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        border-radius: 4px;
+        min-width: 300px;
+        padding: 10px 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all ease 0.3s;
+        .text {
+            flex: 1;
+        }
+        .icon {
+            float: right;
+            cursor: pointer;
+            user-select: none;
+            font-size: 16px;
+        }
+    }
+}

@@ -79,5 +79,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './rotate-card.scss';
+.l-rotate-card_container{
+    display: inline-block;
+    position: relative;
+    .front, .back{
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        transition: all ease 0.7s;
+    }
+}
 </style>>

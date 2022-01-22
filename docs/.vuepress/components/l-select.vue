@@ -168,5 +168,81 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './select.scss';
+.l-select_container {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    .show-text {
+        background-color: #fff;
+        border-radius: 4px;
+        border: 1px solid #dcdfe6;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        font-size: inherit;
+        text-align: left;
+        height: 40px;
+        line-height: 40px;
+        outline: none;
+        padding: 0 15px;
+        transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        flex: 1;
+        width: 100%;
+        cursor: pointer;
+        overflow:hidden; //超出的文本隐藏
+        text-overflow:ellipsis; //溢出用省略号显示
+        white-space:nowrap; //溢出不换行
+    }
+
+    .options {
+        transition: all ease 0.3s;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+        margin: 5px 0;
+        max-height: 170px;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 40px;
+
+        .options-list {
+            height: 34px;
+            line-height: 34px;
+            text-align: left;
+            padding-left: 15px;
+            width: 100%;
+            overflow:hidden; //超出的文本隐藏
+            text-overflow:ellipsis; //溢出用省略号显示
+            white-space:nowrap; //溢出不换行
+            cursor: pointer;
+        }
+        .options-list:hover {
+            background-color: #f5f7fa;
+        }
+    }
+    .options::-webkit-scrollbar {
+        display: none;
+    }
+    .delete-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: #dddddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #606266;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
 </style>>

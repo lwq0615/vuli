@@ -8,6 +8,7 @@ import radio from './radio'
 import radioGroup from './radio-group'
 import progress from './progress'
 import Switch from './switch'
+import message from './message'
 
 const components = {
     button,
@@ -29,6 +30,7 @@ const install = function(Vue){
     Object.keys(components).forEach(key => {
         Vue.component(components[key].name,components[key])
     })
+    Vue.prototype.$message = message
 }
 
 export {
@@ -42,7 +44,8 @@ export {
     radio,
     radioGroup,
     progress,
-    Switch
+    Switch,
+    message
 }
 
 export default {install}

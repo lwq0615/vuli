@@ -89,5 +89,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './radio-group.scss';
+.l-radio-group_container{
+    display: inline-block;
+    overflow: auto;
+    width: 400px;
+    height: 100px;
+    .grid{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        overflow: auto;
+    }
+}
 </style>>
