@@ -11,6 +11,11 @@ export default {
   props: {
     option:Object
   },
+  data(){
+    return {
+      destroy: null
+    }
+  },
   computed: {
     colorStyle() {
       let backColor= {
@@ -41,6 +46,11 @@ export default {
       return `font-size: ${this.option.fontSize || '16px'};`
     }
   },
+  mounted(){
+    this.destroy = setTimeout(() => {
+      this.$parent.removeMsg(this.option)
+    },this.option.duration || 3000)
+  },
   methods: {
     close(){
       if(this.option.onClose){
@@ -51,6 +61,7 @@ export default {
         res.type = res.type || 'success'
         this.option.onClose(res)
       }
+      clearTimeout(this.destroy)
       this.$parent.removeMsg(this.option)
     }
   }

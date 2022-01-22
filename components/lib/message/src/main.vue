@@ -28,13 +28,11 @@ export default {
             setTimeout(() => {
                 this.changeMsgStyle()
             },1)
-            setTimeout(() => {
-                this.removeMsg(option)
-            },option.duration || 3000)
         },
         removeMsg(option){
             this.msgLen--
             const index = this.msgList.indexOf(option)
+            console.log('len'+this.msgLen)
             if(index === -1){
                 return
             }

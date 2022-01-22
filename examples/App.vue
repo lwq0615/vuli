@@ -61,6 +61,9 @@ export default {
           console.log(e)
         }
       })
+      this.$message("这是一条success的消息")
+      // this.$message.error("这是一条error的消息")
+      // this.$message.warning("这是一条warning的消息")
     }
   }
 }

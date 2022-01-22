@@ -36,7 +36,7 @@ export default {
     test(){
       //$message为全局方法，可通过this直接调用
       this.$message.info({
-        content:"失败了,这是一条失败的消息",
+        content:"这是一条info的消息",
         close: true,
         onClose(e){
           console.log(e)
