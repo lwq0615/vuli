@@ -11,6 +11,7 @@ module.exports = {
             '/componentDocs/progress',
             '/componentDocs/switch',
             '/componentDocs/message',
+            '/componentDocs/input',
             '/componentDocs/slide'
         ]
     }

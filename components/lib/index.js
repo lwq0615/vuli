@@ -9,6 +9,7 @@ import radioGroup from './radio-group'
 import progress from './progress'
 import Switch from './switch'
 import message from './message'
+import input from './input'
 
 const components = {
     button,
@@ -20,7 +21,8 @@ const components = {
     radio,
     radioGroup,
     progress,
-    Switch
+    Switch,
+    input
 }
 
 const install = function(Vue){
@@ -35,6 +37,7 @@ const install = function(Vue){
 
 export {
     install,
+    message,
     button,
     select,
     slide,
@@ -45,7 +48,7 @@ export {
     radioGroup,
     progress,
     Switch,
-    message
+    input
 }
 
 export default {install}

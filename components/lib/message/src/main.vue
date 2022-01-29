@@ -32,7 +32,6 @@ export default {
         removeMsg(option){
             this.msgLen--
             const index = this.msgList.indexOf(option)
-            console.log('len'+this.msgLen)
             if(index === -1){
                 return
             }

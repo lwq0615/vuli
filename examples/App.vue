@@ -8,6 +8,7 @@
     <!-- <l-select
       :options="[{label:'李伟强',value:1},{label:'李伟强2',value:2}]"
       v-model="value"
+      :disable="false"
       @change="test"
       :openSearch="false"
     ></l-select> -->
@@ -35,6 +36,8 @@
 
     <!-- <l-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></l-switch> -->
 
+    <l-input v-model="value" @change="test"></l-input>
+
   </div>
 </template>
 
@@ -54,16 +57,7 @@ export default {
       console.log(e)
     },
     test1(){
-      this.$message.info({
-        content:"失败了,这是一条失败的消息",
-        close: true,
-        onClose(e){
-          console.log(e)
-        }
-      })
-      this.$message("这是一条success的消息")
-      // this.$message.error("这是一条error的消息")
-      // this.$message.warning("这是一条warning的消息")
+      this.value = null
     }
   }
 }

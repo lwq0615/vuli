@@ -5,7 +5,7 @@
             :placeholder="tempLabel || '请选择'"
             @click="selectClick()"
             v-model="form.label"
-            :style="`background-color:${disable ? '#F5F7FA' : '#fff'}`"
+            :style="disableStyle+cursorStyle"
             @input="searchInput"
             v-show="openSearch"
             :title="form.label"
@@ -15,7 +15,7 @@
             v-show="!openSearch"
             :title="form.label"
             @click="selectClick()"
-            :style="`color:${form.label ? '#606266' : '#757575'};background-color:${disable ? '#F5F7FA' : '#fff'}`"
+            :style="`color:${form.label ? '#606266' : '#757575'};${disableStyle+cursorStyle}`"
         >
             {{form.label || '请选择'}}
         </div>
@@ -41,7 +41,7 @@
                 :style="`color:${item.value == form.value ? '#E44258' : '#606266'};background-color:${item.value == form.value ? '#f5f7fa' : ''};`"
             >{{item.label}}</div>
         </div>
-        <div class="delete-btn" @click="deleteCheck($event)" v-show="deleteBtn">×</div>
+        <div class="delete-btn" @click="deleteCheck($event)" v-show="deleteBtn" :style="cursorStyle">×</div>
     </div>
 </template>
 
@@ -85,6 +85,14 @@ export default {
             tempLabel: null,
             search: '',
             searchData: []
+        }
+    },
+    computed: {
+        disableStyle(){
+            return `background-color:${this.disable ? '#F5F7FA' : '#fff'};`
+        },
+        cursorStyle(){
+            return `cursor:${this.disable ? 'no-drop' : 'pointer'};`
         }
     },
     watch:{

@@ -1,0 +1,59 @@
+.l-input_container{
+    display: inline-block;
+    position: relative;
+
+    input{
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: 1px solid #e4e7ed;
+        border-radius: 3px;
+        transition: all ease 0.3s;
+        color: #606266;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+    input:focus{
+        border: 1px solid #E44258;
+    }
+    .disable{
+        background-color: #F5F7FA;
+        cursor: no-drop;
+    }
+    .disable:focus{
+        border: 1px solid #e4e7ed;
+    }
+
+    textarea{
+        outline: none;
+        border: 1px solid #e4e7ed;
+        border-radius: 3px;
+        transition: color ease 0.3s, border ease 0.3s;
+        color: #606266;
+        padding: 8px;
+    }
+    textarea::-webkit-scrollbar{
+        display: none;
+    }
+    textarea:focus{
+        border: 1px solid #E44258;
+    }
+
+    .clear{
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        border: 1px solid #dddddd;
+        color: #DCDFE6;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+    }
+}
