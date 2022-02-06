@@ -55,7 +55,6 @@ export default {
 | ---  | --- | ---  | ---      | ---   | ---   |
 | value / v-model | 绑定值 | String,Number | 否 | null | --|
 | shadow | 边框阴影 | Boolean | 否 | true | -- |
-| default | 默认选中 | String, Number | 否 | null | -- |
 
 
 #### Tab-panel Attributes
