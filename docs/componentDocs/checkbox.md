@@ -1,22 +1,21 @@
-# radio 单选框
+# checkbox 复选框
 
 ### 
 
 #### 示例
 ###
-<l-radio-group v-model="value">
-<l-radio :value="1">福建</l-radio>
-<l-radio :value="2" :disable="true">泉州</l-radio>
-<l-radio :value="3" :disable="true">福州</l-radio>
-<l-radio :value="4">厦门</l-radio>
-<l-radio :value="5">漳州</l-radio>
-</l-radio-group>
+<l-checkbox-group v-model="value">
+<l-checkbox value="1">福建</l-checkbox>
+<l-checkbox value="2">厦门</l-checkbox>
+<l-checkbox value="3">漳浦</l-checkbox>
+<l-checkbox value="4">泉州</l-checkbox>
+</l-checkbox-group>
 
 <script>
 export default {
   data(){
     return {
-      value: 1
+      value: []
     }
   }
 }
@@ -24,20 +23,19 @@ export default {
 
 #### 代码
 ```html
-<!--l-radio-group必须与l-radio搭配使用-->
-<l-radio-group v-model="value">
-    <l-radio :value="1">福建</l-radio>
-    <l-radio :value="2" :disable="true">泉州</l-radio>
-    <l-radio :value="3" :disable="true">福州</l-radio>
-    <l-radio :value="4">厦门</l-radio>
-    <l-radio :value="5">漳州</l-radio>
-</l-radio-group>
+<!--l-checkbox-group必须与l-checkbox搭配使用-->
+<l-checkbox-group v-model="value">
+  <l-checkbox value="1">福建</l-checkbox>
+  <l-checkbox value="2">厦门</l-checkbox>
+  <l-checkbox value="3">漳浦</l-checkbox>
+  <l-checkbox value="4">泉州</l-checkbox>
+</l-checkbox-group>
 
 <script>
 export default {
   data(){
     return {
-      value: 1
+      value: []
     }
   }
 }
@@ -47,7 +45,7 @@ export default {
 #### Radio-group Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| value / v-model | 绑定值 | String,Number | 否 | null | -- |
+| value / v-model | 绑定值 | Array | 否 | [] | -- |
 | columns | 单选框每列宽度权值 | Array | 否 | [1,1,1] | -- |
 | rowHeight | 单选框高度 | String | 否 | 50px | -- |
 | fontSize | 单选框文字大小 | String | 否 | 14px | -- |
@@ -64,15 +62,8 @@ export default {
 #### Radio-group Events
 | 事件名 | 触发条件 | 参数 |
 |  ---  | ---  | ---  | 
-| radioClick | 点击单选框 | 单选框的value值 |
-| change | 值改变 | 改变前后的值 |
-
-
-#### Radio-group Methods
-| 方法名 | 说明 | 所需参数 | 参数说明 |
-|  ---  | ---  | ---  | --- |
-| changeValue | 选择单选框 | value  | 目标单选框的value |
-| radioClick | 点击单选框 | value  | 目标单选框的value |
+| checkboxClick | 点击复选框 | 复选框的value值 |
+| change | 值改变 | 改变后的值 |
 
 
 #### Radio Methods

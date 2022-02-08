@@ -1,9 +1,9 @@
-# progress进度条
+# progress 进度条
 
 ### 
 
 #### 示例
-###
+#### outside
 <l-progress :percentage="70"></l-progress>
 
 #### 代码
@@ -24,7 +24,7 @@ export default {
 ```
 
 #### 示例
-###
+#### inside
 <l-progress :percentage="70" :inside="true"></l-progress>
 
 #### 代码

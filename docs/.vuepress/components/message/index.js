@@ -5,7 +5,7 @@ let messageConstructor = Vue.extend(message)
 let instance = new messageConstructor()
 
 const Message = function (option = {}) {
-    if (typeof option === 'string') {
+    if (typeof option === 'string' || typeof option === 'number') {
         option = {
             content: option
         }
@@ -18,7 +18,7 @@ const Message = function (option = {}) {
 let types = ['success', 'error', 'warning', 'info']
 types.forEach(type => {
     Message[type] = (options) => {
-        if (typeof options === 'string') {
+        if (typeof options === 'string' || typeof option === 'number') {
             options = {
                 content: options
             }

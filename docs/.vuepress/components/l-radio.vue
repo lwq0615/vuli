@@ -1,6 +1,6 @@
 <template>
     <div class="l-radio_container">
-        <div class="fiex" @click="check">
+        <div class="flex" @click="check">
             <div class="input" :style="inputStyle+inputActiveStyle"></div>
             <div class="text" :style="fontSizeStyle+textActiveStyle"><slot></slot></div>
         </div>
@@ -104,7 +104,7 @@ export default {
 .l-radio_container{
     display: inline-block;
     cursor: pointer;
-    .fiex{
+    .flex{
         display: flex;
         align-items: center;
         .input{

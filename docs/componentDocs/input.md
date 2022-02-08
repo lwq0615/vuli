@@ -1,4 +1,4 @@
-# input输入框
+# input 输入框
 
 ### 
 
@@ -6,6 +6,7 @@
 ###
 <l-input v-model="value"></l-input>
 <l-input type="date"></l-input>
+<l-input type="text" search="搜索"></l-input>
 
 <script>
 export default {
@@ -45,6 +46,7 @@ export default {
 | rows | 文本域行数，当type='textarea'时生效 | String,Number | 否 | -- | -- |
 | cols | 文本域列数，当type='textarea'时生效 | String,Number | 否 | -- | -- |
 | clearable | 是否可清空 | Boolean | 否 | true | -- |
+| search | 开启搜索按钮 | String | 否 | -- | 搜索框展示的文本 |
 
 
 #### Events
@@ -55,6 +57,7 @@ export default {
 | change | 输入框失去焦点或用户按下回车 | event |
 | input | 输入值改变 | event |
 | click | 点击输入框 | event |
+| search | 点击搜索按钮 | 输入框的value |
 | clear | 点击清除按钮 | -- |
 
 

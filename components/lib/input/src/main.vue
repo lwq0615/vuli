@@ -32,7 +32,8 @@
         @click="click"
         @input="input"></textarea>
 
-        <div class="clear" @click="clearValue" v-show="clearable">×</div>
+        <div class="clear" @click="clearValue" v-show="clearable && !search">×</div>
+        <div class="search" @click="searchValue" v-show="search && type !== 'textarea'">{{search}}</div>
     </div>
 </template>
 
@@ -71,6 +72,10 @@ export default {
         clearable: {
             type: Boolean,
             default: true
+        },
+        search: {
+            type: String,
+            default: ''
         }
     },
     model: {
@@ -104,7 +109,9 @@ export default {
             return style
         },
         paddingStyle(){
-            if(this.clearable){
+            if(this.search){
+                return 'padding-right: 50px'
+            }else if(this.clearable){
                 return 'padding-right: 25px'
             }
         }
@@ -144,6 +151,9 @@ export default {
         clearValue(){
             this.activeValue = null
             this.$emit('clear')
+        },
+        searchValue(){
+            this.$emit('search',this.activeValue)
         }
     }
 }

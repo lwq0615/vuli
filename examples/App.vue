@@ -3,7 +3,7 @@
 
     <l-button @click="test1" color="error" style="float: left;">按钮</l-button>
 
-    <l-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></l-slide>
+    <!-- <l-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></l-slide> -->
 
     <!-- <l-select
       :options="[{label:'李伟强',value:1},{label:'李伟强2',value:2}]"
@@ -36,7 +36,14 @@
 
     <!-- <l-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></l-switch> -->
 
-    <!-- <l-input v-model="value" @change="test"></l-input> -->
+    <l-input type="date" v-model="value" @search="test"></l-input>
+
+    <!-- <l-checkbox-group v-model="value">
+      <l-checkbox value="1" :disable="true">福建</l-checkbox>
+      <l-checkbox value="2" :disable="true">厦门</l-checkbox>
+      <l-checkbox value="3">漳浦</l-checkbox>
+      <l-checkbox value="4">泉州</l-checkbox>
+    </l-checkbox-group> -->
 
   </div>
 </template>
@@ -57,7 +64,6 @@ export default {
       console.log(e)
     },
     test1(){
-      this.value = null
     }
   }
 }

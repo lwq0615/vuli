@@ -24,5 +24,3 @@ import 'luck-ui/dist/css/index.css'
 import {button} from 'luck-ui'
 Vue.use(button)
 ```
-
-<a href="https://lwq0615.github.io/luck-ui/">说明文档</a>

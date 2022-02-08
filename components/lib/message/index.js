@@ -5,20 +5,20 @@ let messageConstructor = Vue.extend(message)
 let instance = new messageConstructor()
 
 const Message = function (option = {}) {
-    if (typeof option === 'string') {
+    if (typeof option === 'string' || typeof option === 'number') {
         option = {
             content: option
         }
     }
     instance.addMsg(option)
     instance.$mount(); // 渲染组件
-    document.body.appendChild(instance.$el); // 挂载到 body 下
+    document.body.appendChild(instance.$el);
 }
 
 let types = ['success', 'error', 'warning', 'info']
 types.forEach(type => {
     Message[type] = (options) => {
-        if (typeof options === 'string') {
+        if (typeof options === 'string' || typeof option === 'number') {
             options = {
                 content: options
             }

@@ -56,4 +56,23 @@
         cursor: pointer;
         user-select: none;
     }
+
+    .search{
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        bottom: 1px;
+        border-radius: 0 3px 3px 0;
+        border: none;
+        border-left: 1px solid #e4e7ed;
+        color: #E44258;
+        padding: 0 10px;
+        font-size: 13px;
+        display: flex;
+        background-color: #f5f7fa;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+    }
 }

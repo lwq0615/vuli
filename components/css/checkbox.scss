@@ -1,4 +1,4 @@
-.l-radio-group_container{
+.l-checkbox-group_container{
     display: inline-block;
     overflow: auto;
     width: 400px;
@@ -10,18 +10,24 @@
         justify-items: center;
         align-items: center;
         overflow: auto;
-        .l-radio_container{
+        .l-checkbox_container{
             display: inline-block;
             cursor: pointer;
             .flex{
                 display: flex;
                 align-items: center;
                 .input{
-                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: auto;
+                    border-radius: 3px;
                     background-color: white;
                     margin-right: 5px;
                     border: 1px solid #e4e7ed;
                     box-sizing: border-box;
+                    color: white;
+                    user-select: none;
                     transition: all ease 0.3s;
                 }
                 .text{
