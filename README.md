@@ -25,4 +25,4 @@ import { button } from 'luck-ui'
 Vue.use(button)
 ```
 
-<a href="https://lwq0615.github.io/luck-ui/">说明文档</a>
+[说明文档](https://lwq0615.github.io/luck-ui/)
