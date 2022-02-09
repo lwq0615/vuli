@@ -21,6 +21,6 @@ Vue.use(LuckUI)
 ```js
 //main.js
 import 'luck-ui/dist/css/index.css'
-import {button} from 'luck-ui'
+import { button } from 'luck-ui'
 Vue.use(button)
 ```
