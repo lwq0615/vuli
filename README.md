@@ -25,9 +25,4 @@ import { button } from 'luck-ui'
 Vue.use(button)
 ```
 
-<a onclick="href">说明文档</a>
-<script>
-    function href(){
-        window.open('https://lwq0615.github.io/luck-ui/')
-    }
-</script>
+<a href="https://lwq0615.github.io/luck-ui/">说明文档</a>
