@@ -1,4 +1,6 @@
-# rotate-card 翻转卡片
+# Rotate-card 翻转卡片
+
+*张反面存放不同内容的卡片*
 
 ### 
 

@@ -10,6 +10,7 @@
         v-model="activeValue"
         :maxlength="maxlength"
         :minlength="minlength"
+        :name="name"
         @blur="blur"
         @focus="focus"
         @click="click"
@@ -26,6 +27,7 @@
         :maxlength="maxlength"
         :minlength="minlength"
         :cols="cols" 
+        :name="name"
         :rows="rows"
         @blur="blur"
         @focus="focus"
@@ -76,7 +78,8 @@ export default {
         search: {
             type: String,
             default: ''
-        }
+        },
+        name: String
     },
     model: {
         prop: 'value',

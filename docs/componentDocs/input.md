@@ -1,4 +1,4 @@
-# input 输入框
+# Input 输入框
 
 ### 
 
@@ -42,11 +42,12 @@ export default {
 | placeholder | 输入框占位文本 | String | 否 | '请输入' | -- |
 | maxlength | 原生属性，最大输入长度 | String,Number | 否 | -- | -- |
 | minlength | 原生属性，最小输入长度 | String,Number | 否 | -- | -- |
-| type | 输入框类型 | String | 否 | text | textarea或原生input的type值 |
+| type | 输入框类型 | String | 否 | text | textarea和大多数原生input的type值 |
 | rows | 文本域行数，当type='textarea'时生效 | String,Number | 否 | -- | -- |
 | cols | 文本域列数，当type='textarea'时生效 | String,Number | 否 | -- | -- |
 | clearable | 是否可清空 | Boolean | 否 | true | -- |
 | search | 开启搜索按钮 | String | 否 | -- | 搜索框展示的文本 |
+| name | input元素的name属性 | String | 否 | -- | -- |
 
 
 #### Events

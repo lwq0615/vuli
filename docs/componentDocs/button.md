@@ -1,6 +1,6 @@
-# button 按钮
+# Button 按钮
 
-### 
+*可作为form表单submit按钮使用*
 
 #### 示例
 ###

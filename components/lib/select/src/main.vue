@@ -3,45 +3,17 @@
         <input 
             class="show-text"
             :placeholder="tempLabel || '请选择'"
-            @click="selectClick()"
+            @click="selectClick(true)"
+            @blur="selectClick(false)"
             v-model="form.label"
             :style="disableStyle+cursorStyle"
-            @input="searchInput"
-            v-show="openSearch"
-            :title="form.label"
+            :readonly="!openSearch || disable"
         >
-        <div 
-            class="show-text" 
-            v-show="!openSearch"
-            :title="form.label"
-            @click="selectClick()"
-            :style="`color:${form.label ? '#606266' : '#757575'};${disableStyle+cursorStyle}`"
-        >
-            {{form.label || '请选择'}}
+        <div class="options" :style="heightStyle">
+            <slot></slot>
         </div>
-        <div class="options" :style="`height:${showOptions ? options.length*34+'px' : '0'}`" v-show="!search">
-            <div 
-                class="options-list" 
-                v-for="(item,index) in options" 
-                :key="index" 
-                :title="item.label"
-                v-show="item.label.includes(search)"
-                @click="checkOption(item)"
-                :style="`color:${item.value == form.value ? '#E44258' : '#606266'};background-color:${item.value == form.value ? '#f5f7fa' : ''};`"
-            >{{item.label}}</div>
-        </div>
-        <div class="options" :style="`height:${showOptions ? searchData.length*34+'px' : '0'}`" v-show="search">
-            <div 
-                class="options-list" 
-                v-for="(item,index) in searchData" 
-                :key="index" 
-                :title="item.label"
-                v-show="item.label.includes(search)"
-                @click="checkOption(item)"
-                :style="`color:${item.value == form.value ? '#E44258' : '#606266'};background-color:${item.value == form.value ? '#f5f7fa' : ''};`"
-            >{{item.label}}</div>
-        </div>
-        <div class="delete-btn" @click="deleteCheck($event)" v-show="deleteBtn" :style="cursorStyle">×</div>
+        <div class="delete-btn" @click="deleteCheck" v-show="deleteBtn" :style="cursorStyle">×</div>
+        <input type="text" style="display: none;" v-model="form.value" :name="name">
     </div>
 </template>
 
@@ -49,7 +21,6 @@
 export default {
     name: 'lSelect',
     props:{
-        options: Array,
         value: {
             type: [String,Number],
             default: null
@@ -69,7 +40,8 @@ export default {
         disable: {
             type: Boolean,
             default: false
-        }
+        },
+        name: String
     },
     model:{
         prop: 'value',
@@ -77,14 +49,13 @@ export default {
     },
     data(){
         return {
+            options: [],
             form: {
                 label: null,
                 value: null
             },
             showOptions: false,
-            tempLabel: null,
-            search: '',
-            searchData: []
+            tempLabel: null
         }
     },
     computed: {
@@ -93,13 +64,28 @@ export default {
         },
         cursorStyle(){
             return `cursor:${this.disable ? 'no-drop' : 'pointer'};`
+        },
+        heightStyle(){
+            if(!this.showOptions){
+                return `height: 0;`
+            }
+            if(this.openSearch){
+                let len = 0
+                for(let item of this.options){
+                    if(item.label.includes(this.form.label || '')){
+                        len ++
+                    }
+                }
+                return `height: ${len*34 > 5*34 ? 5*34 : len*34}px;`
+            }
+            return `height: ${this.options.length*34 > 5*34 ? 5*34 : this.options.length*34}px;`
         }
     },
     watch:{
         value:{
             handler(newVal){
                 for(let item of this.options){
-                    if(item.value === newVal){
+                    if(item.value === newVal && newVal !== this.form.value){
                         this.checkOption(item)
                     }
                 }
@@ -117,20 +103,19 @@ export default {
         /**
          * 点击select
          */
-        selectClick(){
+        selectClick(open){
             if(this.disable){
                 return
             }
-            this.showOptions = !this.showOptions
-            if(this.openSearch){
-                if(this.showOptions){
-                    //列表打开，输入框清空
-                    this.tempLabel = this.form.label
+            if(open){
+                this.showOptions = true
+                if(this.openSearch){
                     this.form.label = ''
-                }else{
+                }
+            }else{
+                this.showOptions = false
+                if(this.openSearch){
                     this.form.label = this.tempLabel
-                    this.tempLabel = ''
-                    this.search = ''
                 }
             }
         },
@@ -139,11 +124,9 @@ export default {
                 if(option.value !== this.form.value){
                     this.$emit('change',{newVal:option.value,oldVal:this.form.value})
                     this.form = {...option}
+                    this.tempLabel = option.label
                     this.$emit('model',option.value)
                 }
-                this.showOptions = false
-                this.tempLabel = ''
-                this.search = ''
             }else{
                 if(this.form.value !== null){
                     this.$emit('change',{newVal:null,oldVal:this.form.value})
@@ -152,24 +135,16 @@ export default {
                     label: null,
                     value: null
                 }
+                this.tempLabel = ''
                 this.$emit('model',null)
             }
+            this.showOptions = false
         },
-        deleteCheck(e){
-            e.stopPropagation()
+        deleteCheck(){
             if(this.disable){
                 return
             }
             this.checkOption(null)
-        },
-        searchInput(e){
-            this.search = e.target.value
-            this.searchData = []
-            for(let item of this.options){
-                if(item.label.includes(this.search)){
-                    this.searchData.push(item)
-                }
-            }
         }
     }
 }

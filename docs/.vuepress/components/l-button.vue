@@ -57,4 +57,10 @@ export default {
    border: 1px solid #e4e7ed;
    cursor: pointer;
 }
+.l-button_button:hover{
+    opacity: 0.8;
+}
+.l-button_button:active{
+   opacity: 1;
+}
 </style>>

@@ -19,13 +19,12 @@
         flex: 1;
         width: 100%;
         cursor: pointer;
-        overflow:hidden; //超出的文本隐藏
-        text-overflow:ellipsis; //溢出用省略号显示
-        white-space:nowrap; //溢出不换行
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        white-space: nowrap;
     }
 
     .options {
-        transition: all ease 0.3s;
         overflow-y: auto;
         overflow-x: hidden;
         width: 100%;
@@ -38,16 +37,17 @@
         z-index: 2;
         left: 0;
         top: 40px;
+        height: 50px;
+        transition: all ease 0.3s;
 
         .options-list {
-            height: 34px;
             line-height: 34px;
             text-align: left;
             padding-left: 15px;
             width: 100%;
-            overflow:hidden; //超出的文本隐藏
-            text-overflow:ellipsis; //溢出用省略号显示
-            white-space:nowrap; //溢出不换行
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             cursor: pointer;
         }
         .options-list:hover {
@@ -55,8 +55,15 @@
         }
     }
     .options::-webkit-scrollbar {
-        display: none;
+        width: 6px;
     }
+    .options::-webkit-scrollbar-thumb {
+        background-color: rgba($color: #E44258, $alpha: 0.8);
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+    }
+
     .delete-btn {
         position: absolute;
         right: 10px;

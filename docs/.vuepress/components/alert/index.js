@@ -14,6 +14,13 @@ const Alert = function (option = {}) {
     instance.$mount(); // 渲染组件
     document.body.appendChild(instance.$el)
     instance.show()
+    return Alert
 }
+
+Alert.then = function(fun){
+    instance.buttonWatch = fun
+}
+
+Alert.close = instance.close
 
 export default Alert

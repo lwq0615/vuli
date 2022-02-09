@@ -4,6 +4,7 @@
             <div class="input" :style="inputStyle+inputActiveStyle"></div>
             <div class="text" :style="fontSizeStyle+textActiveStyle"><slot></slot></div>
         </div>
+        <input type="radio" style="display:none;" :value="value" :name="$parent.name" :checked="$parent.activeValue === value">
     </div>
 </template>
 

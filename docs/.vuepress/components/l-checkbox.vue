@@ -4,6 +4,8 @@
             <div class="input" :style="inputStyle+inputActiveStyle">{{$parent.activeValue.includes(value) ? '√' : ''}}</div>
             <div class="text" :style="fontSizeStyle+textActiveStyle"><slot></slot></div>
         </div>
+        <input type="checkbox" style="display:none;" :value="value" 
+        :name="$parent.name" :checked="$parent.activeValue.includes(value)">
     </div>
 </template>
 

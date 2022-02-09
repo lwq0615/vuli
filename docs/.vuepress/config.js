@@ -24,7 +24,7 @@ module.exports = {
                     '/componentDocs/select',
                     '/componentDocs/radio',
                     '/componentDocs/checkbox',
-                    '/componentDocs/switch',
+                    '/componentDocs/color',
                     '/componentDocs/input'
                 ]
             },
@@ -32,7 +32,8 @@ module.exports = {
                 title: 'Data',
                 collapsable: false,
                 children: [
-                    '/componentDocs/progress'
+                    '/componentDocs/progress',
+                    '/componentDocs/switch'
                 ]
             },
             {
@@ -40,7 +41,14 @@ module.exports = {
                 collapsable: false,
                 children: [
                     '/componentDocs/message',
-                    '/componentDocs/alert',
+                    '/componentDocs/alert'
+                ]
+            },
+            {
+                title: 'Other',
+                collapsable: false,
+                children: [
+                    '/componentDocs/calculator'
                 ]
             }
         ]

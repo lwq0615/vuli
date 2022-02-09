@@ -1,17 +1,20 @@
 <template>
   <div id="app">
 
-    <l-button @click="test1" color="error" style="float: left;">按钮</l-button>
+    <l-button @click="test1" style="float: left;">按钮</l-button>
 
     <!-- <l-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></l-slide> -->
 
-    <!-- <l-select
-      :options="[{label:'李伟强',value:1},{label:'李伟强2',value:2}]"
-      v-model="value"
-      :disable="false"
-      @change="test"
-      :openSearch="false"
-    ></l-select> -->
+    <!-- <l-select v-model="value">
+      <l-select-option label="福建" :value="1"></l-select-option>
+      <l-select-option label="漳州" :value="2"></l-select-option>
+      <l-select-option label="漳浦" :value="3"></l-select-option>
+      <l-select-option label="厦门" :value="4"></l-select-option>
+      <l-select-option label="泉州" :value="5"></l-select-option>
+      <l-select-option label="三明" :value="6"></l-select-option>
+      <l-select-option label="龙岩" :value="7"></l-select-option>
+    </l-select> -->
+    
 
     <!-- <l-tabs v-model="value" @change="test">
       <l-tab-panel label="第一个" name="1">第一个的内容</l-tab-panel>
@@ -36,14 +39,18 @@
 
     <!-- <l-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></l-switch> -->
 
-    <l-input type="date" v-model="value" @search="test"></l-input>
+    <!-- <l-input type="datetime-local" v-model="value" @search="test"></l-input> -->
 
-    <!-- <l-checkbox-group v-model="value">
+    <!-- <l-checkbox-group v-model="value" name="absa">
       <l-checkbox value="1" :disable="true">福建</l-checkbox>
       <l-checkbox value="2" :disable="true">厦门</l-checkbox>
       <l-checkbox value="3">漳浦</l-checkbox>
       <l-checkbox value="4">泉州</l-checkbox>
     </l-checkbox-group> -->
+
+    <!-- <l-color v-model="value" ref="test"></l-color> -->
+    
+    <!-- <l-calculator @compute="test"></l-calculator> -->
 
   </div>
 </template>

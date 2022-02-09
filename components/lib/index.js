@@ -1,5 +1,6 @@
 import button from './button'
 import select from './select'
+import selectOption from './select-option'
 import slide from './slide'
 import tabs from './tabs'
 import tabPanel from './tab-panel'
@@ -13,10 +14,13 @@ import Alert from './alert'
 import input from './input'
 import checkboxGroup from './checkbox-group'
 import checkbox from './checkbox'
+import color from './color'
+import calculator from './calculator'
 
 const components = {
     button,
     select,
+    selectOption,
     slide,
     tabs,
     tabPanel,
@@ -28,7 +32,9 @@ const components = {
     input,
     checkboxGroup,
     checkbox,
-    Alert
+    Alert,
+    color,
+    calculator
 }
 
 const install = function(Vue){
@@ -47,6 +53,7 @@ export {
     message,
     button,
     select,
+    selectOption,
     slide,
     tabs,
     tabPanel,
@@ -58,7 +65,9 @@ export {
     input,
     checkboxGroup,
     checkbox,
-    Alert
+    Alert,
+    color,
+    calculator
 }
 
 export default {install}

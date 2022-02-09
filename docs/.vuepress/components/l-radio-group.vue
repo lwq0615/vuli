@@ -24,7 +24,8 @@ export default {
         iconSize: {
             type: Number,
             default: 16
-        }
+        },
+        name: String
     },
     model: {
         prop: 'value',

@@ -1,4 +1,4 @@
-# radio 单选框
+# Radio 单选框
 
 ### 
 
@@ -52,6 +52,7 @@ export default {
 | rowHeight | 单选框高度 | String | 否 | 50px | -- |
 | fontSize | 单选框文字大小 | String | 否 | 14px | -- |
 | iconSize | 按钮大小 | Number | 否 | 16 | -- |
+| name | input radio元素的name属性 | String | 否 | -- | -- |
 
 
 #### Radio Attributes

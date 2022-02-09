@@ -74,7 +74,9 @@ export default {
                 this.close()
             }
             item.click ? item.click() : null
-        }
+            this.buttonWatch(item)
+        },
+        buttonWatch(){}
     }
 }
 </script>

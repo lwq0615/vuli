@@ -1,10 +1,10 @@
-# alert 弹窗
+# Alert 弹窗
 
 ### 
 
 #### 示例
 ###
-<l-button @click="alert">按钮</l-button>
+<l-button @click="alert">消息提示</l-button>
 
 <script>
 import message from '../.vuepress/components/message/index.js'
@@ -31,6 +31,10 @@ export default {
                   }
               }
           ]
+      }).then((button) => {
+        if(button.text === '确定'){
+          Alert.close()
+        }
       })
     }
   }
@@ -65,6 +69,11 @@ export default {
                   }
               }
           ]
+      }).then((button) => {
+        if(button.text === '确定'){
+          //直接在js中调用close方法关闭弹窗
+          that.$alert.close()
+        }
       })
     }
   }
@@ -90,3 +99,11 @@ export default {
 | type | 按钮样式 | String | 否 | default | default,error,enter |
 | close | 点击按钮时是否关闭弹窗 | Boolean | 否 | true | true,false |
 | click | 点击按钮时触发的事件 | function | 否 | -- | -- |
+
+
+
+#### Methods
+| 方法名 | 说明 | 所需参数 | 参数说明 |
+|  ---  | ---  | ---  | --- |
+| then | 定义点击任意按钮时执行的函数 | function(button)  | button为点击的按钮信息 |
+| close | 关闭弹窗 | --  | -- |

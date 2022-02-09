@@ -1,10 +1,10 @@
-# slide 轮播图
+# Slide 轮播图
 
-### 
+*无限循环的轮播图*
 
 #### 示例
 ###
-<l-slide :imgs="['/luck-ui/1.JPG','/luck-ui/2.jpg','/luck-ui/3.jpg']"></l-slide>
+<l-slide :imgs="['/luck-ui/2.jpg','/luck-ui/1.JPG','/luck-ui/3.jpg']"></l-slide>
 
 #### 代码
 ```html
