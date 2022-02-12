@@ -19,7 +19,7 @@
 
 <script>
 export default {
-    name: 'lProgress',
+    name: 'l-progress',
     props: {
         percentage: {
             type: Number,
@@ -49,7 +49,7 @@ export default {
         percentage: {
             handler(newVal,oldVal){
                 if(newVal !== oldVal){
-                    this.$emit('change',{newVal,oldVal})
+                    this.$emit('change',newVal)
                 }
                 if(newVal === 100){
                     this.$emit('full')

@@ -1,8 +1,7 @@
 <template>
     <button 
         class="l-button_button"
-        :style="`background-color:${btnColor};width:${width};height:${height};color:${textColor};font-size:${fontSize}`"
-        @click="click()"
+        :style="`background-color:${btnColor};color:${textColor};font-size:${fontSize}`"
     ><slot></slot></button>
 </template>
 
@@ -13,14 +12,6 @@ export default {
         color: {
             type: String,
             default: '#E44258'
-        },
-        width: {
-            type: String,
-            default: '100px'
-        },
-        height: {
-            type: String,
-            default: '40px'
         },
         textColor: {
             type: String,
@@ -42,11 +33,6 @@ export default {
             }
             return colors[this.color] || this.color
         }
-    },
-    methods:{
-        click(){
-            this.$emit('click')
-        }
     }
 }
 </script>
@@ -56,6 +42,8 @@ export default {
    border-radius: 6px;
    border: 1px solid #e4e7ed;
    cursor: pointer;
+   width: 100px;
+   height: 40px;
 }
 .l-button_button:hover{
     opacity: 0.8;

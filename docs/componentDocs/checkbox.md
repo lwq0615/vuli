@@ -61,7 +61,7 @@ export default {
 
 
 #### Radio-group Events
-| 事件名 | 触发条件 | 参数 |
+| 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | checkboxClick | 点击复选框 | 复选框的value值 |
 | change | 值改变 | 改变后的值 |

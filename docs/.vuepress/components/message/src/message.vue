@@ -7,7 +7,7 @@
 </template>
 <script>
 export default {
-  name: "lMessage",
+  name: "l-message",
   props: {
     option:Object
   },

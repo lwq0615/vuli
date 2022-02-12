@@ -1,6 +1,6 @@
 <template>
     <transition name="showTransition">
-        <div class="l-alert_container" @click="close" v-show="showAlert">
+        <div class="l-alert_container" v-show="showAlert">
             <div class="alert-box" @click="stopPropagation" :style="widthStyle+heightStyle">
                 <div class="title">
                     {{option.title}}

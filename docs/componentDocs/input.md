@@ -4,9 +4,36 @@
 
 #### 示例
 ###
+
+文本输入框<br>
 <l-input v-model="value"></l-input>
+
+日期选择<br>
 <l-input type="date"></l-input>
+
+时间选择<br>
+<l-input type="time"></l-input>
+
+日期时间选择<br>
+<l-input type="datetime-local"></l-input>
+
+周选择<br>
+<l-input type="week"></l-input>
+
+数量选择<br>
+<l-input type="number"></l-input>
+
+密码输入框<br>
+<l-input type="password"></l-input>
+
+搜索框<br>
+<l-input type="search" :clearable="true"></l-input>
+
+搜索按钮<br>
 <l-input type="text" search="搜索"></l-input>
+
+文本域<br>
+<l-input type="textarea"></l-input>
 
 <script>
 export default {
@@ -20,8 +47,37 @@ export default {
 
 #### 代码
 ```html
+<!--可直接在style内联样式中修改组件宽高-->
+文本输入框<br>
 <l-input v-model="value"></l-input>
+
+日期选择<br>
 <l-input type="date"></l-input>
+
+时间选择<br>
+<l-input type="time"></l-input>
+
+日期时间选择<br>
+<l-input type="datetime-local"></l-input>
+
+周选择<br>
+<l-input type="week"></l-input>
+
+数量选择<br>
+<l-input type="number"></l-input>
+
+密码输入框<br>
+<l-input type="password"></l-input>
+
+搜索框<br>
+<!-- 搜索框默认带有清空按钮 -->
+<l-input type="search" :clearable="true"></l-input>
+
+搜索按钮<br>
+<l-input type="text" search="搜索"></l-input>
+
+文本域<br>
+<l-input type="textarea"></l-input>
 
 <script>
 export default {
@@ -45,13 +101,13 @@ export default {
 | type | 输入框类型 | String | 否 | text | textarea和大多数原生input的type值 |
 | rows | 文本域行数，当type='textarea'时生效 | String,Number | 否 | -- | -- |
 | cols | 文本域列数，当type='textarea'时生效 | String,Number | 否 | -- | -- |
-| clearable | 是否可清空 | Boolean | 否 | true | -- |
+| clearable | 是否可清空 | Boolean | 否 | false | -- |
 | search | 开启搜索按钮 | String | 否 | -- | 搜索框展示的文本 |
 | name | input元素的name属性 | String | 否 | -- | -- |
 
 
 #### Events
-| 事件名 | 触发条件 | 参数 |
+| 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | blur | 失去焦点 | event |
 | focus | 获得焦点 | event |

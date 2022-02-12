@@ -1,5 +1,5 @@
 <template>
-    <div class="l-select_container" :style="`width:${width}`">
+    <div class="l-select_container">
         <input 
             class="show-text"
             :placeholder="tempLabel || '请选择'"
@@ -19,15 +19,11 @@
 
 <script>
 export default {
-    name: 'lSelect',
+    name: 'l-select',
     props:{
         value: {
             type: [String,Number],
             default: null
-        },
-        width: {
-            type: String,
-            default: '200px'
         },
         deleteBtn: {
             type: Boolean,
@@ -122,14 +118,14 @@ export default {
         checkOption(option){
             if(option){
                 if(option.value !== this.form.value){
-                    this.$emit('change',{newVal:option.value,oldVal:this.form.value})
+                    this.$emit('change',option.value)
                     this.form = {...option}
                     this.tempLabel = option.label
                     this.$emit('model',option.value)
                 }
             }else{
                 if(this.form.value !== null){
-                    this.$emit('change',{newVal:null,oldVal:this.form.value})
+                    this.$emit('change',null)
                 }
                 this.form = {
                     label: null,
@@ -154,6 +150,7 @@ export default {
 .l-select_container {
     display: inline-block;
     position: relative;
+    width: 200px;
     height: 40px;
     .show-text {
         background-color: #fff;
@@ -164,8 +161,7 @@ export default {
         display: inline-block;
         font-size: inherit;
         text-align: left;
-        height: 40px;
-        line-height: 40px;
+        height: 100%;
         outline: none;
         padding: 0 15px;
         transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -189,7 +185,7 @@ export default {
         position: absolute;
         z-index: 2;
         left: 0;
-        top: 40px;
+        top: 100%;
         height: 50px;
         transition: all ease 0.3s;
     }
@@ -218,6 +214,7 @@ export default {
         color: #606266;
         cursor: pointer;
         user-select: none;
+        font-family: Avenir, Helvetica, Arial, sans-serif;
     }
 }
 </style>>

@@ -34,14 +34,14 @@
         @click="click"
         @input="input"></textarea>
 
-        <div class="clear" @click="clearValue" v-show="clearable && !search">×</div>
+        <div class="clear" @click="clearValue" v-show="clearable && !search && type !== 'search'">×</div>
         <div class="search" @click="searchValue" v-show="search && type !== 'textarea'">{{search}}</div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'lInput',
+    name: 'l-input',
     props: {
         value: {
             type: [String,Number],
@@ -73,7 +73,7 @@ export default {
         },
         clearable: {
             type: Boolean,
-            default: true
+            default: false
         },
         search: {
             type: String,
@@ -112,7 +112,9 @@ export default {
             return style
         },
         paddingStyle(){
-            if(this.search){
+            if(this.type === 'search'){
+                return ''
+            }else if(this.search){
                 return 'padding-right: 50px'
             }else if(this.clearable){
                 return 'padding-right: 25px'

@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "lTabs",
+  name: "l-tabs",
   props: {
     shadow: {
       type: Boolean,
@@ -82,7 +82,7 @@ export default {
     },
     tabChange(name) {
       if (this.activeValue !== name) {
-        this.$emit('change',{newVal:name,oldVal:this.activeValue})
+        this.$emit('change',name)
         this.activeValue = name
         this.$emit("model", name);
       }

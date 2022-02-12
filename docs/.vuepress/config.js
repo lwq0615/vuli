@@ -14,6 +14,7 @@ module.exports = {
                     '/componentDocs/button',
                     '/componentDocs/tabs',
                     '/componentDocs/rotate-card',
+                    '/componentDocs/tag',
                     '/componentDocs/slide'
                 ]
             },
@@ -25,6 +26,7 @@ module.exports = {
                     '/componentDocs/radio',
                     '/componentDocs/checkbox',
                     '/componentDocs/color',
+                    '/componentDocs/sider',
                     '/componentDocs/input'
                 ]
             },

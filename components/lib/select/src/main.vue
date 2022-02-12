@@ -1,5 +1,5 @@
 <template>
-    <div class="l-select_container" :style="`width:${width}`">
+    <div class="l-select_container">
         <input 
             class="show-text"
             :placeholder="tempLabel || '请选择'"
@@ -19,15 +19,11 @@
 
 <script>
 export default {
-    name: 'lSelect',
+    name: 'l-select',
     props:{
         value: {
             type: [String,Number],
             default: null
-        },
-        width: {
-            type: String,
-            default: '200px'
         },
         deleteBtn: {
             type: Boolean,
@@ -122,14 +118,14 @@ export default {
         checkOption(option){
             if(option){
                 if(option.value !== this.form.value){
-                    this.$emit('change',{newVal:option.value,oldVal:this.form.value})
+                    this.$emit('change',option.value)
                     this.form = {...option}
                     this.tempLabel = option.label
                     this.$emit('model',option.value)
                 }
             }else{
                 if(this.form.value !== null){
-                    this.$emit('change',{newVal:null,oldVal:this.form.value})
+                    this.$emit('change',null)
                 }
                 this.form = {
                     label: null,

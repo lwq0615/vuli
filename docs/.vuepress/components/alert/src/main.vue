@@ -1,6 +1,6 @@
 <template>
     <transition name="showTransition">
-        <div class="l-alert_container" @click="close" v-show="showAlert">
+        <div class="l-alert_container" v-show="showAlert">
             <div class="alert-box" @click="stopPropagation" :style="widthStyle+heightStyle">
                 <div class="title">
                     {{option.title}}
@@ -89,8 +89,10 @@ export default {
     bottom: 0;
     right: 0;
     z-index: 99;
+    user-select: none;
     background-color: rgba($color: #000000, $alpha: 0.3);
     .alert-box {
+        user-select: text;
         background-color: white;
         margin: 15% auto;
         border-radius: 5px;

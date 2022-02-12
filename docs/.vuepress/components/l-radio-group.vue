@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 'lRadioGroup',
+    name: 'l-radio-group',
     props:{
         value: {
             type: [String,Number],
@@ -71,7 +71,7 @@ export default {
         },
         changeValue(value){
             if(this.activeValue !== value){
-                this.$emit('change',{newVal:value,oldVal:this.activeValue})
+                this.$emit('change',value)
                 this.activeValue = value
                 this.$emit('model',value)
             }

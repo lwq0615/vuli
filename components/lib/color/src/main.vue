@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'lColor',
+    name: 'l-color',
     props: {
         value: {
             type: String,

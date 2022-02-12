@@ -3,12 +3,22 @@
 ### 
 
 #### 示例
-#### outside
+###
+
+outside<br>
 <l-progress :percentage="70"></l-progress>
+
+inside<br>
+<l-progress :percentage="70" :inside="true"></l-progress>
 
 #### 代码
 ```html
-<l-progress :percentage="70" :format="format"></l-progress>
+<!--可直接在style内联样式中修改组件宽高-->
+outside<br>
+<l-progress :percentage="70"></l-progress>
+
+inside<br>
+<l-progress :percentage="70" :inside="true"></l-progress>
 
 <script>
 export default {
@@ -23,15 +33,6 @@ export default {
 </script>
 ```
 
-#### 示例
-#### inside
-<l-progress :percentage="70" :inside="true"></l-progress>
-
-#### 代码
-```html
-<l-progress :percentage="70" :inside="true"></l-progress>
-```
-
 #### Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
@@ -44,7 +45,7 @@ export default {
 
 
 #### Events
-| 事件名 | 触发条件 | 参数 |
+| 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
-| change | 进度发生改变 | 改变前后的百分比 |
+| change | 进度发生改变 | 改变后的百分比 |
 | full | 进度达到100% |-- |

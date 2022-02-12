@@ -1,5 +1,5 @@
 <template>
-    <div class="l-slide_container" :style="`width:${width};height:${height}`">
+    <div class="l-slide_container">
         <div class="imgBox" :style="style">
             <img class="img" :style="`object-fit:${cutType}`" :src="imgs[index-1] || imgs[imgs.length-1]">
             <img class="img" :style="`object-fit:${cutType}`" :src="imgs[index]">
@@ -13,17 +13,9 @@
 
 <script>
 export default {
-    name: 'lSlide',
+    name: 'l-slide',
     props:{
         imgs: Array,
-        width: {
-            type: String,
-            default: '400px'
-        },
-        height: {
-            type: String,
-            default: '250px'
-        },
         cutType: {
             type: String,
             default: 'cover'
@@ -71,9 +63,9 @@ export default {
                     src: that.imgs[that.index2]
                 }
                 if(!events || !events.includes("next")){
-                    that.$emit("next",{oldImg,newImg})
+                    that.$emit("next",newImg)
                 }
-                that.$emit("change",{oldImg,newImg})
+                that.$emit("change",newImg)
                 that.style = `transition:all ${that.time} ease;transform:translateX(-66.66%);`
                 that.o = setTimeout(function(){
                     that.index+1 == that.imgs.length ? that.index = 0 : that.index++
@@ -94,8 +86,8 @@ export default {
                     index: that.index2,
                     src: that.imgs[that.index2]
                 }
-                that.$emit("last",{oldImg,newImg})
-                that.$emit("change",{oldImg,newImg})
+                that.$emit("last",newImg)
+                that.$emit("change",newImg)
                 that.style = `transition:all ${that.time} ease;transform:translateX(0%);`
                 that.o = setTimeout(function(){
                     that.index-1 < 0 ? that.index = that.imgs.length-1 : that.index--

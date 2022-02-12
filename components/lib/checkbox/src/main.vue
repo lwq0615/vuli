@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: 'lCheckbox',
+    name: 'l-checkbox',
     props: {
         value: {
             type: [String,Number],

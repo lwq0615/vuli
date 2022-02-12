@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'lSwitch',
+    name: 'l-switch',
     props: {
         openColor: {
             type: String,

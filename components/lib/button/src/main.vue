@@ -1,26 +1,17 @@
 <template>
     <button 
         class="l-button_button"
-        :style="`background-color:${btnColor};width:${width};height:${height};color:${textColor};font-size:${fontSize}`"
-        @click="click()"
+        :style="`background-color:${btnColor};color:${textColor};font-size:${fontSize}`"
     ><slot></slot></button>
 </template>
 
 <script>
 export default {
-    name: 'lButton',
+    name: 'l-button',
     props:{
         color: {
             type: String,
             default: '#E44258'
-        },
-        width: {
-            type: String,
-            default: '100px'
-        },
-        height: {
-            type: String,
-            default: '40px'
         },
         textColor: {
             type: String,
@@ -41,11 +32,6 @@ export default {
                 error: '#F56C6C'
             }
             return colors[this.color] || this.color
-        }
-    },
-    methods:{
-        click(){
-            this.$emit('click')
         }
     }
 }

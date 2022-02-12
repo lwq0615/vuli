@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: 'lSelectOption',
+    name: 'l-select-option',
     props: {
         value: {
             type: [String,Number],
@@ -21,16 +21,20 @@ export default {
         }
     },
     created(){
-        let option = {
-            value: this.value,
-            label: this.label
+        if(this.$parent.$options._componentTag === 'l-select'){
+            let option = {
+                value: this.value,
+                label: this.label
+            }
+            this.$parent.options.push(option)
         }
-        this.$parent.options.push(option)
     },
     destroyed(){
-        for(let i in this.$parent.options){
-            if(this.$parent.options[i].value === this.value){
-                this.$parent.options.splice(i,1)
+        if(this.$parent.$options._componentTag === 'l-select'){
+            for(let i in this.$parent.options){
+                if(this.$parent.options[i].value === this.value){
+                    this.$parent.options.splice(i,1)
+                }
             }
         }
     },

@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'lSwitch',
+    name: 'l-switch',
     props: {
         openColor: {
             type: String,
@@ -119,6 +119,7 @@ export default {
         border-radius: 100px;
         display: flex;
         transition: all ease 0.3s;
+        align-items: center;
         .span{
             flex: 1;
             transition: all ease 0.3s;

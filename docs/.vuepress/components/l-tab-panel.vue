@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "lTabPanel",
+  name: "l-tab-panel",
   props: {
     name: {
       type: String,

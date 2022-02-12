@@ -65,7 +65,7 @@ export default {
 
 
 #### Tabs Events
-| 事件名 | 触发条件 | 参数 |
+| 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | tabClick | 点击标签 | 标签的name |
-| change | 标签改变 | 改变前后的name |
+| change | 标签改变 | 改变后的name |

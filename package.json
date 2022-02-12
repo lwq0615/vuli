@@ -22,17 +22,11 @@
     "docs": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "publish": "npm publish",
-    "git:push": "git init && git add . && git commit -m 'update' && git push origin master",
+    "git": "git init && git add . && git commit -m 'update' && git push origin master",
     "deploy": "cd docs/.vuepress/dist && git init && git add -A && git commit -m 'deploy' && git push -f https://github.com/lwq0615/luck-ui.git master:gh-pages"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "gulp": "^4.0.2",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-sass": "^5.1.0",
-    "node-sass": "^7.0.1",
-    "sass": "^1.48.0",
-    "sass-loader": "^5.0.1",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.8"
   },
@@ -41,8 +35,12 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
+    "gulp": "^4.0.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^7.0.1",
+    "sass": "^1.48.0",
+    "sass-loader": "^5.0.1",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.9.5",
     "webpack-cli": "^4.9.1"
@@ -58,10 +56,6 @@
     ],
     "parserOptions": {
       "parser": "babel-eslint"
-    },
-    "rules": {
-      "no-unused-vars": "off",
-      "vue/no-unused-components": "off"
     }
   },
   "browserslist": [

@@ -10,12 +10,14 @@ import radioGroup from './radio-group'
 import progress from './progress'
 import Switch from './switch'
 import message from './message'
-import Alert from './alert'
+import alert from './alert'
 import input from './input'
 import checkboxGroup from './checkbox-group'
 import checkbox from './checkbox'
 import color from './color'
 import calculator from './calculator'
+import tag from './tag'
+import sider from './sider'
 
 const components = {
     button,
@@ -32,9 +34,11 @@ const components = {
     input,
     checkboxGroup,
     checkbox,
-    Alert,
+    alert,
     color,
-    calculator
+    calculator,
+    tag,
+    sider
 }
 
 const install = function(Vue){
@@ -45,7 +49,7 @@ const install = function(Vue){
         Vue.component(components[key].name,components[key])
     })
     Vue.prototype.$message = message
-    Vue.prototype.$alert = Alert
+    Vue.prototype.$alert = alert
 }
 
 export {
@@ -65,9 +69,11 @@ export {
     input,
     checkboxGroup,
     checkbox,
-    Alert,
+    alert,
     color,
-    calculator
+    calculator,
+    tag,
+    sider
 }
 
 export default {install}

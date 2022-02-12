@@ -14,6 +14,7 @@ const Alert = function (option = {}) {
     instance.$mount(); // 渲染组件
     document.body.appendChild(instance.$el)
     instance.show()
+    instance.buttonWatch = () => {}
     return Alert
 }
 

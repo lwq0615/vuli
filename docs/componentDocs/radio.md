@@ -63,10 +63,10 @@ export default {
 
 
 #### Radio-group Events
-| 事件名 | 触发条件 | 参数 |
+| 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | radioClick | 点击单选框 | 单选框的value值 |
-| change | 值改变 | 改变前后的值 |
+| change | 值改变 | 改变后的值 |
 
 
 #### Radio-group Methods

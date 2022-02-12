@@ -10,7 +10,7 @@
 export default {
   data(){
     return {
-      value: 'black'
+      value: '#E44258'
     }
   }
 }
@@ -18,13 +18,14 @@ export default {
 
 #### 代码
 ```html
+<!--可直接在style内联样式中修改组件宽高-->
 <l-color v-model="value"></l-color>
 
 <script>
 export default {
   data(){
     return {
-      value: 'black'
+      value: '#E44258'
     }
   }
 }
@@ -39,7 +40,7 @@ export default {
 
 
 #### Events
-| 事件名 | 触发条件 | 参数 |
+| 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | change | 颜色改变 | 改变后的颜色 |
 

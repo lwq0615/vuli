@@ -14,23 +14,21 @@ export default {
     alert(){
       Alert({
         title: '提示',
-          width: '350px',
-          content: '提示消息',
-          height: 'auto',
-          buttons: [
-              {
-                  text: '取消',
-                  type: 'default'
-              },
-              {
-                  text: '确定',
-                  type: 'enter',
-                  close: false,
-                  click(){
-                    message('提交成功')
-                  }
-              }
-          ]
+        content: '提示消息',
+        buttons: [
+            {
+                text: '取消',
+                type: 'default'
+            },
+            {
+                text: '确定',
+                type: 'enter',
+                close: false,
+                click(){
+                  message('提交成功')
+                }
+            }
+        ]
       }).then((button) => {
         if(button.text === '确定'){
           Alert.close()
@@ -52,23 +50,21 @@ export default {
       let that = this
       this.$alert({
         title: '提示',
-          width: '350px',
-          content: '提示消息',
-          height: 'auto',
-          buttons: [
-              {
-                  text: '取消',
-                  type: 'default'
-              },
-              {
-                  text: '确定',
-                  type: 'enter',
-                  close: false,
-                  click(){
-                    that.$message('提交成功')
-                  }
-              }
-          ]
+        content: '提示消息',
+        buttons: [
+            {
+                text: '取消',
+                type: 'default'
+            },
+            {
+                text: '确定',
+                type: 'enter',
+                close: false,
+                click(){
+                  that.$message('提交成功')
+                }
+            }
+        ]
       }).then((button) => {
         if(button.text === '确定'){
           //直接在js中调用close方法关闭弹窗

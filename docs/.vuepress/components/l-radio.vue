@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'lRadio',
+    name: 'l-radio',
     props: {
         value: {
             type: [String,Number],

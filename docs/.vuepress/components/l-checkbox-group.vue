@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 'lCheckboxGroup',
+    name: 'l-checkbox-group',
     props:{
         value: Array,
         columns: Array,

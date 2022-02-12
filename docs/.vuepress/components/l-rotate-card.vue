@@ -17,7 +17,7 @@
 
 <script>
 export default {
-    name: 'lRotateCard',
+    name: 'l-rotate-card',
     props:{
         rotateTime:{
             type: String,

@@ -28,7 +28,7 @@
 
 <script>
 export default {
-    name: 'lCalculator',
+    name: 'l-calculator',
     data(){
         return {
             e: ''

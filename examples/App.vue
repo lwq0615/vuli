@@ -1,7 +1,8 @@
 <template>
   <div id="app">
 
-    <l-button @click="test1" style="float: left;">按钮</l-button>
+    <div style="padding: 50px 0;text-align:center;"><l-button @click="test1">按钮</l-button></div>
+    
 
     <!-- <l-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></l-slide> -->
 
@@ -35,7 +36,7 @@
       <l-radio :value="5">漳州</l-radio>
     </l-radio-group> -->
 
-    <!-- <l-progress :percentage="value" @change="test" @full="test"></l-progress> -->
+    <!-- <l-progress :percentage="value" @change="test"></l-progress> -->
 
     <!-- <l-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></l-switch> -->
 
@@ -52,6 +53,14 @@
     
     <!-- <l-calculator @compute="test"></l-calculator> -->
 
+    <!-- <l-tag size="mini" color="primary">标签</l-tag>
+    <l-tag size="small" color="success" type="plain">标签</l-tag>
+    <l-tag size="default" color="error" type="dark">标签</l-tag>
+    <l-tag size="big" color="info">标签</l-tag>
+    <l-tag>标签</l-tag> -->
+
+    <!-- <l-sider v-model="value" :format="format" :step="10" :stepPoint="true"></l-sider> -->
+
   </div>
 </template>
 
@@ -62,8 +71,11 @@ export default {
   data(){
     return {
       option,
-      value: 1,
-      radios: [{label:'第一个',value: 1},{label:'第二个',value: 2}]
+      value: 50,
+      radios: [{label:'第一个',value: 1},{label:'第二个',value: 2}],
+      format: function(percentage){
+        return percentage+"%"
+      }
     }
   },
   methods: {
@@ -71,18 +83,15 @@ export default {
       console.log(e)
     },
     test1(){
+      this.$message('111')
     }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+.ltag{
+  margin: 5px;
 }
 </style>
+

@@ -19,6 +19,7 @@ export default {
 
 #### 代码
 ```html
+<!--可直接在style内联样式中修改组件宽度-->
 <l-switch v-model="value" :openValue="123" :closeValue="'close'"></l-switch>
 
 <script>
@@ -44,7 +45,7 @@ export default {
 
 
 #### Events
-| 事件名 | 触发条件 | 参数 |
+| 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | change | 状态改变 | 改变后的值 |
 

@@ -28,6 +28,8 @@ export default {
 ###
 #### 代码
 ```html
+<!--可直接在style内联样式中修改组件宽高-->
+<!--l-select必须与l-select-option搭配使用-->
 <l-select v-model="value">
     <l-select-option label="福建" :value="1"></l-select-option>
     <l-select-option label="漳州" :value="2"></l-select-option>
@@ -53,7 +55,6 @@ export default {
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
 | value / v-model | 绑定值 | String,Number | 否 | -- | --|
-| width | 组件宽度 | String | 否 | 200px | --|
 | deleteBtn | 是否显示清空按钮 | Boolean | 否 | true | -- |
 | openSearch | 是否开启搜索 | Boolean | 否 | true | --|
 | disable | 是否禁用 | Boolean | 否 | false | -- |
@@ -68,7 +69,7 @@ export default {
 
 
 #### Events
-| 事件名 | 触发条件 | 参数 |
+| 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
-| change | 下拉框值改变 | 改变前后的值 |
+| change | 下拉框值改变 | 改变后的值 |
 
