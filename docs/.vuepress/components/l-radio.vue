@@ -92,10 +92,11 @@ export default {
     },
     methods: {
         check(){
+            this.$emit('click',this.value)
             if(this.disable){
                 return
             }
-            this.$parent.radioClick(this.value)
+            this.$parent.changeValue(this.value)
         }
     }
 }

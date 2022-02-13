@@ -11,11 +11,11 @@
         :maxlength="maxlength"
         :minlength="minlength"
         :name="name"
-        @blur="blur"
-        @focus="focus"
-        @click="click"
-        @input="input"
-        @change="change">
+        @blur="$emit('blur',$event)"
+        @focus="$emit('focus',$event)"
+        @click="$emit('click',$event)"
+        @input="$emit('input',$event)"
+        @change="$emit('change',$event)">
 
         <textarea 
         v-else
@@ -29,10 +29,11 @@
         :cols="cols" 
         :name="name"
         :rows="rows"
-        @blur="blur"
-        @focus="focus"
-        @click="click"
-        @input="input"></textarea>
+        @blur="$emit('blur',$event)"
+        @focus="$emit('focus',$event)"
+        @click="$emit('click',$event)"
+        @input="$emit('input',$event)"
+        @change="$emit('change',$event)"></textarea>
 
         <div class="clear" @click="clearValue" v-show="clearable && !search && type !== 'search'">×</div>
         <div class="search" @click="searchValue" v-show="search && type !== 'textarea'">{{search}}</div>
@@ -138,21 +139,6 @@ export default {
         }
     },
     methods: {
-        blur(event){
-            this.$emit('blur',event)
-        },
-        focus(event){
-            this.$emit('focus',event)
-        },
-        click(event){
-            this.$emit('click',event)
-        },
-        input(event){
-            this.$emit('input',event)
-        },
-        change(event){
-            this.$emit('change',event)
-        },
         clearValue(){
             this.activeValue = null
             this.$emit('clear')

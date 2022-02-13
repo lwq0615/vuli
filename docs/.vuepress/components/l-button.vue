@@ -1,7 +1,8 @@
 <template>
     <button 
-        class="l-button_button"
-        :style="`background-color:${btnColor};color:${textColor};font-size:${fontSize}`"
+    :class="`l-button_button ${size}`"
+    :style="btnColor"
+    @click="$emit('click',$event)"
     ><slot></slot></button>
 </template>
 
@@ -13,13 +14,9 @@ export default {
             type: String,
             default: '#E44258'
         },
-        textColor: {
+        size: {
             type: String,
-            default: 'white'
-        },
-        fontSize: {
-            type: String,
-            default: '14px'
+            default: 'default'
         }
     },
     computed:{
@@ -31,7 +28,7 @@ export default {
                 warning: '#E6A23C',
                 error: '#F56C6C'
             }
-            return colors[this.color] || this.color
+            return `background-color:${colors[this.color] || this.color};`
         }
     }
 }
@@ -42,11 +39,29 @@ export default {
    border-radius: 6px;
    border: 1px solid #e4e7ed;
    cursor: pointer;
-   width: 100px;
-   height: 40px;
+   font-size: 14px;
+   padding: 10px 20px;
+   color: white;
 }
+.l-button_button.default{
+   font-size: 14px;
+   padding: 10px 20px;
+   color: white;
+}
+.l-button_button.small{
+   font-size: 13px;
+   padding: 7px 14px;
+   color: white;
+}
+.l-button_button.big{
+   font-size: 18px;
+   padding: 12px 28px;
+   color: white;
+}
+
+
 .l-button_button:hover{
-    opacity: 0.8;
+   opacity: 0.8;
 }
 .l-button_button:active{
    opacity: 1;

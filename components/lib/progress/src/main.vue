@@ -1,5 +1,5 @@
 <template>
-    <div class="l-gropress_container" :style="heightStyle">
+    <div class="l-gropress_container" :style="heightStyle" @click="$emit('click',$event)">
 
         <div class="line-progress" v-show="!inside">
             <div class="flex">

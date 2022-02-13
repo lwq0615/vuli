@@ -48,6 +48,7 @@ export default {
 | 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | change | 状态改变 | 改变后的值 |
+| click | 点击组件 | event |
 
 
 #### Methods

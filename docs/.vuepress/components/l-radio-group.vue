@@ -65,10 +65,6 @@ export default {
         this.activeValue = this.value
     },
     methods: {
-        radioClick(value){
-            this.$emit('radioClick',value)
-            this.changeValue(value)
-        },
         changeValue(value){
             if(this.activeValue !== value){
                 this.$emit('change',value)

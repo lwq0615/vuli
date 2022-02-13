@@ -3,6 +3,7 @@
         class="options-list" 
         v-show="!$parent.openSearch || !$parent.showOptions || label.includes($parent.form.label || '')"
         @mousedown="checkOption"
+        @click="$emit('click',{value,label})"
         :style="`color:${value == $parent.form.value ? '#E44258' : '#606266'};background-color:${value == $parent.form.value ? '#f5f7fa' : ''};`"
     >{{label}}</div>
 </template>

@@ -70,3 +70,4 @@ export default {
 | 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | change | value值改变 | 改变后的value |
+| click | 点击组件 | 点击时的value |

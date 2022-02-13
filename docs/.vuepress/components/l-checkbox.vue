@@ -93,6 +93,7 @@ export default {
     },
     methods: {
         check(){
+            this.$emit('click',this.value)
             if(this.disable){
                 return
             }

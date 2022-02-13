@@ -1,7 +1,8 @@
 <template>
     <button 
-        class="l-button_button"
-        :style="`background-color:${btnColor};color:${textColor};font-size:${fontSize}`"
+    :class="`l-button_button ${size}`"
+    :style="btnColor"
+    @click="$emit('click',$event)"
     ><slot></slot></button>
 </template>
 
@@ -13,13 +14,9 @@ export default {
             type: String,
             default: '#E44258'
         },
-        textColor: {
+        size: {
             type: String,
-            default: 'white'
-        },
-        fontSize: {
-            type: String,
-            default: '14px'
+            default: 'default'
         }
     },
     computed:{
@@ -31,7 +28,7 @@ export default {
                 warning: '#E6A23C',
                 error: '#F56C6C'
             }
-            return colors[this.color] || this.color
+            return `background-color:${colors[this.color] || this.color};`
         }
     }
 }

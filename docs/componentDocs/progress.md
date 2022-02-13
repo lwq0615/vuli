@@ -49,3 +49,4 @@ export default {
 |  ---  | ---  | ---  | 
 | change | 进度发生改变 | 改变后的百分比 |
 | full | 进度达到100% |-- |
+| click | 点击组件 | event |

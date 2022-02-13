@@ -27,6 +27,7 @@ module.exports = {
                     '/componentDocs/checkbox',
                     '/componentDocs/color',
                     '/componentDocs/sider',
+                    '/componentDocs/upload',
                     '/componentDocs/input'
                 ]
             },

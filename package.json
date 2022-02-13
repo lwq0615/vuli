@@ -15,15 +15,14 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "npm run build:js && npm run build:css",
     "lint": "vue-cli-service lint",
     "build:js": "webpack --config ./webpack.config.js",
     "build:css": "npx gulp sass",
+    "publish": "npm run build:js && npm run build:css && npm publish",
     "docs": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "publish": "npm publish",
-    "git": "git init && git add . && git commit -m 'update' && git push origin master",
-    "deploy": "cd docs/.vuepress/dist && git init && git add -A && git commit -m 'deploy' && git push -f https://github.com/lwq0615/luck-ui.git master:gh-pages"
+    "build:docs": "vuepress build docs",
+    "git:push": "git init && git add . && git commit -m 'update' && git push origin master",
+    "git:page": "cd docs/.vuepress/dist && git init && git add -A && git commit -m 'deploy' && git push -f https://github.com/lwq0615/luck-ui.git master:gh-pages"
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -13,6 +13,7 @@
 
 #### 代码
 ```html
+<!-- 通过插槽在正反面插入文档 -->
 <l-rotate-card ref="card" rotateTime="1s" rotateType="y" extClass="test" width="200px">
     <div slot="front">front</div>
     <div slot="back">back</div>

@@ -6,7 +6,7 @@
 
     <!-- <l-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></l-slide> -->
 
-    <!-- <l-select v-model="value">
+    <!-- <l-select>
       <l-select-option label="福建" :value="1"></l-select-option>
       <l-select-option label="漳州" :value="2"></l-select-option>
       <l-select-option label="漳浦" :value="3"></l-select-option>
@@ -28,7 +28,7 @@
       <div slot="back">back</div>
     </l-rotate-card> -->
 
-    <!-- <l-radio-group @change="test" v-model="value">
+    <!-- <l-radio-group v-model="value">
       <l-radio :value="1">福建</l-radio>
       <l-radio :value="2" :disable="true">泉州</l-radio>
       <l-radio :value="3" :disable="true">福州</l-radio>
@@ -36,20 +36,20 @@
       <l-radio :value="5">漳州</l-radio>
     </l-radio-group> -->
 
-    <!-- <l-progress :percentage="value" @change="test"></l-progress> -->
+    <!-- <l-progress :percentage="value" @click="test"></l-progress> -->
 
-    <!-- <l-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></l-switch> -->
+    <!-- <l-switch v-model="value" @click="test" :openValue="123" :closeValue="'close'"></l-switch> -->
 
-    <!-- <l-input type="datetime-local" v-model="value" @search="test"></l-input> -->
+    <!-- <l-input type="text" v-model="value" @click="test"></l-input> -->
 
-    <!-- <l-checkbox-group v-model="value" name="absa">
+    <!-- <l-checkbox-group name="absa">
       <l-checkbox value="1" :disable="true">福建</l-checkbox>
       <l-checkbox value="2" :disable="true">厦门</l-checkbox>
       <l-checkbox value="3">漳浦</l-checkbox>
       <l-checkbox value="4">泉州</l-checkbox>
     </l-checkbox-group> -->
 
-    <!-- <l-color v-model="value" ref="test"></l-color> -->
+    <!-- <l-color></l-color> -->
     
     <!-- <l-calculator @compute="test"></l-calculator> -->
 
@@ -59,7 +59,11 @@
     <l-tag size="big" color="info">标签</l-tag>
     <l-tag>标签</l-tag> -->
 
-    <!-- <l-sider v-model="value" :format="format" :step="10" :stepPoint="true"></l-sider> -->
+    <!-- <l-sider :step="10" :stepPoint="true" @click="test"></l-sider> -->
+
+    <l-upload ref="upload" action="http://localhost:8083/test">
+      上传文件
+    </l-upload>
 
   </div>
 </template>
@@ -72,18 +76,15 @@ export default {
     return {
       option,
       value: 50,
-      radios: [{label:'第一个',value: 1},{label:'第二个',value: 2}],
-      format: function(percentage){
-        return percentage+"%"
-      }
+      files: null
     }
   },
   methods: {
     test(e){
       console.log(e)
     },
-    test1(){
-      this.$message('111')
+    test1(e){
+      this.$refs.upload.upload()
     }
   }
 }

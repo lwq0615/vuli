@@ -1,5 +1,5 @@
 <template>
-    <div class="l-switch_container">
+    <div class="l-switch_container" @click="$emit('click',$event)">
         <div class="switch" @click="change()" :style="colorStyle">
             <div class="span" :style="flexStyle"></div>
             <div class="icon"></div>

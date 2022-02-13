@@ -62,7 +62,6 @@ export default {
     },
     methods: {
         checkboxClick(value){
-            this.$emit('checkboxClick',value)
             if(this.activeValue.includes(value)){
                 this.activeValue.splice(this.activeValue.indexOf(value),1)
             }else{

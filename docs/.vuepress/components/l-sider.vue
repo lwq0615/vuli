@@ -1,6 +1,6 @@
 <template>
     <div class="l-sider_container" ref="container">
-        <div class="sider" @click="siderClick" :style="cursorStyle" @mouseenter="showTip(true)" @mouseout="showTip(false)">
+        <div class="sider" @click="siderClick" :style="cursorStyle" @mouseover="showTip(true)" @mouseout="showTip(false)">
             <div class="front" ref="front" :style="widthStyle+colorStyle">
                 <div class="icon" 
                 @mousedown="mousedown" 
@@ -145,6 +145,7 @@ export default {
             }
         },
         siderClick(e){
+            this.$emit('click',this.activeValue)
             if(this.disable){
                 return
             }
@@ -155,14 +156,14 @@ export default {
         },
         changeValue(percentage){
             window.event.stopPropagation()
-            if(this.activeValue !== percentage){
-                if(this.step){
-                    if(percentage%this.step >= this.step/2){
-                        percentage = Math.ceil(percentage/this.step)*this.step
-                    }else{
-                        percentage = Math.floor(percentage/this.step)*this.step
-                    }
+            if(this.step){
+                if(percentage%this.step >= this.step/2){
+                    percentage = Math.ceil(percentage/this.step)*this.step
+                }else{
+                    percentage = Math.floor(percentage/this.step)*this.step
                 }
+            }
+            if(this.activeValue !== percentage){
                 this.$emit('change',percentage)
                 this.activeValue = percentage
             }

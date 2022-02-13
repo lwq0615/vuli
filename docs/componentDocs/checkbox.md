@@ -42,7 +42,7 @@ export default {
 </script>
 ```
 
-#### Radio-group Attributes
+#### Checkbox-group Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
 | value / v-model | 绑定值 | Array | 否 | [] | -- |
@@ -53,21 +53,26 @@ export default {
 | name | input checkbox元素的name属性 | String | 否 | -- | -- |
 
 
-#### Radio Attributes
+#### Checkbox Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
 | value | 单选框的值 | String,Number | 否 | null | -- |
 | disable | 是否禁用 | Boolean | 否 | false | -- |
 
 
-#### Radio-group Events
+#### Checkbox-group Events
 | 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
-| checkboxClick | 点击复选框 | 复选框的value值 |
 | change | 值改变 | 改变后的值 |
 
 
-#### Radio Methods
+#### Checkbox Events
+| 事件名 | 触发条件 | 回调参数 |
+|  ---  | ---  | ---  | 
+| click | 点击复选框 | 复选框的value值 |
+
+
+#### Checkbox Methods
 | 方法名 | 说明 | 所需参数 | 参数说明 |
 |  ---  | ---  | ---  | --- |
 | check | 点击单选框 | --  | -- |

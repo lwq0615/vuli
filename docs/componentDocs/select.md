@@ -68,8 +68,18 @@ export default {
 | label | option展示的文本 | String,Number  | 是 | -- | --|
 
 
-#### Events
+#### Select Events
 | 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
+| click | 点击输入框 | -- |
 | change | 下拉框值改变 | 改变后的值 |
+| open | 下拉框打开 | -- |
+| close | 下拉框关闭 | -- |
+| clear | 点击清空按钮 | -- |
+
+
+#### Option Events
+| 事件名 | 触发条件 | 回调参数 |
+|  ---  | ---  | ---  | 
+| click | 点击选项 | option的value和label |
 

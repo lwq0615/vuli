@@ -86,6 +86,9 @@ export default {
                     }
                 }
             }
+        },
+        showOptions(newVal){
+            newVal ? this.$emit('open') : this.$emit('close')
         }
     },
     created(){
@@ -100,6 +103,7 @@ export default {
          * 点击select
          */
         selectClick(open){
+            open ? this.$emit('click') : null
             if(this.disable){
                 return
             }
@@ -137,6 +141,7 @@ export default {
             this.showOptions = false
         },
         deleteCheck(){
+            this.$emit('clear')
             if(this.disable){
                 return
             }

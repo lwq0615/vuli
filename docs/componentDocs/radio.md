@@ -65,15 +65,19 @@ export default {
 #### Radio-group Events
 | 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
-| radioClick | 点击单选框 | 单选框的value值 |
 | change | 值改变 | 改变后的值 |
+
+
+#### Radio Events
+| 事件名 | 触发条件 | 回调参数 |
+|  ---  | ---  | ---  | 
+| click | 点击单选框 | 单选框的value值 |
 
 
 #### Radio-group Methods
 | 方法名 | 说明 | 所需参数 | 参数说明 |
 |  ---  | ---  | ---  | --- |
 | changeValue | 选择单选框 | value  | 目标单选框的value |
-| radioClick | 点击单选框 | value  | 目标单选框的value |
 
 
 #### Radio Methods

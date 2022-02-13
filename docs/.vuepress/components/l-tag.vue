@@ -1,5 +1,9 @@
 <template>
-  <div class="l-tag_container" :style="colorStyle" :class="size || 'default'">
+  <div 
+  class="l-tag_container" 
+  :style="colorStyle" 
+  :class="size || 'default'" 
+  @click="$emit('click',$event)">
     <slot></slot>
     <span class="close" @click="closeEvent" v-show="close">×</span>
   </div>

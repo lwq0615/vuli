@@ -1,6 +1,6 @@
 <!-- message.vue -->
 <template>
-  <div class="l-message" :style="colorStyle+topStyle">
+  <div class="l-message" :style="colorStyle+topStyle" @click="click">
     <div class="text" :style="alignStyle+sizeStyle">{{ option.content }}</div>
     <div class="icon" @click="close" v-show="option.close">×</div>
   </div>
@@ -47,15 +47,15 @@ export default {
     }
   },
   mounted(){
-    setTimeout(() => {
+    this.destroy = setTimeout(() => {
       this.$parent.removeMsg(this.option)
     },this.option.duration || 3000)
   },
   methods: {
     close(){
+      window.event.stopPropagation()
       if(this.option.onClose){
         let res = {...this.option}
-        delete res.onClose
         delete res.opacity
         delete res.top
         res.type = res.type || 'success'
@@ -63,6 +63,15 @@ export default {
       }
       clearTimeout(this.destroy)
       this.$parent.removeMsg(this.option)
+    },
+    click(){
+      if(this.option.onClick){
+        let res = {...this.option}
+        delete res.opacity
+        delete res.top
+        res.type = res.type || 'success'
+        this.option.onClick(res)
+      }
     }
   }
 };

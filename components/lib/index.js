@@ -18,8 +18,9 @@ import color from './color'
 import calculator from './calculator'
 import tag from './tag'
 import sider from './sider'
+import upload from './upload'
 
-const components = {
+const components = [
     button,
     select,
     selectOption,
@@ -38,15 +39,13 @@ const components = {
     color,
     calculator,
     tag,
-    sider
-}
+    sider,
+    upload
+]
 
 const install = function(Vue){
-    if(install.installed){
-        return
-    }
-    Object.keys(components).forEach(key => {
-        Vue.component(components[key].name,components[key])
+    components.forEach(item => {
+        Vue.component(item.name,item)
     })
     Vue.prototype.$message = message
     Vue.prototype.$alert = alert
@@ -73,7 +72,8 @@ export {
     color,
     calculator,
     tag,
-    sider
+    sider,
+    upload
 }
 
-export default {install}
+export default { install }

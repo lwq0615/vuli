@@ -47,6 +47,7 @@ export default {
     },
     methods: {
         checkColor(){
+            this.$emit('click',this.activeValue)
             this.$refs.input.click()
         }
     }
