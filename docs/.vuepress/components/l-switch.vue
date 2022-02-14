@@ -4,6 +4,11 @@
             <div class="span" :style="flexStyle"></div>
             <div class="icon"></div>
         </div>
+        <input 
+        type="text" 
+        style="display: none;" 
+        v-model="activeValue" 
+        :name="name">
     </div>
 </template>
 
@@ -35,7 +40,8 @@ export default {
         closeValue: {
             type: [Number,String,Boolean],
             default: false
-        }
+        },
+        name: String
     },
     model: {
         prop: 'value',
@@ -73,6 +79,13 @@ export default {
                 style += 'opacity: 0.5;'
             }
             return style
+        },
+        activeValue(){
+            if(this.open){
+                return this.openValue !== undefined ? this.openValue : true
+            }else{
+                return this.closeValue !== undefined ? this.closeValue : false
+            }
         }
     },
     created(){
@@ -93,13 +106,8 @@ export default {
                 newValue = !this.open
             }
             this.open = newValue
-            if(this.open){
-                this.$emit('change',this.openValue !== undefined ? this.openValue : true)
-                this.$emit('model',this.openValue !== undefined ? this.openValue : true)
-            }else{
-                this.$emit('change',this.closeValue !== undefined ? this.closeValue : false)
-                this.$emit('model',this.closeValue !== undefined ? this.closeValue : false)
-            }
+            this.$emit('change',this.activeValue)
+            this.$emit('model',this.activeValue)
             return this.open
         }
     }

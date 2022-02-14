@@ -1,18 +1,19 @@
 # Select 下拉框
 
-### 
+### 示例
 
-#### 示例
-###
-<l-select v-model="value">
-<l-select-option label="福建" :value="1"></l-select-option>
-<l-select-option label="漳州" :value="2"></l-select-option>
-<l-select-option label="漳浦" :value="3"></l-select-option>
-<l-select-option label="厦门" :value="4"></l-select-option>
-<l-select-option label="泉州" :value="5"></l-select-option>
-<l-select-option label="三明" :value="6"></l-select-option>
-<l-select-option label="龙岩" :value="7"></l-select-option>
-</l-select>
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+  <l-select v-model="value">
+  <l-select-option label="福建" :value="1"></l-select-option>
+  <l-select-option label="漳州" :value="2"></l-select-option>
+  <l-select-option label="漳浦" :value="3"></l-select-option>
+  <l-select-option label="厦门" :value="4"></l-select-option>
+  <l-select-option label="泉州" :value="5"></l-select-option>
+  <l-select-option label="三明" :value="6"></l-select-option>
+  <l-select-option label="龙岩" :value="7"></l-select-option>
+  </l-select>
+</div>
 
 <script>
 export default {
@@ -24,9 +25,8 @@ export default {
 }
 </script>
 
-###
-###
-#### 代码
+
+### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
 <!--l-select必须与l-select-option搭配使用-->
@@ -59,6 +59,7 @@ export default {
 | openSearch | 是否开启搜索 | Boolean | 否 | true | --|
 | disable | 是否禁用 | Boolean | 否 | false | -- |
 | name | select元素的name属性 | String | 否 | -- | -- |
+| required | 是否必填 | Boolean | 否 | false | -- |
 
 
 #### Option Attributes
@@ -76,6 +77,7 @@ export default {
 | open | 下拉框打开 | -- |
 | close | 下拉框关闭 | -- |
 | clear | 点击清空按钮 | -- |
+| invalid | 提交值无效 | event |
 
 
 #### Option Events

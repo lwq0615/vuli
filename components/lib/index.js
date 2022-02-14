@@ -19,6 +19,7 @@ import calculator from './calculator'
 import tag from './tag'
 import sider from './sider'
 import upload from './upload'
+import tooltip from './tooltip'
 
 const components = [
     button,
@@ -40,7 +41,8 @@ const components = [
     calculator,
     tag,
     sider,
-    upload
+    upload,
+    tooltip
 ]
 
 const install = function(Vue){
@@ -73,7 +75,8 @@ export {
     calculator,
     tag,
     sider,
-    upload
+    upload,
+    tooltip
 }
 
 export default { install }

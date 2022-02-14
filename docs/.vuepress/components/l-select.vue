@@ -13,7 +13,13 @@
             <slot></slot>
         </div>
         <div class="delete-btn" @click="deleteCheck" v-show="deleteBtn" :style="cursorStyle">×</div>
-        <input type="text" style="display: none;" v-model="form.value" :name="name">
+        <input 
+        type="text" 
+        style="display: none;" 
+        v-model="form.value" 
+        :name="name" 
+        :required="required" 
+        @invalid="$emit('invalid',$event)">
     </div>
 </template>
 
@@ -37,7 +43,11 @@ export default {
             type: Boolean,
             default: false
         },
-        name: String
+        name: String,
+        required: {
+            type: Boolean,
+            default: false
+        }
     },
     model:{
         prop: 'value',

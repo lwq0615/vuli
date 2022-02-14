@@ -1,11 +1,16 @@
 <template>
-    <div class="l-checkbox_container">
+    <div class="l-checkbox_container" :style="oneColumn">
         <div class="flex" @click="check">
-            <div class="input" :style="inputStyle+inputActiveStyle">{{$parent.activeValue.includes(value) ? '√' : ''}}</div>
+            <div class="input" :style="inputStyle+inputActiveStyle">{{active() ? '√' : ''}}</div>
             <div class="text" :style="fontSizeStyle+textActiveStyle"><slot></slot></div>
         </div>
-        <input type="checkbox" style="display:none;" :value="value" 
-        :name="$parent.name" :checked="$parent.activeValue.includes(value)">
+        <input 
+        v-if="!all"
+        type="checkbox" 
+        style="display:none;" 
+        :value="value" 
+        :name="$parent.name" 
+        :checked="active()">
     </div>
 </template>
 
@@ -13,11 +18,12 @@
 export default {
     name: 'l-checkbox',
     props: {
-        value: {
-            type: [String,Number],
-            default: null
-        },
+        value: [String,Number],
         disable: {
+            type: Boolean,
+            default: false
+        },
+        all: {
             type: Boolean,
             default: false
         }
@@ -26,7 +32,7 @@ export default {
         textActiveStyle(){
             if(this.$parent.$options._componentTag === 'l-checkbox-group'){
                 let style = ''
-                if(this.$parent.activeValue.includes(this.value)){
+                if(this.active()){
                     if(this.disable){
                         style += `color: #c0c4cc;`
                     }else{
@@ -68,7 +74,7 @@ export default {
         inputActiveStyle(){
             if(this.$parent.$options._componentTag === 'l-checkbox-group'){
                 let style = ''
-                if(this.$parent.activeValue.includes(this.value)){
+                if(this.active()){
                     if(this.disable){
                         style += `background-color: #c0c4cc;`
                     }else{
@@ -79,15 +85,22 @@ export default {
             }else{
                 return null
             }
+        },
+        oneColumn(){
+            if(this.all){
+                return `grid-column-start:1;grid-column-end:-1;`
+            }else{
+                return ''
+            }
         }
     },
     created(){
-        if(this.$parent.$options._componentTag === 'l-checkbox-group'){
+        if(!this.all && this.$parent.$options._componentTag === 'l-checkbox-group'){
             this.$parent.createCheckbox(this)
         }
     },
     destroyed(){
-        if(this.$parent.$options._componentTag === 'l-checkbox-group'){
+        if(!this.all && this.$parent.$options._componentTag === 'l-checkbox-group'){
             this.$parent.delCheckbox(this)
         }
     },
@@ -97,7 +110,22 @@ export default {
             if(this.disable){
                 return
             }
-            this.$parent.checkboxClick(this.value)
+            if(this.all){
+                this.$parent.checkAll()
+            }else{
+                this.$parent.checkboxClick(this.value)
+            }
+        },
+        active(){
+            if(this.$parent.$options._componentTag === 'l-checkbox-group'){
+                if(this.all){
+                    return this.$parent.allFlg()
+                }else{
+                    if(this.$parent.activeValue.includes(this.value)){
+                        return true
+                    }
+                }
+            }
         }
     }
 }
@@ -110,6 +138,7 @@ export default {
     .flex{
         display: flex;
         align-items: center;
+        height: 100%;
         .input{
             display: flex;
             align-items: center;
@@ -121,6 +150,7 @@ export default {
             border: 1px solid #e4e7ed;
             box-sizing: border-box;
             color: white;
+            user-select: none;
             transition: all ease 0.3s;
         }
         .text{

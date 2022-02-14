@@ -1,0 +1,82 @@
+.l-tooltip_container {
+    display: inline-block;
+    position: relative;
+    .tooltip {
+        position: absolute;
+        z-index: 99;
+        .content {
+            padding: 7px 10px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+        .sjx {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    .tooltip.top {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        .sjx {
+            margin: 0 auto;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+        }
+    }
+
+    .tooltip.bottom {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        .sjx {
+            margin: 0 auto;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+        }
+    }
+
+    .tooltip.left {
+        top: 50%;
+        left: 0;
+        transform: translateX(-100%) translateY(-50%);
+        display: flex;
+        align-items: center;
+        .content{
+            flex: 1;
+        }
+        .sjx {
+            margin: 0 auto;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+        }
+    }
+
+    .tooltip.right {
+        top: 50%;
+        right: 0;
+        transform: translateX(100%) translateY(-50%);
+        display: flex;
+        align-items: center;
+        .content{
+            flex: 1;
+        }
+        .sjx {
+            margin: 0 auto;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+        }
+    }
+
+
+
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.2s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
+    }
+}

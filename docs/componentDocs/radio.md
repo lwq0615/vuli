@@ -1,16 +1,17 @@
 # Radio 单选框
 
-### 
+### 示例
 
-#### 示例
-###
-<l-radio-group v-model="value">
-<l-radio :value="1">福建</l-radio>
-<l-radio :value="2" :disable="true">泉州</l-radio>
-<l-radio :value="3" :disable="true">福州</l-radio>
-<l-radio :value="4">厦门</l-radio>
-<l-radio :value="5">漳州</l-radio>
-</l-radio-group>
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+  <l-radio-group v-model="value" :columns=[1,1,1]>
+  <l-radio :value="1">福建</l-radio>
+  <l-radio :value="2" :disable="true">泉州</l-radio>
+  <l-radio :value="3" :disable="true">福州</l-radio>
+  <l-radio :value="4">厦门</l-radio>
+  <l-radio :value="5">漳州</l-radio>
+  </l-radio-group>
+</div>
 
 <script>
 export default {
@@ -22,10 +23,13 @@ export default {
 }
 </script>
 
-#### 代码
+### 代码
 ```html
 <!--l-radio-group必须与l-radio搭配使用-->
-<l-radio-group v-model="value">
+<!-- 可直接通过style内联样式修改组件宽高 -->
+<!-- 当columns为Array时(例如[1,1,1]),复选框会分为三列，每列宽度比为1:1:1 -->
+<!-- 当columns为String时(默认为'100px'),复选框每列宽度为100px,直至排放不下时自动换行 -->
+<l-radio-group v-model="value" :columns=[1,1,1]>
     <l-radio :value="1">福建</l-radio>
     <l-radio :value="2" :disable="true">泉州</l-radio>
     <l-radio :value="3" :disable="true">福州</l-radio>
@@ -48,11 +52,13 @@ export default {
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
 | value / v-model | 绑定值 | String,Number | 否 | null | -- |
-| columns | 单选框每列宽度权值 | Array | 否 | [1,1,1] | -- |
+| columns | 单选框每列宽度权值 | Array,String | 否 | 100px | -- |
 | rowHeight | 单选框高度 | String | 否 | 50px | -- |
 | fontSize | 单选框文字大小 | String | 否 | 14px | -- |
 | iconSize | 按钮大小 | Number | 否 | 16 | -- |
 | name | input radio元素的name属性 | String | 否 | -- | -- |
+| justify | 复选框在每列的位置 | String | 否 | left | left,center,right |
+| required | 是否必填 | Boolean | 否 | false | -- |
 
 
 #### Radio Attributes
@@ -66,6 +72,7 @@ export default {
 | 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | change | 值改变 | 改变后的值 |
+| invalid | 提交值无效 | -- |
 
 
 #### Radio Events

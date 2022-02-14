@@ -207,6 +207,7 @@ export default {
                 .tip {
                     transition: all ease 0.2s;
                     position: absolute;
+                    z-index: 99;
                     top: 0;
                     left: 50%;
                     transform: translateX(-50%) translateY(-115%);

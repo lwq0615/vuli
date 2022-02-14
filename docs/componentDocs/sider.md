@@ -1,16 +1,16 @@
 # Sider 滑块
 
-#### 示例
-###
+### 示例
 
-默认<br>
-<l-sider v-model="value1" :format="format"></l-sider>
-
-开启但不显示间断点<br>
-<l-sider v-model="value2" :step="10"></l-sider>
-
-开启并显示间断点<br>
-<l-sider v-model="value3" :step="10" :stepPoint="true"></l-sider>
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+  默认<br>
+  <l-sider v-model="value1" :format="format"></l-sider><br><br>
+  开启但不显示间断点<br>
+  <l-sider v-model="value2" :step="10"></l-sider><br><br>
+  开启并显示间断点<br>
+  <l-sider v-model="value3" :step="10" :stepPoint="true"></l-sider>
+</div>
 
 <script>
 export default {
@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-#### 代码
+### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
 默认<br>

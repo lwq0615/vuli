@@ -1,19 +1,21 @@
 # Rotate-card 翻转卡片
 
-*张反面存放不同内容的卡片*
+*正反面存放不同内容可翻转的卡片*
 
-### 
+### 示例
 
-#### 示例
-###
-<l-rotate-card ref="card" rotateTime="1s" rotateType="y" extClass="test" width="200px">
-<div slot="front">front</div>
-<div slot="back">back</div>
-</l-rotate-card>
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+    <l-rotate-card ref="card" rotateTime="1s" rotateType="y" extClass="test" width="200px">
+    <div slot="front">front</div>
+    <div slot="back">back</div>
+    </l-rotate-card>
+</div>
 
-#### 代码
+### 代码
 ```html
 <!-- 通过插槽在正反面插入文档 -->
+<!-- 通过extClass插入的class可自定义卡片的样式 -->
 <l-rotate-card ref="card" rotateTime="1s" rotateType="y" extClass="test" width="200px">
     <div slot="front">front</div>
     <div slot="back">back</div>

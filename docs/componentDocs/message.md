@@ -1,11 +1,12 @@
 # Message 消息
 
-### 
+### 示例
 
-#### 示例
-###
-<l-button @click="info">info</l-button>
-<l-button @click="success">success</l-button>
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+  <l-button @click="info">info</l-button>
+  <l-button @click="success">success</l-button>
+</div>
 
 <script>
 import message from '../.vuepress/components/message/index.js'
@@ -31,7 +32,7 @@ export default {
 }
 </script>
 
-#### 代码
+### 代码
 ```html
 <l-button @click="info">info</l-button>
 <l-button @click="success">success</l-button>

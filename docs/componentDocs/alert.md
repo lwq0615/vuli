@@ -1,10 +1,11 @@
 # Alert 弹窗
 
-### 
+### 示例
 
-#### 示例
-###
-<l-button @click="alert">消息提示</l-button>
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+  <l-button @click="alert">alert</l-button>
+</div>
 
 <script>
 import message from '../.vuepress/components/message/index.js'
@@ -39,9 +40,9 @@ export default {
 }
 </script>
 
-#### 代码
+### 代码
 ```html
-<l-button @click="alert">按钮</l-button>
+<l-button @click="alert">alert</l-button>
 
 <script>
 export default {

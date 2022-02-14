@@ -1,10 +1,13 @@
 # Calculator 计算器
 
-#### 示例
-###
-<l-calculator></l-calculator>
+### 示例
 
-#### 代码
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+    <l-calculator></l-calculator>
+</div>
+
+### 代码
 ```html
 <l-calculator></l-calculator>
 ```

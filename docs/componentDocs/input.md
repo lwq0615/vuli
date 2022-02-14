@@ -1,39 +1,30 @@
 # Input 输入框
 
-### 
+### 示例
 
-#### 示例
-###
-
-文本输入框<br>
-<l-input v-model="value"></l-input>
-
-日期选择<br>
-<l-input type="date"></l-input>
-
-时间选择<br>
-<l-input type="time"></l-input>
-
-日期时间选择<br>
-<l-input type="datetime-local"></l-input>
-
-周选择<br>
-<l-input type="week"></l-input>
-
-数量选择<br>
-<l-input type="number"></l-input>
-
-密码输入框<br>
-<l-input type="password"></l-input>
-
-搜索框<br>
-<l-input type="search" :clearable="true"></l-input>
-
-搜索按钮<br>
-<l-input type="text" search="搜索"></l-input>
-
-文本域<br>
-<l-input type="textarea"></l-input>
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+  文本输入框<br>
+  <l-input v-model="value"></l-input><br><br>
+  日期选择<br>
+  <l-input type="date"></l-input><br><br>
+  时间选择<br>
+  <l-input type="time"></l-input><br><br>
+  日期时间选择<br>
+  <l-input type="datetime-local"></l-input><br><br>
+  周选择<br>
+  <l-input type="week"></l-input><br><br>
+  数量选择<br>
+  <l-input type="number"></l-input><br><br>
+  密码输入框<br>
+  <l-input type="password"></l-input><br><br>
+  搜索框<br>
+  <l-input type="search"></l-input><br><br>
+  搜索按钮<br>
+  <l-input type="text" search="搜索"></l-input><br><br>
+  文本域<br>
+  <l-input type="textarea"></l-input>
+</div>
 
 <script>
 export default {
@@ -45,7 +36,7 @@ export default {
 }
 </script>
 
-#### 代码
+### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
 文本输入框<br>
@@ -70,8 +61,8 @@ export default {
 <l-input type="password"></l-input>
 
 搜索框<br>
-<!-- 搜索框默认带有清空按钮 -->
-<l-input type="search" :clearable="true"></l-input>
+<!-- 搜索框默认带有清空按钮,此时clearable属性不再生效 -->
+<l-input type="search"></l-input>
 
 搜索按钮<br>
 <l-input type="text" search="搜索"></l-input>
@@ -104,6 +95,7 @@ export default {
 | clearable | 是否可清空 | Boolean | 否 | false | -- |
 | search | 开启搜索按钮 | String | 否 | -- | 搜索框展示的文本 |
 | name | input元素的name属性 | String | 否 | -- | -- |
+| required | 是否必填 | Boolean | 否 | false | -- |
 
 
 #### Events
@@ -116,6 +108,7 @@ export default {
 | click | 点击输入框 | event |
 | search | 点击搜索按钮 | 输入框的value |
 | clear | 点击清除按钮 | -- |
+| invalid | 提交值无效 | event |
 
 
 #### Methods

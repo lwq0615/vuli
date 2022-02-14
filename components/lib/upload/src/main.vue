@@ -85,7 +85,9 @@ export default {
         cutType: {
             type: String,
             default: 'cover'
-        }
+        },
+        headers: Object,
+        data: [Object,Function]
     },
     model: {
         prop: 'files',
@@ -178,6 +180,12 @@ export default {
                 }
                 uploading++
                 this.$emit('start',file)
+                let data = null
+                if(typeof this.data === 'object'){
+                    data = {...this.data}
+                }else if(typeof this.data === 'function'){
+                    data = this.data(file)
+                }
                 request(this.action,file,{
                     onprogress: (e) => {
                         that.progress[i] = Math.floor(e.loaded/e.total*100)
@@ -194,7 +202,7 @@ export default {
                     onerror: (err) => {
                         this.$emit('error',err,file)
                     }
-                })
+                },this.headers,data)
             }
         },
         getBlob(file){

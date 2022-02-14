@@ -27,8 +27,8 @@ module.exports = {
                     '/componentDocs/checkbox',
                     '/componentDocs/color',
                     '/componentDocs/sider',
-                    '/componentDocs/upload',
-                    '/componentDocs/input'
+                    '/componentDocs/input',
+                    '/componentDocs/switch'
                 ]
             },
             {
@@ -36,7 +36,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                     '/componentDocs/progress',
-                    '/componentDocs/switch'
+                    '/componentDocs/upload'
                 ]
             },
             {
@@ -44,7 +44,8 @@ module.exports = {
                 collapsable: false,
                 children: [
                     '/componentDocs/message',
-                    '/componentDocs/alert'
+                    '/componentDocs/alert',
+                    '/componentDocs/tooltip'
                 ]
             },
             {

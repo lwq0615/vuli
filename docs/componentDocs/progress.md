@@ -1,17 +1,16 @@
 # Progress 进度条
 
-### 
+### 示例
 
-#### 示例
-###
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+  outside<br>
+  <l-progress :percentage="70"></l-progress><br><br>
+  inside<br>
+  <l-progress :percentage="70" :inside="true"></l-progress>
+</div>
 
-outside<br>
-<l-progress :percentage="70"></l-progress>
-
-inside<br>
-<l-progress :percentage="70" :inside="true"></l-progress>
-
-#### 代码
+### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
 outside<br>

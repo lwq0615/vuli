@@ -11,6 +11,8 @@
         :maxlength="maxlength"
         :minlength="minlength"
         :name="name"
+        :required="required"
+        @invalid="$emit('invalid',$event)"
         @blur="$emit('blur',$event)"
         @focus="$emit('focus',$event)"
         @click="$emit('click',$event)"
@@ -22,6 +24,7 @@
         :class="disableClass" 
         :style="textareaStyle"
         :readonly="disable" 
+        :required="required"
         :placeholder="placeholder" 
         v-model="activeValue"
         :maxlength="maxlength"
@@ -29,6 +32,7 @@
         :cols="cols" 
         :name="name"
         :rows="rows"
+        @invalid="$emit('invalid',$event)"
         @blur="$emit('blur',$event)"
         @focus="$emit('focus',$event)"
         @click="$emit('click',$event)"
@@ -80,7 +84,11 @@ export default {
             type: String,
             default: ''
         },
-        name: String
+        name: String,
+        required: {
+            type: Boolean,
+            default: false
+        }
     },
     model: {
         prop: 'value',

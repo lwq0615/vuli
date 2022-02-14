@@ -1,10 +1,11 @@
 # Switch 开关
 
-### 
+### 示例
 
-#### 示例
-###
-<l-switch v-model="value" :openValue="123" :closeValue="'close'"></l-switch>
+<br>
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+  <l-switch v-model="value" :openValue="123" :closeValue="'close'"></l-switch>
+</div>
 
 <script>
 export default {
@@ -17,7 +18,7 @@ export default {
 </script>
 
 
-#### 代码
+### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽度-->
 <l-switch v-model="value" :openValue="123" :closeValue="'close'"></l-switch>
@@ -42,6 +43,7 @@ export default {
 | disabled | 是否禁用 | Boolean | 否 | false | -- |
 | openValue | 打开时的值 | Number,String,Boolean | 否 | true |-- |
 | closeValue | 关闭时的值 | Number,String,Boolean | 否 | false |-- |
+| name | input的name属性 | String | 否 | -- | -- |
 
 
 #### Events

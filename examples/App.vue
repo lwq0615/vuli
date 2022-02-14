@@ -1,12 +1,18 @@
 <template>
   <div id="app">
 
-    <div style="padding: 50px 0;text-align:center;"><l-button @click="test1">按钮</l-button></div>
+    <div style="padding: 50px 0;text-align:center;">
+      <l-button @click="test1">按钮</l-button>
+    </div>
+
+    <!-- <l-tooltip content="上方的tooltip" v-model="value">
+      <l-button>按钮</l-button>
+    </l-tooltip> -->
     
 
     <!-- <l-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></l-slide> -->
 
-    <!-- <l-select>
+    <!-- <l-select name="test" :required="true">
       <l-select-option label="福建" :value="1"></l-select-option>
       <l-select-option label="漳州" :value="2"></l-select-option>
       <l-select-option label="漳浦" :value="3"></l-select-option>
@@ -38,11 +44,12 @@
 
     <!-- <l-progress :percentage="value" @click="test"></l-progress> -->
 
-    <!-- <l-switch v-model="value" @click="test" :openValue="123" :closeValue="'close'"></l-switch> -->
+    <!-- <l-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></l-switch> -->
 
-    <!-- <l-input type="text" v-model="value" @click="test"></l-input> -->
+    <!-- <l-input type="text" v-model="value" @invalid="test" :required="true"></l-input> -->
 
-    <!-- <l-checkbox-group name="absa">
+    <!-- <l-checkbox-group @change="test" v-model="value">
+      <l-checkbox :all="true">全选</l-checkbox>
       <l-checkbox value="1" :disable="true">福建</l-checkbox>
       <l-checkbox value="2" :disable="true">厦门</l-checkbox>
       <l-checkbox value="3">漳浦</l-checkbox>
@@ -61,9 +68,9 @@
 
     <!-- <l-sider :step="10" :stepPoint="true" @click="test"></l-sider> -->
 
-    <l-upload ref="upload" action="http://localhost:8083/test">
+    <!-- <l-upload ref="upload" action="http://localhost:8083/test">
       上传文件
-    </l-upload>
+    </l-upload> -->
 
   </div>
 </template>
@@ -75,8 +82,7 @@ export default {
   data(){
     return {
       option,
-      value: 50,
-      files: null
+      value: false
     }
   },
   methods: {
@@ -84,15 +90,12 @@ export default {
       console.log(e)
     },
     test1(e){
-      this.$refs.upload.upload()
+      console.log(this.value)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.ltag{
-  margin: 5px;
-}
 </style>
 

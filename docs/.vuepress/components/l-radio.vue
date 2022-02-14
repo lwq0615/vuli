@@ -4,7 +4,14 @@
             <div class="input" :style="inputStyle+inputActiveStyle"></div>
             <div class="text" :style="fontSizeStyle+textActiveStyle"><slot></slot></div>
         </div>
-        <input type="radio" style="display:none;" :value="value" :name="$parent.name" :checked="$parent.activeValue === value">
+        <input 
+        type="radio" 
+        style="display:none;" 
+        :value="value" 
+        :name="$parent.name" 
+        :checked="$parent.activeValue === value"
+        @invalid="invalid"
+        :required="$parent.required">
     </div>
 </template>
 
@@ -97,13 +104,18 @@ export default {
                 return
             }
             this.$parent.changeValue(this.value)
+        },
+        invalid(){
+            if(this.$parent.$children.indexOf(this) === 0){
+                this.$parent.$emit('invalid')
+            }
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-.l-radio_container{
+ .l-radio_container{
     display: inline-block;
     cursor: pointer;
     .flex{

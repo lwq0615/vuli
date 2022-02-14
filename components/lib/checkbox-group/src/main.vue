@@ -1,6 +1,6 @@
 <template>
     <div class="l-checkbox-group_container">
-        <div class="grid" :style="`${columnsStyle+rowHeightStyle}`"><slot></slot></div>
+        <div class="grid" :style="columnsStyle+justifyStyle+rowHeightStyle"><slot></slot></div>
     </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
     name: 'l-checkbox-group',
     props:{
         value: Array,
-        columns: Array,
+        columns: [Array,String],
         rowHeight: {
             type: String,
             default: '50px'
@@ -22,7 +22,11 @@ export default {
             type: Number,
             default: 16
         },
-        name: String
+        name: String,
+        justify: {
+            type: String,
+            default: 'left'
+        }
     },
     data(){
         return {
@@ -33,18 +37,24 @@ export default {
     computed: {
         columnsStyle(){
             if(this.columns){
-                let str = ''
-                for(let item of this.columns){
-                    str += ` ${item}fr`
+                if(Array.isArray(this.columns)){
+                    let str = ''
+                    for(let item of this.columns){
+                        str += ` ${item}fr`
+                    }
+                    return `grid-template-columns: ${str};`
+                }else if(typeof this.columns === 'string'){
+                    return `grid-template-columns: repeat(auto-fill, ${this.columns});`
                 }
-                return `grid-template-columns: ${str};`
             }else{
-                return 'grid-template-columns: 1fr 1fr 1fr;'
+                return `grid-template-columns: repeat(auto-fill, 100px);`
             }
         },
+        justifyStyle(){
+            return `justify-items: ${this.justify};`
+        },
         rowHeightStyle(){
-            let rows = Math.ceil(this.checkboxs.length/(this.columns ? this.columns.length : 3))
-            return `grid-template-rows: repeat(${rows}, ${this.rowHeight});`
+            return `grid-template-rows: ${this.rowHeight};grid-auto-rows:${this.rowHeight};`
         }
     },
     watch:{
@@ -53,8 +63,10 @@ export default {
                 if(newVal !== oldVal){
                     this.activeValue = newVal
                 }
-                this.$emit('change',this.activeValue)
             }
+        },
+        activeValue(newVal){
+            this.$emit('change',newVal)
         }
     },
     created(){
@@ -73,11 +85,31 @@ export default {
         },
         delCheckbox(dom){
             if(this.activeValue.includes(dom.value)){
-                let newValue = this.activeValue.slice()
-                newValue.splice(newValue.indexOf(dom.value),1)
-                this.changeValue(newValue)
+                this.activeValue.splice(this.activeValue.indexOf(dom.value),1)
             }
             this.checkboxs.splice(this.checkboxs.indexOf(dom),1)
+        },
+        checkAll(){
+            if(this.allFlg(true)){
+                this.activeValue.splice(0)
+            }else{
+                this.checkboxs.forEach(item => {
+                    if(!item.disable && !this.activeValue.includes(item.value)){
+                        this.activeValue.push(item.value)
+                    }
+                })
+            }
+        },
+        allFlg(disable){
+            if(disable){
+                let num = 0
+                this.checkboxs.forEach(item => {
+                    item.disable ? null : num++
+                })
+                return this.activeValue.length === num
+            }else{
+                return this.activeValue.length === this.checkboxs.length
+            }
         }
     }
 }

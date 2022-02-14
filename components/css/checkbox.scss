@@ -1,8 +1,7 @@
 .l-checkbox-group_container{
     display: inline-block;
     overflow: auto;
-    width: 400px;
-    height: 100px;
+    width: 100%;
     .grid{
         width: 100%;
         height: 100%;
@@ -16,6 +15,7 @@
             .flex{
                 display: flex;
                 align-items: center;
+                height: 100%;
                 .input{
                     display: flex;
                     align-items: center;

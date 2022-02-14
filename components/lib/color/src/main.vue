@@ -1,6 +1,6 @@
 <template>
     <div class="l-color_container">
-        <div class="color-block" :style="colorStyle" @click="checkColor"></div>
+        <div class="color-block" :style="colorStyle" @click="checkColor">></div>
         <input type="color" v-model="activeValue" ref="input" :name="name">
     </div>
 </template>
@@ -12,7 +12,7 @@ export default {
     props: {
         value: {
             type: String,
-            default: '#fff'
+            default: '#E44258'
         },
         name: String
     },

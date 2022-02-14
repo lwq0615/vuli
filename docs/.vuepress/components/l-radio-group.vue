@@ -1,6 +1,6 @@
 <template>
     <div class="l-radio-group_container">
-        <div class="grid" :style="`${columnsStyle+rowHeightStyle}`"><slot></slot></div>
+        <div class="grid" :style="`${columnsStyle+rowHeightStyle+justifyStyle}`"><slot></slot></div>
     </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
             type: [String,Number],
             default: null
         },
-        columns: Array,
+        columns: [Array,String],
         rowHeight: {
             type: String,
             default: '50px'
@@ -25,7 +25,15 @@ export default {
             type: Number,
             default: 16
         },
-        name: String
+        name: String,
+        justify: {
+            type: String,
+            default: 'left'
+        },
+        required: {
+            type: Boolean,
+            default: false
+        }
     },
     model: {
         prop: 'value',
@@ -40,18 +48,24 @@ export default {
     computed: {
         columnsStyle(){
             if(this.columns){
-                let str = ''
-                for(let item of this.columns){
-                    str += ` ${item}fr`
+                if(Array.isArray(this.columns)){
+                    let str = ''
+                    for(let item of this.columns){
+                        str += ` ${item}fr`
+                    }
+                    return `grid-template-columns: ${str};`
+                }else if(typeof this.columns === 'string'){
+                    return `grid-template-columns: repeat(auto-fill, ${this.columns});`
                 }
-                return `grid-template-columns: ${str};`
             }else{
-                return 'grid-template-columns: 1fr 1fr 1fr;'
+                return `grid-template-columns: repeat(auto-fill, 100px);`
             }
         },
         rowHeightStyle(){
-            let rows = Math.ceil(this.radios.length/(this.columns ? this.columns.length : 3))
-            return `grid-template-rows: repeat(${rows}, ${this.rowHeight});`
+            return `grid-template-rows: ${this.rowHeight};grid-auto-rows:${this.rowHeight};`
+        },
+        justifyStyle(){
+            return `justify-items: ${this.justify};`
         }
     },
     watch:{
@@ -89,8 +103,7 @@ export default {
 .l-radio-group_container{
     display: inline-block;
     overflow: auto;
-    width: 400px;
-    height: 100px;
+    width: 100%;
     .grid{
         width: 100%;
         height: 100%;

@@ -12,7 +12,7 @@ export default {
     props: {
         value: {
             type: String,
-            default: '#fff'
+            default: '#E44258'
         },
         name: String
     },
@@ -61,6 +61,7 @@ export default {
     width: 20px;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
     input{
         height: 0;
         width: 0;
@@ -76,6 +77,13 @@ export default {
         width: 100%;
         border-radius: 3px;
         border: 1px solid #e4e7ed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        transform: rotateZ(90deg);
+        font-family: serif;
+        user-select: none;
     }
 }
 </style>

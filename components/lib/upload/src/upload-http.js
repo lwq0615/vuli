@@ -17,7 +17,7 @@ function createXHR () {
     return xhr;
 }
 
-let request =  function(url,data,options){
+let request =  function(url,data,options,headers,body){
     return new Promise((resolve, reject) => {
         let xhr = createXHR()
         xhr.open('post',url)
@@ -29,6 +29,16 @@ let request =  function(url,data,options){
                     resolve(xhr.responseText)
                 }
             }
+        }
+        if(headers){
+            Object.keys(headers).forEach(key => {
+                xhr.setRequestHeader(key,headers[key])
+            })
+        }
+        if(body){
+            Object.keys(body).forEach(key => {
+                formData.append(key,body[key])
+            })
         }
         if(options){
             xhr.upload.onprogress = options.onprogress || null
