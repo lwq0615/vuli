@@ -115,11 +115,10 @@ export default {
     width: 100px;
     height: 100px;
     margin-top: 10px;
-    line-height: 100px;
-    text-align: center;
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: white;
 }
 .grid{
