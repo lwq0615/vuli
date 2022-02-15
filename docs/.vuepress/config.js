@@ -11,6 +11,7 @@ module.exports = {
                 title: 'View',
                 collapsable: false,
                 children: [
+                    '/componentDocs/layout',
                     '/componentDocs/button',
                     '/componentDocs/tabs',
                     '/componentDocs/rotate-card',
@@ -52,6 +53,7 @@ module.exports = {
                 title: 'Other',
                 collapsable: false,
                 children: [
+                    '/componentDocs/transition',
                     '/componentDocs/calculator'
                 ]
             }

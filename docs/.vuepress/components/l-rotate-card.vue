@@ -41,19 +41,13 @@ export default {
         },
         height: {
             type: String,
-            default: '200px'
+            default: '400px'
         }
     },
     data(){
         return {
             side: true
         }
-    },
-    created(){
-        let that = this
-        setInterval(function(){
-            that.rotate()
-        },2000)
     },
     computed: {
         transformStyle(){
@@ -71,7 +65,13 @@ export default {
     },
     methods:{
         rotate(side){
-            this.side = side || !this.side
+            if(side === 'front'){
+                this.side = true
+            }else if(side === 'back'){
+                this.side = false
+            }else{
+                this.side = !this.side
+            }
             this.$emit('rotate',side ? 'front' : 'back')
         }
     }

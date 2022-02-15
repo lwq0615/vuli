@@ -20,6 +20,8 @@ import tag from './tag'
 import sider from './sider'
 import upload from './upload'
 import tooltip from './tooltip'
+import row from './row'
+import col from './col'
 
 const components = [
     button,
@@ -42,7 +44,9 @@ const components = [
     tag,
     sider,
     upload,
-    tooltip
+    tooltip,
+    row,
+    col
 ]
 
 const install = function(Vue){
@@ -76,7 +80,9 @@ export {
     tag,
     sider,
     upload,
-    tooltip
+    tooltip,
+    row,
+    col
 }
 
 export default { install }

@@ -1,0 +1,19 @@
+<template>
+    <div class="l-row_container" :style="gapStyle">
+        <slot></slot>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'l-row',
+    props: {
+        gap: String
+    },
+    computed: {
+        gapStyle(){
+            return `grid-column-gap: ${this.gap};`
+        }
+    }
+}
+</script>

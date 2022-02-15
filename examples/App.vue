@@ -29,7 +29,7 @@
       <l-tab-panel label="第三个" name="3">第三个的内容</l-tab-panel>
     </l-tabs> -->
 
-    <!-- <l-rotate-card ref="card" rotateTime="1s" rotateType="y" extClass="test" width="200px">
+    <!-- <l-rotate-card ref="card" rotateTime="1s" rotateType="y">
       <div slot="front">front</div>
       <div slot="back">back</div>
     </l-rotate-card> -->
@@ -58,7 +58,7 @@
 
     <!-- <l-color></l-color> -->
     
-    <!-- <l-calculator @compute="test"></l-calculator> -->
+    <!-- <l-calculator></l-calculator> -->
 
     <!-- <l-tag size="mini" color="primary">标签</l-tag>
     <l-tag size="small" color="success" type="plain">标签</l-tag>
@@ -72,6 +72,43 @@
       上传文件
     </l-upload> -->
 
+    <!-- <l-row>
+      <l-col :span="8">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+      <l-col :span="8">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+      <l-col :span="8">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+    </l-row>
+    <l-row gap="5px">
+      <l-col :span="6">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+      <l-col :span="6">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+      <l-col :span="6">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+      <l-col :span="6">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+    </l-row>
+    <l-row gap="5px">
+      <l-col :span="6" :offset="1">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+      <l-col :span="4" :offset="2">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+      <l-col :span="8" :offset="1">
+        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
+      </l-col>
+    </l-row> -->
+
   </div>
 </template>
 
@@ -82,7 +119,7 @@ export default {
   data(){
     return {
       option,
-      value: false
+      value: true
     }
   },
   methods: {
@@ -90,12 +127,12 @@ export default {
       console.log(e)
     },
     test1(e){
-      console.log(this.value)
+      this.value = !this.value
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 </style>
 

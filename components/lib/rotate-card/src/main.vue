@@ -41,7 +41,7 @@ export default {
         },
         height: {
             type: String,
-            default: '200px'
+            default: '400px'
         }
     },
     data(){
@@ -65,7 +65,13 @@ export default {
     },
     methods:{
         rotate(side){
-            this.side = side || !this.side
+            if(side === 'front'){
+                this.side = true
+            }else if(side === 'back'){
+                this.side = false
+            }else{
+                this.side = !this.side
+            }
             this.$emit('rotate',side ? 'front' : 'back')
         }
     }

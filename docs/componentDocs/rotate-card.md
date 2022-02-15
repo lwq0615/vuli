@@ -6,20 +6,42 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <l-rotate-card ref="card" rotateTime="1s" rotateType="y" extClass="test" width="200px">
-    <div slot="front">front</div>
-    <div slot="back">back</div>
+    <l-rotate-card rotateTime="1s" rotateType="y" ref="card">
+        <div slot="front">front</div>
+        <div slot="back">back</div>
     </l-rotate-card>
+    <l-button @click="rotate">翻转</l-button>
 </div>
+
+<script>
+export default {
+  methods: {
+    rotate(){
+        this.$refs.card.rotate()
+    }
+  }
+}
+</script>
 
 ### 代码
 ```html
 <!-- 通过插槽在正反面插入文档 -->
 <!-- 通过extClass插入的class可自定义卡片的样式 -->
-<l-rotate-card ref="card" rotateTime="1s" rotateType="y" extClass="test" width="200px">
+<l-rotate-card rotateTime="1s" rotateType="y" ref="card">
     <div slot="front">front</div>
     <div slot="back">back</div>
 </l-rotate-card>
+<l-button @click="rotate">翻转</l-button>
+
+<script>
+export default {
+  methods: {
+    rotate(){
+        this.$refs.card.rotate()
+    }
+  }
+}
+</script>
 ```
 
 #### Attributes
@@ -27,7 +49,7 @@
 | ---  | --- | ---  | ---      | ---   | ---   |
 | rotateTime | 动画时间 | String | 否 | 0.7s | -- |
 | width | 组件宽度 | String | 否 | 300px | -- |
-| height | 组件高度 | String | 否 | 200px | -- |
+| height | 组件高度 | String | 否 | 400px | -- |
 | transformType | 动画类型 | String | 否 | ease | 参考transition属性 |
 | extClass | 自定义卡片的class | String | 否 | -- | -- |
 

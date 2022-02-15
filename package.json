@@ -22,7 +22,7 @@
     "docs": "vuepress dev docs",
     "build:docs": "vuepress build docs",
     "git:push": "git init && git add . && git commit -m 'update' && git push origin master",
-    "git:page": "cd docs/.vuepress/dist && git init && git add -A && git commit -m 'deploy' && git push -f https://github.com/lwq0615/luck-ui.git master:gh-pages"
+    "git:page": "vuepress build docs && cd docs/.vuepress/dist && git init && git add -A && git commit -m 'deploy' && git push -f https://github.com/lwq0615/luck-ui.git master:gh-pages"
   },
   "dependencies": {
     "core-js": "^3.6.5",
