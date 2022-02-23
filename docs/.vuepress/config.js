@@ -1,5 +1,11 @@
 module.exports = {
     base: '/vui/',
+    head: [
+        [
+            'link', 
+            { rel: 'icon', href: '/logo.png' }
+        ]
+    ],
     themeConfig: {
         sidebar: [
             {
@@ -15,9 +21,6 @@ module.exports = {
                     '/componentDocs/button',
                     '/componentDocs/tabs',
                     '/componentDocs/tag',
-                    '/componentDocs/slide',
-                    '/componentDocs/image',
-                    '/componentDocs/image-light',
                     '/componentDocs/rotate-card'
                 ]
             },
@@ -39,6 +42,9 @@ module.exports = {
                 collapsable: false,
                 children: [
                     '/componentDocs/progress',
+                    '/componentDocs/slide',
+                    '/componentDocs/image',
+                    '/componentDocs/image-light',
                     '/componentDocs/upload'
                 ]
             },

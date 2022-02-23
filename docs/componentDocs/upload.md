@@ -7,8 +7,6 @@
     <l-upload 
     :limit="3" 
     action="/test" 
-    tip="只允许上传图片" 
-    accept="jpg,png" 
     :autoUpload="true" 
     :data="{name: 'luck'}"></l-upload>
 </div>
@@ -19,8 +17,6 @@
 <l-upload 
 :limit="3" 
 action="/test" 
-tip="只允许上传图片" 
-accept="jpg,png" 
 :autoUpload="true" 
 :data="{name: 'luck'}">
     上传文件
@@ -31,7 +27,11 @@ accept="jpg,png"
 
 *上传照片*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <l-upload type="image" :data="data"></l-upload>
+  <l-upload 
+  type="image" 
+  :data="data"
+  tip="只允许上传图片" 
+  accept="jpg,png" ></l-upload>
 </div>
 
 <script>
@@ -48,7 +48,11 @@ export default {
 
 ### 代码
 ```html
-<l-upload type="image" :data="data"></l-upload>
+<l-upload 
+type="image" 
+:data="data"
+tip="只允许上传图片" 
+accept="jpg,png" ></l-upload>
 
 <script>
 export default {
@@ -85,7 +89,7 @@ export default {
 | type | 组件样式 | String | 否 | file | file或image |
 | cutType | type='image'时图片裁剪方式 | String | 否 | cover | 参考object-fit属性 |
 | headers | 请求的header | Object | 否 | -- | -- |
-| data | 请求时附带的参数 | Object,Function | 否 | -- | -- |
+| data | 请求时附带的参数 | Object,Function | 否 | -- | 类型为Function时回调参数为上传的文件 |
 
 
 #### Events
@@ -98,7 +102,7 @@ export default {
 | upload | 调用upload方法(autoUpload导致的自动上传也会触发事件) | -- |
 | start | 文件开始上传 | 开始上传的文件 |
 | progress | 文件上传时 | event,上传的文件 |
-| end | 文件上传成功 | 上传成功的文件 |
+| end | 文件上传成功 | event,上传成功的文件 |
 | success | 文件全部上传完成 | 上传的文件(不包含重复上传) |
 | error | 文件上传失败 | error,上传失败的文件 |
 

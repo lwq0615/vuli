@@ -55,6 +55,7 @@
 import lButton from '../../button/src/main.vue'
 import message from '../../message/index.js'
 import request from './upload-http.js'
+import imageLight from '../../image-light/index.js'
 export default {
     name: 'l-upload',
     components: {
@@ -192,8 +193,8 @@ export default {
                         that.progress = that.progress.slice()
                         this.$emit('progress',e,file)
                     },
-                    onload: () => {
-                        this.$emit('end',file)
+                    onload: (e) => {
+                        this.$emit('end',e,file)
                         successFiles.push(file)
                         if(--uploading === 0){
                             this.$emit('success',successFiles)
@@ -210,7 +211,7 @@ export default {
         },
         bigImage(file){
             this.$emit('fileClick',file)
-            window.open(window.URL.createObjectURL(file))
+            imageLight(window.URL.createObjectURL(file))
         }
     }
 }

@@ -68,7 +68,7 @@
 
     <!-- <l-sider :step="10" :stepPoint="true" @click="test"></l-sider> -->
 
-    <!-- <l-upload ref="upload" action="http://localhost:8083/test">
+    <!-- <l-upload ref="upload" action="http://localhost:8083/test" type="image">
       上传文件
     </l-upload> -->
 
@@ -109,20 +109,18 @@
       </l-col>
     </l-row> -->
 
-    <l-image>
+    <!-- <l-image>
       <l-image-item :src="index%3+1+'.JPG'" v-for="(item,index) in 20" :key="index" lazy></l-image-item>
-    </l-image>
+    </l-image> -->
 
   </div>
 </template>
 
 <script>
-import option from './tableOption.js'
 export default {
   name: 'App',
   data(){
     return {
-      option,
       value: 1
     }
   },
