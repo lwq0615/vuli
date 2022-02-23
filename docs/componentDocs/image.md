@@ -5,7 +5,7 @@
 *grid方格布局*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
     <l-image style="width:100%;height:500px;">
-        <l-image-item :src="'/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index" lazy></l-image-item>
+        <l-image-item :src="'/luck-ui/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index" lazy></l-image-item>
     </l-image>
 </div>
 
@@ -13,7 +13,7 @@
 ```html
 <!-- 可直接通过style内联样式修改组件宽高 -->
 <l-image style="width:100%;height:500px;">
-    <l-image-item :src="'/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index" lazy></l-image-item>
+    <l-image-item :src="'/luck-ui/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index" lazy></l-image-item>
 </l-image>
 ```
 
@@ -22,7 +22,7 @@
 *fall瀑布布局*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
     <l-image style="width:100%;height:500px;" type="fall">
-        <l-image-item :src="'/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index"></l-image-item>
+        <l-image-item :src="'/luck-ui/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index"></l-image-item>
     </l-image>
 </div>
 
@@ -30,7 +30,7 @@
 ```html
 <!-- 可直接通过style内联样式修改组件宽高 -->
  <l-image style="width:100%;height:500px;" type="fall">
-    <l-image-item :src="'/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index"></l-image-item>
+    <l-image-item :src="'/luck-ui/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index"></l-image-item>
 </l-image>
 ```
 
