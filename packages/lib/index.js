@@ -22,6 +22,9 @@ import upload from './upload'
 import tooltip from './tooltip'
 import row from './row'
 import col from './col'
+import image from './image'
+import imageItem from './image-item'
+import imageLight from './image-light'
 
 const components = [
     button,
@@ -46,7 +49,9 @@ const components = [
     upload,
     tooltip,
     row,
-    col
+    col,
+    image,
+    imageItem
 ]
 
 const install = function(Vue){
@@ -55,11 +60,13 @@ const install = function(Vue){
     })
     Vue.prototype.$message = message
     Vue.prototype.$alert = alert
+    Vue.prototype.$imageLight = imageLight
 }
 
 export {
     install,
     message,
+    imageLight,
     button,
     select,
     selectOption,
@@ -82,7 +89,9 @@ export {
     upload,
     tooltip,
     row,
-    col
+    col,
+    image,
+    imageItem
 }
 
 export default { install }

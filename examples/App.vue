@@ -109,6 +109,10 @@
       </l-col>
     </l-row> -->
 
+    <l-image>
+      <l-image-item :src="index%3+1+'.JPG'" v-for="(item,index) in 20" :key="index" lazy></l-image-item>
+    </l-image>
+
   </div>
 </template>
 
@@ -119,7 +123,7 @@ export default {
   data(){
     return {
       option,
-      value: true
+      value: 1
     }
   },
   methods: {
@@ -127,7 +131,7 @@ export default {
       console.log(e)
     },
     test1(e){
-      this.value = !this.value
+      this.$imageLight("1.JPG")
     }
   }
 }

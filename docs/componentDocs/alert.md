@@ -78,6 +78,16 @@ export default {
 </script>
 ```
 
+#### 单独引用
+```js
+import { alert } from 'luck-ui';
+
+alert({
+  title: '提示',
+  content: '提示消息'
+})
+```
+
 #### Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |

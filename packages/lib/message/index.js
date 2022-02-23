@@ -11,7 +11,7 @@ const Message = function (option = {}) {
         }
     }
     instance.addMsg(option)
-    instance.$mount(); // 渲染组件
+    instance.$mount(); 
     document.body.appendChild(instance.$el);
 }
 

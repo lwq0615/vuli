@@ -91,10 +91,13 @@ export default {
     z-index: 99;
     user-select: none;
     background-color: rgba($color: #000000, $alpha: 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .alert-box {
         user-select: text;
         background-color: white;
-        margin: 15% auto;
+        transform: translateY(-50%);
         border-radius: 5px;
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         transition: all ease 0.3s;

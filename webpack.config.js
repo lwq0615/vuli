@@ -1,3 +1,6 @@
+/**
+ * 打包packages目录下的js文件
+ */
 const glob = require('glob')
 const { VueLoaderPlugin } = require('vue-loader')
 const path = require('path')
@@ -12,7 +15,7 @@ async function makeList(dirPath,list){
     }
 }
 
-makeList('components/lib',list)
+makeList('packages/lib',list)
 
 module.exports = {
     entry: list,

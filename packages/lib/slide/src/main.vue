@@ -54,10 +54,6 @@ export default {
             let that = this
             this.index2 = that.index+1 == that.imgs.length ? 0 : that.index+1
             if(!that.o){
-                let oldImg = {
-                    index: that.index,
-                    src: that.imgs[that.index]
-                }
                 let newImg = {
                     index: that.index2,
                     src: that.imgs[that.index2]
@@ -78,10 +74,6 @@ export default {
             let that = this
             this.index2 = that.index-1 < 0 ? that.imgs.length-1 : that.index-1
             if(!that.o){
-                let oldImg = {
-                    index: that.index,
-                    src: that.imgs[that.index]
-                }
                 let newImg = {
                     index: that.index2,
                     src: that.imgs[that.index2]

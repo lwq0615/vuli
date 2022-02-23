@@ -14,9 +14,11 @@ module.exports = {
                     '/componentDocs/layout',
                     '/componentDocs/button',
                     '/componentDocs/tabs',
-                    '/componentDocs/rotate-card',
                     '/componentDocs/tag',
-                    '/componentDocs/slide'
+                    '/componentDocs/slide',
+                    '/componentDocs/image',
+                    '/componentDocs/image-light',
+                    '/componentDocs/rotate-card'
                 ]
             },
             {
@@ -54,6 +56,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                     '/componentDocs/transition',
+                    '/componentDocs/loading',
                     '/componentDocs/calculator'
                 ]
             }

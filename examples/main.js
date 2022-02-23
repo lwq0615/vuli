@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import '../components/css/index.scss'
-import luckUi from '../components/lib/index.js'
+import '../packages/css/index.scss'
+import luckUi from '../packages/lib/index.js'
 
 Vue.use(luckUi)
 
