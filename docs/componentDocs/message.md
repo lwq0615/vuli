@@ -64,7 +64,7 @@ export default {
 
 #### 单独引用
 ```js
-import { message } from 'luck-ui';
+import { message } from 'vui';
 
 message.success('成功了')
 ```

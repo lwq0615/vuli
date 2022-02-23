@@ -80,7 +80,7 @@ export default {
 
 #### 单独引用
 ```js
-import { alert } from 'luck-ui';
+import { alert } from 'vui';
 
 alert({
   title: '提示',

@@ -1,10 +1,10 @@
 {
-  "name": "luck-ui4",
+  "name": "vui4",
   "version": "1.3.4",
   "description": "luck组件库",
   "main": "dist/lib/index.js",
   "keywords": [
-    "luck-ui",
+    "vui",
     "vue",
     "ui"
   ],
@@ -22,7 +22,7 @@
     "docs": "vuepress dev docs",
     "git": "npm run git:page && npm run git:push",
     "git:push": "git init && git add . && git commit -m 'update' && git push origin master",
-    "git:page": "vuepress build docs && cd docs/.vuepress/dist && git init && git add -A && git commit -m 'deploy' && git push -f https://github.com/lwq0615/luck-ui.git master:gh-pages"
+    "git:page": "vuepress build docs && cd docs/.vuepress/dist && git init && git add -A && git commit -m 'deploy' && git push -f https://github.com/lwq0615/vui.git master:gh-pages"
   },
   "dependencies": {
     "core-js": "^3.6.5",

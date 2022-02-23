@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/luck-ui/',
+    base: '/vui/',
     themeConfig: {
         sidebar: [
             {
