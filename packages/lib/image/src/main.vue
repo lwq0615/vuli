@@ -1,5 +1,5 @@
 <template>
-    <div :class="`l-image_container ${noScroll ? 'noScroll' : ''}`" ref="container" @scroll="loadImg">
+    <div :class="`vu-image_container ${noScroll ? 'noScroll' : ''}`" ref="container" @scroll="loadImg">
         <div :class="type" :style="scrollStyle" ref="scroll">
             <slot></slot>
         </div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'l-image',
+    name: 'vu-image',
     props: {
         columns: {
             type: Number,

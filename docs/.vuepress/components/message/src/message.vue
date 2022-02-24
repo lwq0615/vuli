@@ -1,13 +1,13 @@
 <!-- message.vue -->
 <template>
-  <div class="l-message" :style="colorStyle+topStyle" @click="click">
+  <div class="vu-message" :style="colorStyle+topStyle" @click="click">
     <div class="text" :style="alignStyle+sizeStyle">{{ option.content }}</div>
     <div class="icon" @click="close" v-show="option.close">×</div>
   </div>
 </template>
 <script>
 export default {
-  name: "l-message",
+  name: "vu-message",
   props: {
     option:Object
   },
@@ -80,7 +80,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.l-message {
+.vu-message {
     display: flex;
     position: fixed;
     z-index: 9999;

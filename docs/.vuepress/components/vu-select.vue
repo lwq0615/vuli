@@ -1,5 +1,5 @@
 <template>
-    <div class="l-select_container">
+    <div class="vu-select_container">
         <input 
             class="show-text"
             :placeholder="tempLabel || '请选择'"
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-    name: 'l-select',
+    name: 'vu-select',
     props:{
         value: {
             type: [String,Number],
@@ -162,7 +162,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-select_container {
+.vu-select_container {
     display: inline-block;
     position: relative;
     width: 200px;

@@ -1,6 +1,6 @@
 <template>
     <button 
-    :class="`l-button_button ${size}`"
+    :class="`vu-button_button ${size}`"
     :style="btnColor"
     @click="$emit('click',$event)"
     ><slot></slot></button>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'l-button',
+    name: 'vu-button',
     props:{
         color: {
             type: String,

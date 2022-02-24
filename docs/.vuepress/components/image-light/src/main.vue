@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <section class="l-image-light_container" @click="show = false" v-show="show">
+        <section class="vu-image-light_container" @click="show = false" v-show="show">
             <div class="imgBox">
                 <img :src="url">
             </div>
@@ -35,7 +35,7 @@ export default {
     opacity: 0;
 }
 
-.l-image-light_container{
+.vu-image-light_container{
     position: fixed;
     top: 0;
     bottom: 0;

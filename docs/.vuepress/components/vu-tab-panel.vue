@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "l-tab-panel",
+  name: "vu-tab-panel",
   props: {
     name: {
       type: String,
@@ -16,12 +16,12 @@ export default {
     },
   },
   created() {
-    if(this.$parent.$options._componentTag === 'l-tabs'){
+    if(this.$parent.$options._componentTag === 'vu-tabs'){
       this.$parent.loadTab({ name: this.name, label: this.label });
     }
   },
   destroyed() {
-    if(this.$parent.$options._componentTag === 'l-tabs'){
+    if(this.$parent.$options._componentTag === 'vu-tabs'){
       this.$parent.delTab({ name: this.name, label: this.label });
     }
   },

@@ -4,13 +4,13 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-  <l-checkbox-group v-model="value" :columns="[1,1,1]">
-    <l-checkbox :all="true">全选</l-checkbox>
-    <l-checkbox value="1" :disable="true">福建</l-checkbox>
-    <l-checkbox value="2">厦门</l-checkbox>
-    <l-checkbox value="3">漳浦</l-checkbox>
-    <l-checkbox value="4">泉州</l-checkbox>
-  </l-checkbox-group>
+  <vu-checkbox-group v-model="value" :columns="[1,1,1]">
+    <vu-checkbox :all="true">全选</vu-checkbox>
+    <vu-checkbox value="1" :disable="true">福建</vu-checkbox>
+    <vu-checkbox value="2">厦门</vu-checkbox>
+    <vu-checkbox value="3">漳浦</vu-checkbox>
+    <vu-checkbox value="4">泉州</vu-checkbox>
+  </vu-checkbox-group>
 </div>
 
 <script>
@@ -25,18 +25,18 @@ export default {
 
 ### 代码
 ```html
-<!--l-checkbox-group必须与l-checkbox搭配使用-->
+<!--vu-checkbox-group必须与vu-checkbox搭配使用-->
 <!-- 可直接通过style内联样式修改组件宽高 -->
 <!-- 当columns为Array时(例如[1,1,1]),复选框会分为三列，每列宽度比为1:1:1 -->
 <!-- 当columns为String时(默认为'100px'),复选框每列宽度为100px,直至排放不下时自动换行 -->
-<l-checkbox-group v-model="value" :columns="[1,1,1]">
+<vu-checkbox-group v-model="value" :columns="[1,1,1]">
   <!-- 将复选框标记为全选按钮会使该复选框独占一行 -->
-  <l-checkbox :all="true">全选</l-checkbox>
-  <l-checkbox value="1" :disable="true">福建</l-checkbox>
-  <l-checkbox value="2">厦门</l-checkbox>
-  <l-checkbox value="3">漳浦</l-checkbox>
-  <l-checkbox value="4">泉州</l-checkbox>
-</l-checkbox-group>
+  <vu-checkbox :all="true">全选</vu-checkbox>
+  <vu-checkbox value="1" :disable="true">福建</vu-checkbox>
+  <vu-checkbox value="2">厦门</vu-checkbox>
+  <vu-checkbox value="3">漳浦</vu-checkbox>
+  <vu-checkbox value="4">泉州</vu-checkbox>
+</vu-checkbox-group>
 
 <script>
 export default {

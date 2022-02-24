@@ -1,12 +1,12 @@
 <template>
-    <div :class="`l-image-item_container ${loading}`" @click="$emit('click',src)">
+    <div :class="`vu-image-item_container ${loading}`" @click="$emit('click',src)">
         <img :src="load ? src : ''" :style="imgStyle" @load="loadEnd" ref="img">
     </div>
 </template>
 
 <script>
 export default {
-    name: 'l-image-item',
+    name: 'vu-image-item',
     props: {
         src: String,
         lazy: Boolean
@@ -23,12 +23,12 @@ export default {
         }
     },
     mounted(){
-        if(this.$parent.$options._componentTag === 'l-image'){
+        if(this.$parent.$options._componentTag === 'vu-image'){
             this.$parent.createImg(this)
         }
     },
     destroyed(){
-        if(this.$parent.$options._componentTag === 'l-image'){
+        if(this.$parent.$options._componentTag === 'vu-image'){
             this.$parent.destroyeImg(this)
         }
     },
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fall .l-image-item_container {
+.fall .vu-image-item_container {
     width: 100%;
     border-radius: 3px;
     overflow: hidden;
@@ -63,7 +63,7 @@ export default {
     }
 }
 
-.grid .l-image-item_container {
+.grid .vu-image-item_container {
     width: 100%;
     height: 0;
     padding-bottom: 100%;

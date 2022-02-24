@@ -6,36 +6,36 @@
 
 *small*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <l-button size="small">按钮</l-button>
-    <l-button size="small" color="primary">按钮</l-button>
+    <vu-button size="small">按钮</vu-button>
+    <vu-button size="small" color="primary">按钮</vu-button>
 </div>
 
 *default*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <l-button size="default" color="success">按钮</l-button>
-    <l-button color="info">按钮</l-button>
+    <vu-button size="default" color="success">按钮</vu-button>
+    <vu-button color="info">按钮</vu-button>
 </div>
 
 *big*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <l-button size="big" color="warning">按钮</l-button>
-    <l-button size="big" color="error">按钮</l-button>
+    <vu-button size="big" color="warning">按钮</vu-button>
+    <vu-button size="big" color="error">按钮</vu-button>
 </div>
 
 ### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽高,字体颜色等-->
 small
-<l-button size="small">按钮</l-button>
-<l-button size="small" color="primary">按钮</l-button>
+<vu-button size="small">按钮</vu-button>
+<vu-button size="small" color="primary">按钮</vu-button>
 
 default
-<l-button size="default" color="success">按钮</l-button>
-<l-button color="info">按钮</l-button>
+<vu-button size="default" color="success">按钮</vu-button>
+<vu-button color="info">按钮</vu-button>
 
 big
-<l-button size="big" color="warning">按钮</l-button>
-<l-button size="big" color="error">按钮</l-button>
+<vu-button size="big" color="warning">按钮</vu-button>
+<vu-button size="big" color="error">按钮</vu-button>
 ```
 
 #### Attributes

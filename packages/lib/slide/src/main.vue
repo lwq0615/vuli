@@ -1,5 +1,5 @@
 <template>
-    <div class="l-slide_container">
+    <div class="vu-slide_container">
         <div class="imgBox" :style="style">
             <img class="img" :style="`object-fit:${cutType}`" :src="imgs[index-1] || imgs[imgs.length-1]">
             <img class="img" :style="`object-fit:${cutType}`" :src="imgs[index]">
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-    name: 'l-slide',
+    name: 'vu-slide',
     props:{
         imgs: Array,
         cutType: {

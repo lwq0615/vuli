@@ -1,6 +1,6 @@
 <template>
     <button 
-    :class="`l-button_button ${size}`"
+    :class="`vu-button_button ${size}`"
     :style="btnColor"
     @click="$emit('click',$event)"
     ><slot></slot></button>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'l-button',
+    name: 'vu-button',
     props:{
         color: {
             type: String,
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-button_button{
+.vu-button_button{
    border-radius: 6px;
    border: 1px solid #e4e7ed;
    cursor: pointer;
@@ -43,27 +43,27 @@ export default {
    padding: 10px 20px;
    color: white;
 }
-.l-button_button.default{
+.vu-button_button.default{
    font-size: 14px;
    padding: 10px 20px;
    color: white;
 }
-.l-button_button.small{
+.vu-button_button.small{
    font-size: 13px;
    padding: 7px 14px;
    color: white;
 }
-.l-button_button.big{
+.vu-button_button.big{
    font-size: 18px;
    padding: 12px 28px;
    color: white;
 }
 
 
-.l-button_button:hover{
+.vu-button_button:hover{
    opacity: 0.8;
 }
-.l-button_button:active{
+.vu-button_button:active{
    opacity: 1;
 }
 </style>>

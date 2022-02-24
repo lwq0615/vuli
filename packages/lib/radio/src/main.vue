@@ -1,5 +1,5 @@
 <template>
-    <div class="l-radio_container">
+    <div class="vu-radio_container">
         <div class="flex" @click="check">
             <div class="input" :style="inputStyle+inputActiveStyle"></div>
             <div class="text" :style="fontSizeStyle+textActiveStyle"><slot></slot></div>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-    name: 'l-radio',
+    name: 'vu-radio',
     props: {
         value: {
             type: [String,Number],
@@ -30,7 +30,7 @@ export default {
     },
     computed: {
         textActiveStyle(){
-            if(this.$parent.$options._componentTag === 'l-radio-group'){
+            if(this.$parent.$options._componentTag === 'vu-radio-group'){
                 let style = ''
                 if(this.$parent.activeValue === this.value){
                     if(this.disable){
@@ -51,14 +51,14 @@ export default {
             }
         },
         fontSizeStyle(){
-            if(this.$parent.$options._componentTag === 'l-radio-group'){
+            if(this.$parent.$options._componentTag === 'vu-radio-group'){
                 return `font-size:${this.$parent.fontSize};`
             }else{
                 return null
             }
         },
         inputStyle(){
-            if(this.$parent.$options._componentTag === 'l-radio-group'){
+            if(this.$parent.$options._componentTag === 'vu-radio-group'){
                 let style = ''
                 style += `width:${this.$parent.iconSize}px;`
                 style += `height:${this.$parent.iconSize}px;`
@@ -71,7 +71,7 @@ export default {
             }
         },
         inputActiveStyle(){
-            if(this.$parent.$options._componentTag === 'l-radio-group'){
+            if(this.$parent.$options._componentTag === 'vu-radio-group'){
                 let style = ''
                 if(this.$parent.activeValue === this.value){
                     if(this.disable){
@@ -88,12 +88,12 @@ export default {
         }
     },
     created(){
-        if(this.$parent.$options._componentTag === 'l-radio-group'){
+        if(this.$parent.$options._componentTag === 'vu-radio-group'){
             this.$parent.createRadio(this)
         }
     },
     destroyed(){
-        if(this.$parent.$options._componentTag === 'l-radio-group'){
+        if(this.$parent.$options._componentTag === 'vu-radio-group'){
             this.$parent.delRadio(this)
         }
     },

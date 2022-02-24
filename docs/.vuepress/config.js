@@ -21,6 +21,7 @@ module.exports = {
                     '/componentDocs/button',
                     '/componentDocs/tabs',
                     '/componentDocs/tag',
+                    '/componentDocs/scroll',
                     '/componentDocs/rotate-card'
                 ]
             },
@@ -63,6 +64,7 @@ module.exports = {
                 children: [
                     '/componentDocs/transition',
                     '/componentDocs/loading',
+                    '/componentDocs/dialog',
                     '/componentDocs/calculator'
                 ]
             }

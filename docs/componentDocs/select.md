@@ -4,15 +4,15 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-  <l-select v-model="value">
-  <l-select-option label="福建" :value="1"></l-select-option>
-  <l-select-option label="漳州" :value="2"></l-select-option>
-  <l-select-option label="漳浦" :value="3"></l-select-option>
-  <l-select-option label="厦门" :value="4"></l-select-option>
-  <l-select-option label="泉州" :value="5"></l-select-option>
-  <l-select-option label="三明" :value="6"></l-select-option>
-  <l-select-option label="龙岩" :value="7"></l-select-option>
-  </l-select>
+  <vu-select v-model="value">
+  <vu-select-option label="福建" :value="1"></vu-select-option>
+  <vu-select-option label="漳州" :value="2"></vu-select-option>
+  <vu-select-option label="漳浦" :value="3"></vu-select-option>
+  <vu-select-option label="厦门" :value="4"></vu-select-option>
+  <vu-select-option label="泉州" :value="5"></vu-select-option>
+  <vu-select-option label="三明" :value="6"></vu-select-option>
+  <vu-select-option label="龙岩" :value="7"></vu-select-option>
+  </vu-select>
 </div>
 
 <script>
@@ -29,16 +29,16 @@ export default {
 ### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
-<!--l-select必须与l-select-option搭配使用-->
-<l-select v-model="value">
-    <l-select-option label="福建" :value="1"></l-select-option>
-    <l-select-option label="漳州" :value="2"></l-select-option>
-    <l-select-option label="漳浦" :value="3"></l-select-option>
-    <l-select-option label="厦门" :value="4"></l-select-option>
-    <l-select-option label="泉州" :value="5"></l-select-option>
-    <l-select-option label="三明" :value="6"></l-select-option>
-    <l-select-option label="龙岩" :value="7"></l-select-option>
-</l-select>
+<!--vu-select必须与vu-select-option搭配使用-->
+<vu-select v-model="value">
+    <vu-select-option label="福建" :value="1"></vu-select-option>
+    <vu-select-option label="漳州" :value="2"></vu-select-option>
+    <vu-select-option label="漳浦" :value="3"></vu-select-option>
+    <vu-select-option label="厦门" :value="4"></vu-select-option>
+    <vu-select-option label="泉州" :value="5"></vu-select-option>
+    <vu-select-option label="三明" :value="6"></vu-select-option>
+    <vu-select-option label="龙岩" :value="7"></vu-select-option>
+</vu-select>
 
 <script>
 export default {

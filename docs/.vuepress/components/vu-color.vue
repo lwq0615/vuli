@@ -1,5 +1,5 @@
 <template>
-    <div class="l-color_container">
+    <div class="vu-color_container">
         <div class="color-block" :style="colorStyle" @click="checkColor"></div>
         <input type="color" v-model="activeValue" ref="input" :name="name">
     </div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'l-color',
+    name: 'vu-color',
     props: {
         value: {
             type: String,
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-color_container{
+.vu-color_container{
     display: inline-block;
     height: 20px;
     width: 20px;

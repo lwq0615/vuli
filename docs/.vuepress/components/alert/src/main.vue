@@ -1,6 +1,6 @@
 <template>
-    <transition name="showTransition">
-        <div class="l-alert_container" v-show="showAlert">
+    <transition name="vui-alert-show">
+        <div class="vu-alert_container" v-show="showAlert">
             <div class="alert-box" @click="stopPropagation" :style="widthStyle+heightStyle">
                 <div class="title">
                     {{option.title}}
@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-alert_container {
+.vu-alert_container {
     position: fixed;
     left: 0;
     top: 0;
@@ -94,10 +94,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10%;
     .alert-box {
         user-select: text;
         background-color: white;
-        transform: translateY(-50%);
         border-radius: 5px;
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         transition: all ease 0.3s;
@@ -163,12 +163,12 @@ export default {
     }
 }
 
-.showTransition-enter-active,
-.showTransition-leave-active {
+.vui-alert-show-enter-active,
+.vui-alert-show-leave-active {
     transition: all 0.3s;
 }
-.showTransition-enter,
-.showTransition-leave-to {
+.vui-alert-show-enter,
+.vui-alert-show-leave-to {
     opacity: 0;
     .alert-box {
         transform: rotateY(45deg) rotateX(45deg);

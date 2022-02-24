@@ -1,6 +1,6 @@
 <template>
   <div 
-  class="l-tag_container" 
+  class="vu-tag_container" 
   :style="colorStyle" 
   :class="size || 'default'" 
   @click="$emit('click',$event)">
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "l-tag",
+  name: "vu-tag",
   props: {
     type: String,
     color: String,

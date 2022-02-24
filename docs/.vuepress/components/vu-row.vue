@@ -1,12 +1,12 @@
 <template>
-    <div class="l-row_container" :style="gapStyle">
+    <div class="vu-row_container" :style="gapStyle">
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'l-row',
+    name: 'vu-row',
     props: {
         gap: String
     },
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-row_container{
+.vu-row_container{
     display: grid;
     grid-template-columns: repeat(24, 1fr);
     justify-items: right;

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="l-tabs_container"
+    class="vu-tabs_container"
     :style="`${shadow ? 'box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);' : ''}`"
   >
     <div class="tab">
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "l-tabs",
+  name: "vu-tabs",
   props: {
     shadow: {
       type: Boolean,

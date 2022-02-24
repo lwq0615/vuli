@@ -4,7 +4,7 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-  <l-switch v-model="value" :openValue="123" :closeValue="'close'"></l-switch>
+  <vu-switch v-model="value" :openValue="123" :closeValue="'close'"></vu-switch>
 </div>
 
 <script>
@@ -21,7 +21,7 @@ export default {
 ### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽度-->
-<l-switch v-model="value" :openValue="123" :closeValue="'close'"></l-switch>
+<vu-switch v-model="value" :openValue="123" :closeValue="'close'"></vu-switch>
 
 <script>
 export default {

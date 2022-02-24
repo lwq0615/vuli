@@ -5,19 +5,19 @@
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
   outside<br>
-  <l-progress :percentage="70"></l-progress><br><br>
+  <vu-progress :percentage="70"></vu-progress><br><br>
   inside<br>
-  <l-progress :percentage="70" :inside="true"></l-progress>
+  <vu-progress :percentage="70" :inside="true"></vu-progress>
 </div>
 
 ### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
 outside<br>
-<l-progress :percentage="70"></l-progress>
+<vu-progress :percentage="70"></vu-progress>
 
 inside<br>
-<l-progress :percentage="70" :inside="true"></l-progress>
+<vu-progress :percentage="70" :inside="true"></vu-progress>
 
 <script>
 export default {

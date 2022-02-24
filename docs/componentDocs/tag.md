@@ -5,46 +5,46 @@
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
     不同大小<br>
-    <l-tag size="mini" color="primary">标签</l-tag>
-    <l-tag size="small" color="primary">标签</l-tag>
-    <l-tag size="default" color="primary">标签</l-tag>
-    <l-tag size="big" color="primary">标签</l-tag><br><br>
+    <vu-tag size="mini" color="primary">标签</vu-tag>
+    <vu-tag size="small" color="primary">标签</vu-tag>
+    <vu-tag size="default" color="primary">标签</vu-tag>
+    <vu-tag size="big" color="primary">标签</vu-tag><br><br>
     不同样式<br>
-    <l-tag type="dark">标签</l-tag>
-    <l-tag type="light">标签</l-tag>
-    <l-tag type="plain">标签</l-tag><br><br>
+    <vu-tag type="dark">标签</vu-tag>
+    <vu-tag type="light">标签</vu-tag>
+    <vu-tag type="plain">标签</vu-tag><br><br>
     不同颜色<br>
-    <l-tag color="primary">标签</l-tag>
-    <l-tag color="success">标签</l-tag>
-    <l-tag color="info">标签</l-tag>
-    <l-tag color="error">标签</l-tag>
-    <l-tag color="warning">标签</l-tag><br><br>
+    <vu-tag color="primary">标签</vu-tag>
+    <vu-tag color="success">标签</vu-tag>
+    <vu-tag color="info">标签</vu-tag>
+    <vu-tag color="error">标签</vu-tag>
+    <vu-tag color="warning">标签</vu-tag><br><br>
     带有关闭按钮<br>
-    <l-tag :close="true">标签</l-tag>
+    <vu-tag :close="true">标签</vu-tag>
 </div>
 
 ### 代码
 ```html
 不同大小<br>
-<l-tag size="mini" color="primary">标签</l-tag>
-<l-tag size="small" color="primary">标签</l-tag>
-<l-tag size="default" color="primary">标签</l-tag>
-<l-tag size="big" color="primary">标签</l-tag>
+<vu-tag size="mini" color="primary">标签</vu-tag>
+<vu-tag size="small" color="primary">标签</vu-tag>
+<vu-tag size="default" color="primary">标签</vu-tag>
+<vu-tag size="big" color="primary">标签</vu-tag>
 
 不同样式<br>
-<l-tag type="dark">标签</l-tag>
-<l-tag type="light">标签</l-tag>
-<l-tag type="plain">标签</l-tag>
+<vu-tag type="dark">标签</vu-tag>
+<vu-tag type="light">标签</vu-tag>
+<vu-tag type="plain">标签</vu-tag>
 
 不同颜色<br>
-<l-tag color="primary">标签</l-tag>
-<l-tag color="success">标签</l-tag>
-<l-tag color="info">标签</l-tag>
-<l-tag color="error">标签</l-tag>
-<l-tag color="warning">标签</l-tag>
+<vu-tag color="primary">标签</vu-tag>
+<vu-tag color="success">标签</vu-tag>
+<vu-tag color="info">标签</vu-tag>
+<vu-tag color="error">标签</vu-tag>
+<vu-tag color="warning">标签</vu-tag>
 
 带有关闭按钮<br>
-<l-tag :close="true">标签</l-tag>
+<vu-tag :close="true">标签</vu-tag>
 ```
 
 #### Attributes

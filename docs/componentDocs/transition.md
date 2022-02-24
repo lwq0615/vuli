@@ -7,7 +7,7 @@
 *fade淡入淡出*
 
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;height:150px;">
-    <l-button @click="fade = !fade">click</l-button><br>
+    <vu-button @click="fade = !fade">click</vu-button><br>
     <transition name="fade">
         <div v-show="fade" class="div">fade</div>
     </transition>
@@ -15,7 +15,7 @@
 
 ### 代码
 ```html
-<l-button @click="show = !show">click</l-button><br>
+<vu-button @click="show = !show">click</vu-button><br>
 <transition name="fade">
     <div v-show="show" class="div">fade</div>
 </transition>
@@ -36,7 +36,7 @@ export default {
 *rotate旋转*
 
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;height:260px;">
-    <l-button @click="rotate = !rotate">click</l-button><br>
+    <vu-button @click="rotate = !rotate">click</vu-button><br>
     <div class="grid">
         <transition name="rotate">
             <div v-show="rotate" class="div">rotate</div>
@@ -64,7 +64,7 @@ export default {
 
 ### 代码
 ```html
-<l-button @click="show = !show">click</l-button><br>
+<vu-button @click="show = !show">click</vu-button><br>
 <transition name="rotate">
     <div v-show="show" class="div">rotate</div>
 </transition>

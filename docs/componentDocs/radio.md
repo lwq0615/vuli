@@ -4,13 +4,13 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-  <l-radio-group v-model="value" :columns=[1,1,1]>
-  <l-radio :value="1">福建</l-radio>
-  <l-radio :value="2" :disable="true">泉州</l-radio>
-  <l-radio :value="3" :disable="true">福州</l-radio>
-  <l-radio :value="4">厦门</l-radio>
-  <l-radio :value="5">漳州</l-radio>
-  </l-radio-group>
+  <vu-radio-group v-model="value" :columns=[1,1,1]>
+  <vu-radio :value="1">福建</vu-radio>
+  <vu-radio :value="2" :disable="true">泉州</vu-radio>
+  <vu-radio :value="3" :disable="true">福州</vu-radio>
+  <vu-radio :value="4">厦门</vu-radio>
+  <vu-radio :value="5">漳州</vu-radio>
+  </vu-radio-group>
 </div>
 
 <script>
@@ -25,17 +25,17 @@ export default {
 
 ### 代码
 ```html
-<!--l-radio-group必须与l-radio搭配使用-->
+<!--vu-radio-group必须与vu-radio搭配使用-->
 <!-- 可直接通过style内联样式修改组件宽高 -->
 <!-- 当columns为Array时(例如[1,1,1]),复选框会分为三列，每列宽度比为1:1:1 -->
 <!-- 当columns为String时(默认为'100px'),复选框每列宽度为100px,直至排放不下时自动换行 -->
-<l-radio-group v-model="value" :columns=[1,1,1]>
-    <l-radio :value="1">福建</l-radio>
-    <l-radio :value="2" :disable="true">泉州</l-radio>
-    <l-radio :value="3" :disable="true">福州</l-radio>
-    <l-radio :value="4">厦门</l-radio>
-    <l-radio :value="5">漳州</l-radio>
-</l-radio-group>
+<vu-radio-group v-model="value" :columns=[1,1,1]>
+    <vu-radio :value="1">福建</vu-radio>
+    <vu-radio :value="2" :disable="true">泉州</vu-radio>
+    <vu-radio :value="3" :disable="true">福州</vu-radio>
+    <vu-radio :value="4">厦门</vu-radio>
+    <vu-radio :value="5">漳州</vu-radio>
+</vu-radio-group>
 
 <script>
 export default {

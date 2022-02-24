@@ -25,6 +25,8 @@ import col from './col'
 import image from './image'
 import imageItem from './image-item'
 import imageLight from './image-light'
+import scroll from './scroll'
+import dialog from './dialog'
 
 const components = [
     button,
@@ -51,7 +53,9 @@ const components = [
     row,
     col,
     image,
-    imageItem
+    imageItem,
+    scroll,
+    dialog
 ]
 
 const install = function(Vue){
@@ -91,7 +95,9 @@ export {
     row,
     col,
     image,
-    imageItem
+    imageItem,
+    scroll,
+    dialog
 }
 
 export default { install }

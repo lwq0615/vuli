@@ -1,5 +1,5 @@
 <template>
-    <div class="l-switch_container" @click="$emit('click',$event)">
+    <div class="vu-switch_container" @click="$emit('click',$event)">
         <div class="switch" @click="change()" :style="colorStyle">
             <div class="span" :style="flexStyle"></div>
             <div class="icon"></div>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-    name: 'l-switch',
+    name: 'vu-switch',
     props: {
         openColor: {
             type: String,
@@ -116,7 +116,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.l-switch_container{
+.vu-switch_container{
     width: 40px;
     height: 20px;
     display: inline-block;

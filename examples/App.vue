@@ -2,116 +2,124 @@
   <div id="app">
 
     <div style="padding: 50px 0;text-align:center;">
-      <l-button @click="test1">按钮</l-button>
+      <vu-button @click="test1">按钮</vu-button>
     </div>
 
-    <!-- <l-tooltip content="上方的tooltip" v-model="value">
-      <l-button>按钮</l-button>
-    </l-tooltip> -->
+    <!-- <vu-tooltip content="上方的tooltip" v-model="value">
+      <vu-button>按钮</vu-button>
+    </vu-tooltip> -->
     
 
-    <!-- <l-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></l-slide> -->
+    <!-- <vu-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></vu-slide> -->
 
-    <!-- <l-select name="test" :required="true">
-      <l-select-option label="福建" :value="1"></l-select-option>
-      <l-select-option label="漳州" :value="2"></l-select-option>
-      <l-select-option label="漳浦" :value="3"></l-select-option>
-      <l-select-option label="厦门" :value="4"></l-select-option>
-      <l-select-option label="泉州" :value="5"></l-select-option>
-      <l-select-option label="三明" :value="6"></l-select-option>
-      <l-select-option label="龙岩" :value="7"></l-select-option>
-    </l-select> -->
+    <!-- <vu-select name="test" :required="true">
+      <vu-select-option label="福建" :value="1"></vu-select-option>
+      <vu-select-option label="漳州" :value="2"></vu-select-option>
+      <vu-select-option label="漳浦" :value="3"></vu-select-option>
+      <vu-select-option label="厦门" :value="4"></vu-select-option>
+      <vu-select-option label="泉州" :value="5"></vu-select-option>
+      <vu-select-option label="三明" :value="6"></vu-select-option>
+      <vu-select-option label="龙岩" :value="7"></vu-select-option>
+    </vu-select> -->
     
 
-    <!-- <l-tabs v-model="value" @change="test">
-      <l-tab-panel label="第一个" name="1">第一个的内容</l-tab-panel>
-      <l-tab-panel label="第二个" name="2">第二个的内容</l-tab-panel>
-      <l-tab-panel label="第三个" name="3">第三个的内容</l-tab-panel>
-    </l-tabs> -->
+    <!-- <vu-tabs v-model="value" @change="test">
+      <vu-tab-panel label="第一个" name="1">第一个的内容</vu-tab-panel>
+      <vu-tab-panel label="第二个" name="2">第二个的内容</vu-tab-panel>
+      <vu-tab-panel label="第三个" name="3">第三个的内容</vu-tab-panel>
+    </vu-tabs> -->
 
-    <!-- <l-rotate-card ref="card" rotateTime="1s" rotateType="y">
+    <!-- <vu-rotate-card ref="card" rotateTime="1s" rotateType="y">
       <div slot="front">front</div>
       <div slot="back">back</div>
-    </l-rotate-card> -->
+    </vu-rotate-card> -->
 
-    <!-- <l-radio-group v-model="value">
-      <l-radio :value="1">福建</l-radio>
-      <l-radio :value="2" :disable="true">泉州</l-radio>
-      <l-radio :value="3" :disable="true">福州</l-radio>
-      <l-radio :value="4">厦门</l-radio>
-      <l-radio :value="5">漳州</l-radio>
-    </l-radio-group> -->
+    <!-- <vu-radio-group v-model="value">
+      <vu-radio :value="1">福建</vu-radio>
+      <vu-radio :value="2" :disable="true">泉州</vu-radio>
+      <vu-radio :value="3" :disable="true">福州</vu-radio>
+      <vu-radio :value="4">厦门</vu-radio>
+      <vu-radio :value="5">漳州</vu-radio>
+    </vu-radio-group> -->
 
-    <!-- <l-progress :percentage="value" @click="test"></l-progress> -->
+    <!-- <vu-progress :percentage="value" @click="test"></vu-progress> -->
 
-    <!-- <l-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></l-switch> -->
+    <!-- <vu-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></vu-switch> -->
 
-    <!-- <l-input type="text" v-model="value" @invalid="test" :required="true"></l-input> -->
+    <!-- <vu-input type="text" v-model="value" @invalid="test" :required="true"></vu-input> -->
 
-    <!-- <l-checkbox-group @change="test" v-model="value">
-      <l-checkbox :all="true">全选</l-checkbox>
-      <l-checkbox value="1" :disable="true">福建</l-checkbox>
-      <l-checkbox value="2" :disable="true">厦门</l-checkbox>
-      <l-checkbox value="3">漳浦</l-checkbox>
-      <l-checkbox value="4">泉州</l-checkbox>
-    </l-checkbox-group> -->
+    <!-- <vu-checkbox-group @change="test" v-model="value">
+      <vu-checkbox :all="true">全选</vu-checkbox>
+      <vu-checkbox value="1" :disable="true">福建</vu-checkbox>
+      <vu-checkbox value="2" :disable="true">厦门</vu-checkbox>
+      <vu-checkbox value="3">漳浦</vu-checkbox>
+      <vu-checkbox value="4">泉州</vu-checkbox>
+    </vu-checkbox-group> -->
 
-    <!-- <l-color></l-color> -->
+    <!-- <vu-color></vu-color> -->
     
-    <!-- <l-calculator></l-calculator> -->
+    <!-- <vu-calculator></vu-calculator> -->
 
-    <!-- <l-tag size="mini" color="primary">标签</l-tag>
-    <l-tag size="small" color="success" type="plain">标签</l-tag>
-    <l-tag size="default" color="error" type="dark">标签</l-tag>
-    <l-tag size="big" color="info">标签</l-tag>
-    <l-tag>标签</l-tag> -->
+    <!-- <vu-tag size="mini" color="primary">标签</vu-tag>
+    <vu-tag size="small" color="success" type="plain">标签</vu-tag>
+    <vu-tag size="default" color="error" type="dark">标签</vu-tag>
+    <vu-tag size="big" color="info">标签</vu-tag>
+    <vu-tag>标签</vu-tag> -->
 
-    <!-- <l-sider :step="10" :stepPoint="true" @click="test"></l-sider> -->
+    <!-- <vu-sider :step="10" :stepPoint="true" @click="test"></vu-sider> -->
 
-    <!-- <l-upload ref="upload" action="http://localhost:8083/test" type="image">
+    <!-- <vu-upload ref="upload" action="http://localhost:8083/test" type="image">
       上传文件
-    </l-upload> -->
+    </vu-upload> -->
 
-    <!-- <l-row>
-      <l-col :span="8">
+    <!-- <vu-row>
+      <vu-col :span="8">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-      <l-col :span="8">
+      </vu-col>
+      <vu-col :span="8">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-      <l-col :span="8">
+      </vu-col>
+      <vu-col :span="8">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-    </l-row>
-    <l-row gap="5px">
-      <l-col :span="6">
+      </vu-col>
+    </vu-row>
+    <vu-row gap="5px">
+      <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-      <l-col :span="6">
+      </vu-col>
+      <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-      <l-col :span="6">
+      </vu-col>
+      <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-      <l-col :span="6">
+      </vu-col>
+      <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-    </l-row>
-    <l-row gap="5px">
-      <l-col :span="6" :offset="1">
+      </vu-col>
+    </vu-row>
+    <vu-row gap="5px">
+      <vu-col :span="6" :offset="1">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-      <l-col :span="4" :offset="2">
+      </vu-col>
+      <vu-col :span="4" :offset="2">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-      <l-col :span="8" :offset="1">
+      </vu-col>
+      <vu-col :span="8" :offset="1">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </l-col>
-    </l-row> -->
+      </vu-col>
+    </vu-row> -->
 
-    <!-- <l-image>
-      <l-image-item :src="index%3+1+'.JPG'" v-for="(item,index) in 20" :key="index" lazy></l-image-item>
-    </l-image> -->
+    <!-- <vu-image>
+      <vu-image-item :src="index%3+1+'.JPG'" v-for="(item,index) in 20" :key="index" lazy></vu-image-item>
+    </vu-image> -->
+
+    <!-- <vu-scroll @scrollEnd="test1">
+       <div v-for="i in value" :key="i">{{ i }}</div>
+    </vu-scroll> -->
+
+    <!-- <vu-dialog ref="tt">
+      <div slot="content">222</div>
+    </vu-dialog> -->
 
   </div>
 </template>
@@ -121,7 +129,7 @@ export default {
   name: 'App',
   data(){
     return {
-      value: 1
+      value: false
     }
   },
   methods: {
@@ -129,7 +137,7 @@ export default {
       console.log(e)
     },
     test1(e){
-      this.$imageLight("1.JPG")
+      this.$refs.tt.show()
     }
   }
 }

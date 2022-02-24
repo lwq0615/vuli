@@ -5,11 +5,11 @@
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
   默认<br>
-  <l-sider v-model="value1" :format="format"></l-sider><br><br>
+  <vu-sider v-model="value1" :format="format"></vu-sider><br><br>
   开启但不显示间断点<br>
-  <l-sider v-model="value2" :step="10"></l-sider><br><br>
+  <vu-sider v-model="value2" :step="10"></vu-sider><br><br>
   开启并显示间断点<br>
-  <l-sider v-model="value3" :step="10" :stepPoint="true"></l-sider>
+  <vu-sider v-model="value3" :step="10" :stepPoint="true"></vu-sider>
 </div>
 
 <script>
@@ -31,13 +31,13 @@ export default {
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
 默认<br>
-<l-sider v-model="value" :format="format"></l-sider>
+<vu-sider v-model="value" :format="format"></vu-sider>
 
 开启但不显示间断点<br>
-<l-sider v-model="value" :step="10"></l-sider>
+<vu-sider v-model="value" :step="10"></vu-sider>
 
 开启并显示间断点<br>
-<l-sider v-model="value" :step="10" :stepPoint="true"></l-sider>
+<vu-sider v-model="value" :step="10" :stepPoint="true"></vu-sider>
 
 <script>
 export default {

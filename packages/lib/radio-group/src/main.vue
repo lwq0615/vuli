@@ -1,12 +1,12 @@
 <template>
-    <div class="l-radio-group_container">
+    <div class="vu-radio-group_container">
         <div class="grid" :style="`${columnsStyle+rowHeightStyle+justifyStyle}`"><slot></slot></div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'l-radio-group',
+    name: 'vu-radio-group',
     props:{
         value: {
             type: [String,Number],

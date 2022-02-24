@@ -5,25 +5,25 @@
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
   文本输入框<br>
-  <l-input v-model="value"></l-input><br><br>
+  <vu-input v-model="value"></vu-input><br><br>
   日期选择<br>
-  <l-input type="date"></l-input><br><br>
+  <vu-input type="date"></vu-input><br><br>
   时间选择<br>
-  <l-input type="time"></l-input><br><br>
+  <vu-input type="time"></vu-input><br><br>
   日期时间选择<br>
-  <l-input type="datetime-local"></l-input><br><br>
+  <vu-input type="datetime-local"></vu-input><br><br>
   周选择<br>
-  <l-input type="week"></l-input><br><br>
+  <vu-input type="week"></vu-input><br><br>
   数量选择<br>
-  <l-input type="number"></l-input><br><br>
+  <vu-input type="number"></vu-input><br><br>
   密码输入框<br>
-  <l-input type="password"></l-input><br><br>
+  <vu-input type="password"></vu-input><br><br>
   搜索框<br>
-  <l-input type="search"></l-input><br><br>
+  <vu-input type="search"></vu-input><br><br>
   搜索按钮<br>
-  <l-input type="text" search="搜索"></l-input><br><br>
+  <vu-input type="text" search="搜索"></vu-input><br><br>
   文本域<br>
-  <l-input type="textarea"></l-input>
+  <vu-input type="textarea"></vu-input>
 </div>
 
 <script>
@@ -40,35 +40,35 @@ export default {
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
 文本输入框<br>
-<l-input v-model="value"></l-input>
+<vu-input v-model="value"></vu-input>
 
 日期选择<br>
-<l-input type="date"></l-input>
+<vu-input type="date"></vu-input>
 
 时间选择<br>
-<l-input type="time"></l-input>
+<vu-input type="time"></vu-input>
 
 日期时间选择<br>
-<l-input type="datetime-local"></l-input>
+<vu-input type="datetime-local"></vu-input>
 
 周选择<br>
-<l-input type="week"></l-input>
+<vu-input type="week"></vu-input>
 
 数量选择<br>
-<l-input type="number"></l-input>
+<vu-input type="number"></vu-input>
 
 密码输入框<br>
-<l-input type="password"></l-input>
+<vu-input type="password"></vu-input>
 
 搜索框<br>
 <!-- 搜索框默认带有清空按钮,此时clearable属性不再生效 -->
-<l-input type="search"></l-input>
+<vu-input type="search"></vu-input>
 
 搜索按钮<br>
-<l-input type="text" search="搜索"></l-input>
+<vu-input type="text" search="搜索"></vu-input>
 
 文本域<br>
-<l-input type="textarea"></l-input>
+<vu-input type="textarea"></vu-input>
 
 <script>
 export default {

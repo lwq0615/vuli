@@ -3,7 +3,7 @@
 ### 示例
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-  <l-color v-model="value"></l-color>
+  <vu-color v-model="value"></vu-color>
 </div>
 
 <script>
@@ -19,7 +19,7 @@ export default {
 ### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
-<l-color v-model="value"></l-color>
+<vu-color v-model="value"></vu-color>
 
 <script>
 export default {

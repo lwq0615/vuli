@@ -1,10 +1,10 @@
 <template>
-    <div class="l-message_container">
-        <l-message 
+    <div class="vu-message_container">
+        <vu-message 
         v-for="(item,index) in msgList" 
         :key="index"
         :option="item"
-        ></l-message>
+        ></vu-message>
     </div>
 </template>
 <script>

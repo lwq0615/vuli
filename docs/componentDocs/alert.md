@@ -4,7 +4,7 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-  <l-button @click="alert">alert</l-button>
+  <vu-button @click="alert">alert</vu-button>
 </div>
 
 <script>
@@ -42,7 +42,7 @@ export default {
 
 ### 代码
 ```html
-<l-button @click="alert">alert</l-button>
+<vu-button @click="alert">alert</vu-button>
 
 <script>
 export default {

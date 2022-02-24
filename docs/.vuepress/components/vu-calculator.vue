@@ -1,5 +1,5 @@
 <template>
-    <div class="l-calculator_container">
+    <div class="vu-calculator_container">
         <div class="grid">
             <div class="window">{{e}}</div>
             <button class="(" @click="append('(')">(</button>
@@ -28,7 +28,7 @@
 
 <script>
 export default {
-    name: 'l-calculator',
+    name: 'vu-calculator',
     data(){
         return {
             e: ''
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-calculator_container {
+.vu-calculator_container {
     display: inline-block;
     width: 300px;
     border-radius: 3px;

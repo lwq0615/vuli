@@ -4,34 +4,34 @@
 
 *上传文件*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <l-upload 
+    <vu-upload 
     :limit="3" 
     action="/test" 
     :autoUpload="true" 
-    :data="{name: 'luck'}"></l-upload>
+    :data="{name: 'luck'}"></vu-upload>
 </div>
 
 ### 代码
 
 ```html
-<l-upload 
+<vu-upload 
 :limit="3" 
 action="/test" 
 :autoUpload="true" 
 :data="{name: 'luck'}">
     上传文件
-</l-upload>
+</vu-upload>
 ```
 
 ### 示例
 
 *上传照片*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-  <l-upload 
+  <vu-upload 
   type="image" 
   :data="data"
   tip="只允许上传图片" 
-  accept="jpg,png" ></l-upload>
+  accept="jpg,png" ></vu-upload>
 </div>
 
 <script>
@@ -48,11 +48,11 @@ export default {
 
 ### 代码
 ```html
-<l-upload 
+<vu-upload 
 type="image" 
 :data="data"
 tip="只允许上传图片" 
-accept="jpg,png" ></l-upload>
+accept="jpg,png" ></vu-upload>
 
 <script>
 export default {

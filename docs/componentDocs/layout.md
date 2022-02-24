@@ -5,87 +5,87 @@
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
     基础使用
-    <l-row>
-        <l-col :span="8">
+    <vu-row>
+        <vu-col :span="8">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-        <l-col :span="8">
+        </vu-col>
+        <vu-col :span="8">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-        <l-col :span="8">
+        </vu-col>
+        <vu-col :span="8">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-    </l-row>
+        </vu-col>
+    </vu-row>
     使用gap属性设置单元格间隔
-    <l-row gap="5px">
-        <l-col :span="6">
+    <vu-row gap="5px">
+        <vu-col :span="6">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-        <l-col :span="6">
+        </vu-col>
+        <vu-col :span="6">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-        <l-col :span="6">
+        </vu-col>
+        <vu-col :span="6">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-        <l-col :span="6">
+        </vu-col>
+        <vu-col :span="6">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-    </l-row>
+        </vu-col>
+    </vu-row>
     使用offset设置单元格偏移量
-    <l-row gap="5px">
-        <l-col :span="6" :offset="1">
+    <vu-row gap="5px">
+        <vu-col :span="6" :offset="1">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-        <l-col :span="4" :offset="2">
+        </vu-col>
+        <vu-col :span="4" :offset="2">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-        <l-col :span="8" :offset="1">
+        </vu-col>
+        <vu-col :span="8" :offset="1">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-        </l-col>
-    </l-row>
+        </vu-col>
+    </vu-row>
 </div>
 
 ### 代码
 ```html
 基础使用
-<l-row>
-    <l-col :span="8">
+<vu-row>
+    <vu-col :span="8">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-    <l-col :span="8">
+    </vu-col>
+    <vu-col :span="8">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-    <l-col :span="8">
+    </vu-col>
+    <vu-col :span="8">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-</l-row>
+    </vu-col>
+</vu-row>
 使用gap属性设置单元格间隔
-<l-row gap="5px">
-    <l-col :span="6">
+<vu-row gap="5px">
+    <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-    <l-col :span="6">
+    </vu-col>
+    <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-    <l-col :span="6">
+    </vu-col>
+    <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-    <l-col :span="6">
+    </vu-col>
+    <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-</l-row>
+    </vu-col>
+</vu-row>
 使用offset设置单元格偏移量
-<l-row gap="5px">
-    <l-col :span="6" :offset="1">
+<vu-row gap="5px">
+    <vu-col :span="6" :offset="1">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-    <l-col :span="4" :offset="2">
+    </vu-col>
+    <vu-col :span="4" :offset="2">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-    <l-col :span="8" :offset="1">
+    </vu-col>
+    <vu-col :span="8" :offset="1">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-    </l-col>
-</l-row>
+    </vu-col>
+</vu-row>
 ```
 
 **注意**

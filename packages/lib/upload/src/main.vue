@@ -1,5 +1,5 @@
 <template>
-    <div class="l-upload_container">
+    <div class="vu-upload_container">
         <input 
         type="file" 
         :accept="accept" 
@@ -10,9 +10,9 @@
 
         <a ref="a"></a>
 
-        <l-button size="small" @click="inputFiles" style="margin-left:7px;" v-if="type === 'file'">
+        <vu-button size="small" @click="inputFiles" style="margin-left:7px;" v-if="type === 'file'">
             <slot></slot>
-        </l-button>
+        </vu-button>
 
         <p class="tip">{{tip}}</p>
 
@@ -57,7 +57,7 @@ import message from '../../message/index.js'
 import request from './upload-http.js'
 import imageLight from '../../image-light/index.js'
 export default {
-    name: 'l-upload',
+    name: 'vu-upload',
     components: {
         lButton
     },

@@ -1,12 +1,12 @@
 <template>
-    <div class="l-row_container" :style="gapStyle">
+    <div class="vu-row_container" :style="gapStyle">
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'l-row',
+    name: 'vu-row',
     props: {
         gap: String
     },

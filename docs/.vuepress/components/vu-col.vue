@@ -1,12 +1,12 @@
 <template>
-    <div class="l-col_container" :style="spanStyle">
+    <div class="vu-col_container" :style="spanStyle">
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'l-col',
+    name: 'vu-col',
     props: {
         span: {
             type: Number,

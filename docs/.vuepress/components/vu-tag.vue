@@ -1,6 +1,6 @@
 <template>
   <div 
-  class="l-tag_container" 
+  class="vu-tag_container" 
   :style="colorStyle" 
   :class="size || 'default'" 
   @click="$emit('click',$event)">
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "l-tag",
+  name: "vu-tag",
   props: {
     type: String,
     color: String,
@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-tag_container {
+.vu-tag_container {
     display: inline-block;
     border: 1px solid #e4e7ed;
     padding: 5px 10px;
@@ -71,14 +71,14 @@ export default {
         display: inline-block;
     }
 }
-.l-tag_container.mini{
+.vu-tag_container.mini{
     padding: 1px 2px;
     font-size: 10px;
     .close {
         margin-left: 2px;
     }
 }
-.l-tag_container.small{
+.vu-tag_container.small{
     padding: 3px 5px;
     font-size: 11px;
     .close {
@@ -86,7 +86,7 @@ export default {
         width: 7px;
     }
 }
-.l-tag_container.default{
+.vu-tag_container.default{
     padding: 5px 10px;
     font-size: 13px;
     .close {
@@ -94,7 +94,7 @@ export default {
         width: 7px;
     }
 }
-.l-tag_container.big{
+.vu-tag_container.big{
     padding: 7px 14px;
     font-size: 16px;
     .close {

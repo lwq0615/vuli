@@ -4,39 +4,39 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <l-tooltip content="左方的tooltip" direction="left">
-        <l-button>left</l-button>
-    </l-tooltip>
-    <l-tooltip content="上方的tooltip" direction="top">
-        <l-button>top</l-button>
-    </l-tooltip>
-    <l-tooltip content="下方的tooltip" direction="bottom">
-        <l-button>bottom</l-button>
-    </l-tooltip>
-    <l-tooltip content="右方的tooltip" direction="right">
-        <l-button>right</l-button>
-    </l-tooltip>
+    <vu-tooltip content="左方的tooltip" direction="left">
+        <vu-button>left</vu-button>
+    </vu-tooltip>
+    <vu-tooltip content="上方的tooltip" direction="top">
+        <vu-button>top</vu-button>
+    </vu-tooltip>
+    <vu-tooltip content="下方的tooltip" direction="bottom">
+        <vu-button>bottom</vu-button>
+    </vu-tooltip>
+    <vu-tooltip content="右方的tooltip" direction="right">
+        <vu-button>right</vu-button>
+    </vu-tooltip>
 </div>
 
 
 ### 代码
 
 ```html
-<l-tooltip content="左方的tooltip" direction="left">
-    <l-button>left</l-button>
-</l-tooltip>
+<vu-tooltip content="左方的tooltip" direction="left">
+    <vu-button>left</vu-button>
+</vu-tooltip>
 
-<l-tooltip content="上方的tooltip" direction="top">
-    <l-button>top</l-button>
-</l-tooltip>
+<vu-tooltip content="上方的tooltip" direction="top">
+    <vu-button>top</vu-button>
+</vu-tooltip>
 
-<l-tooltip content="下方的tooltip" direction="bottom">
-    <l-button>bottom</l-button>
-</l-tooltip>
+<vu-tooltip content="下方的tooltip" direction="bottom">
+    <vu-button>bottom</vu-button>
+</vu-tooltip>
 
-<l-tooltip content="右方的tooltip" direction="right">
-    <l-button>right</l-button>
-</l-tooltip>
+<vu-tooltip content="右方的tooltip" direction="right">
+    <vu-button>right</vu-button>
+</vu-tooltip>
 ```
 
 #### Attributes

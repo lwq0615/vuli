@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'l-select-option',
+    name: 'vu-select-option',
     props: {
         value: {
             type: [String,Number],
@@ -22,7 +22,7 @@ export default {
         }
     },
     created(){
-        if(this.$parent.$options._componentTag === 'l-select'){
+        if(this.$parent.$options._componentTag === 'vu-select'){
             let option = {
                 value: this.value,
                 label: this.label
@@ -31,7 +31,7 @@ export default {
         }
     },
     destroyed(){
-        if(this.$parent.$options._componentTag === 'l-select'){
+        if(this.$parent.$options._componentTag === 'vu-select'){
             for(let i in this.$parent.options){
                 if(this.$parent.options[i].value === this.value){
                     this.$parent.options.splice(i,1)

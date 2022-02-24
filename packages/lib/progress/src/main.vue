@@ -1,5 +1,5 @@
 <template>
-    <div class="l-gropress_container" :style="heightStyle" @click="$emit('click',$event)">
+    <div class="vu-gropress_container" :style="heightStyle" @click="$emit('click',$event)">
 
         <div class="line-progress" v-show="!inside">
             <div class="flex">
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-    name: 'l-progress',
+    name: 'vu-progress',
     props: {
         percentage: {
             type: Number,

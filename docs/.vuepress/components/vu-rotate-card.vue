@@ -1,5 +1,5 @@
 <template>
-    <div class="l-rotate-card_container" :style="size">
+    <div class="vu-rotate-card_container" :style="size">
         <div 
             :class="`front ${extClass}`" 
             :style="`transition: all ${transformType} ${rotateTime};${side ? '' : transformStyle}`"
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-    name: 'l-rotate-card',
+    name: 'vu-rotate-card',
     props:{
         rotateTime:{
             type: String,
@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-rotate-card_container{
+.vu-rotate-card_container{
     display: inline-block;
     position: relative;
     .front, .back{

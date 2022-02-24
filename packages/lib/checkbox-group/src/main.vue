@@ -1,12 +1,12 @@
 <template>
-    <div class="l-checkbox-group_container">
+    <div class="vu-checkbox-group_container">
         <div class="grid" :style="columnsStyle+justifyStyle+rowHeightStyle"><slot></slot></div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'l-checkbox-group',
+    name: 'vu-checkbox-group',
     props:{
         value: Array,
         columns: [Array,String],

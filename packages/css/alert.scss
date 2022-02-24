@@ -1,4 +1,4 @@
-.l-alert_container {
+.vu-alert_container {
     position: fixed;
     left: 0;
     top: 0;
@@ -10,10 +10,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10%;
     .alert-box {
         user-select: text;
         background-color: white;
-        transform: translateY(-50%);
         border-radius: 5px;
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         transition: all ease 0.3s;
@@ -79,12 +79,12 @@
     }
 }
 
-.showTransition-enter-active,
-.showTransition-leave-active {
+.vui-alert-show-enter-active,
+.vui-alert-show-leave-active {
     transition: all 0.3s;
 }
-.showTransition-enter,
-.showTransition-leave-to {
+.vui-alert-show-enter,
+.vui-alert-show-leave-to {
     opacity: 0;
     .alert-box {
         transform: rotateY(45deg) rotateX(45deg);

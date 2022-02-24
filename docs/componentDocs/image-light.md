@@ -4,7 +4,7 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <l-button @click="image">查看大图</l-button>
+    <vu-button @click="image">查看大图</vu-button>
 </div>
 
 <script>
@@ -21,13 +21,14 @@ export default {
 
 ### 代码
 ```html
-<l-button @click="image">查看大图</l-button>
+<vu-button @click="image">查看大图</vu-button>
 
 <script>
 export default {
   methods: {
     image(){
       //$imageLight为全局方法，可通过this直接调用
+      //参数为图片的资源地址
       this.$imageLight("/vui/2.jpg")
     }
   }

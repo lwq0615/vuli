@@ -1,5 +1,5 @@
 <template>
-    <div class="l-input_container" :style="whStyle">
+    <div class="vu-input_container" :style="whStyle">
         <input 
         v-if="type !== 'textarea'"
         :class="disableClass" 
@@ -46,7 +46,7 @@
 
 <script>
 export default {
-    name: 'l-input',
+    name: 'vu-input',
     props: {
         value: {
             type: [String,Number],
@@ -159,7 +159,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-input_container{
+.vu-input_container{
     display: inline-block;
     position: relative;
 

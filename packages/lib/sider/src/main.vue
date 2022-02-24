@@ -1,5 +1,5 @@
 <template>
-    <div class="l-sider_container" ref="container">
+    <div class="vu-sider_container" ref="container">
         <div class="sider" @click="siderClick" :style="cursorStyle" @mouseover="showTip(true)" @mouseout="showTip(false)">
             <div class="front" ref="front" :style="widthStyle+colorStyle">
                 <div class="icon" 
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-    name: 'l-sider',
+    name: 'vu-sider',
     props: {
         value: Number,
         color: {

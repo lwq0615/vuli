@@ -4,12 +4,12 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <l-calculator></l-calculator>
+    <vu-calculator></vu-calculator>
 </div>
 
 ### 代码
 ```html
-<l-calculator></l-calculator>
+<vu-calculator></vu-calculator>
 ```
 
 

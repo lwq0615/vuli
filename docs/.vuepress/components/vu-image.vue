@@ -1,5 +1,5 @@
 <template>
-    <div :class="`l-image_container ${noScroll ? 'noScroll' : ''}`" ref="container" @scroll="loadImg">
+    <div :class="`vu-image_container ${noScroll ? 'noScroll' : ''}`" ref="container" @scroll="loadImg">
         <div :class="type" :style="scrollStyle" ref="scroll">
             <slot></slot>
         </div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'l-image',
+    name: 'vu-image',
     props: {
         columns: {
             type: Number,
@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-image_container {
+.vu-image_container {
     display: inline-block;
     width: 600px;
     height: 400px;
@@ -100,14 +100,14 @@ export default {
         grid-row-gap: 5px;
     }
 }
-.l-image_container::-webkit-scrollbar {
+.vu-image_container::-webkit-scrollbar {
     background-color: #DCDFE6;
     width: 10px;
 }
-.l-image_container::-webkit-scrollbar-thumb {
+.vu-image_container::-webkit-scrollbar-thumb {
     background-color: rgba($color: #e44258, $alpha: 0.8);
 }
-.l-image_container.noScroll::-webkit-scrollbar {
+.vu-image_container.noScroll::-webkit-scrollbar {
     display: none;
 }
 </style>

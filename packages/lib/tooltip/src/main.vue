@@ -1,5 +1,5 @@
 <template>
-    <div class="l-tooltip_container" @mouseenter="mouseenter" @mouseover="mouseover" @mouseout="mouseout">
+    <div class="vu-tooltip_container" @mouseenter="mouseenter" @mouseover="mouseover" @mouseout="mouseout">
         <slot></slot>
         <transition name="fade" v-if="!disable">
             <div class="tooltip top" v-show="show" v-if="direction === 'top'">
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-    name: 'l-tooltip',
+    name: 'vu-tooltip',
     props: {
         content: {
             type: String,
