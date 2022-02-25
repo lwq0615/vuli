@@ -1,7 +1,6 @@
 <template>
     <transition name="vui-dialog-show">
-        <section class="vu-dialog_container" v-show="showDialog">
-            <div class="vu-dialog_modal" v-if="modal"></div>
+        <section :class="`vu-dialog_container ${modal ? 'modal' : ''}`" v-show="showDialog">
             <div class="dialog-box" :style="widthStyle+heightStyle" ref="dialogBox">
                 <div class="title">
                     {{$slots.title ? '' : '提示'}}

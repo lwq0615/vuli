@@ -13,8 +13,8 @@ npm install vui
 ```js
 //main.js
 import 'vui/dist/css/index.css'
-import LuckUI from 'vui'
-Vue.use(LuckUI)
+import Vui from 'vui'
+Vue.use(Vui)
 ```
 
 #### 按需引入

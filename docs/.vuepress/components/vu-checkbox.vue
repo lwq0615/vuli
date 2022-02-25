@@ -121,7 +121,7 @@ export default {
                 if(this.all){
                     return this.$parent.allFlg()
                 }else{
-                    if(this.$parent.activeValue.includes(this.value)){
+                    if(this.$parent.value.includes(this.value)){
                         return true
                     }
                 }

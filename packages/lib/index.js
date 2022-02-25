@@ -27,6 +27,7 @@ import imageItem from './image-item'
 import imageLight from './image-light'
 import scroll from './scroll'
 import dialog from './dialog'
+import pagination from './pagination'
 
 const components = [
     button,
@@ -55,7 +56,8 @@ const components = [
     image,
     imageItem,
     scroll,
-    dialog
+    dialog,
+    pagination
 ]
 
 const install = function(Vue){
@@ -97,7 +99,8 @@ export {
     image,
     imageItem,
     scroll,
-    dialog
+    dialog,
+    pagination
 }
 
 export default { install }

@@ -8,6 +8,7 @@
     :limit="3" 
     action="/test" 
     :autoUpload="true" 
+    :fileList="fileList1"
     :data="{name: 'luck'}"></vu-upload>
 </div>
 
@@ -18,9 +19,20 @@
 :limit="3" 
 action="/test" 
 :autoUpload="true" 
+:fileList="fileList"
 :data="{name: 'luck'}">
     上传文件
 </vu-upload>
+
+<script>
+export default {
+  data(){
+    return {
+      fileList: []
+    }
+  }
+}
+</script>
 ```
 
 ### 示例
@@ -31,11 +43,18 @@ action="/test"
   type="image" 
   :data="data"
   tip="只允许上传图片" 
+  :fileList="fileList2"
   accept="jpg,png" ></vu-upload>
 </div>
 
 <script>
 export default {
+  data(){
+    return {
+      fileList1: [],
+      fileList2: []
+    }
+  },
   methods: {
     data(file){
       return {
@@ -52,12 +71,17 @@ export default {
 type="image" 
 :data="data"
 tip="只允许上传图片" 
+:fileList="fileList"
 accept="jpg,png" ></vu-upload>
 
 <script>
 export default {
+  data(){
+    return {
+      fileList: []
+    }
+  },
   methods: {
-    //data为function时回调参数为当前上传的文件
     data(file){
       return {
         name: file.name
@@ -79,7 +103,7 @@ export default {
 #### Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| v-model | 绑定的文件列表(只读，绑定后不可修改值) | Array | 否 | -- | -- |
+| fileList | 绑定的文件列表(绑定后不可更改) | Array | 是| -- | -- |
 | accept | 允许上传的文件类型 | String | 否 | -- | 以','分隔的字符串 |
 | multiple | 是否可以多选 | Boolean | 否 | true | -- |
 | tip | 提示文本 | String | 否 | 点击上传文件 | -- |

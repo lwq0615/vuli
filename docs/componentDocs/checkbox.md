@@ -4,9 +4,9 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-  <vu-checkbox-group v-model="value" :columns="[1,1,1]">
+  <vu-checkbox-group :value="value" :columns="[1,1,1]">
     <vu-checkbox :all="true">全选</vu-checkbox>
-    <vu-checkbox value="1" :disable="true">福建</vu-checkbox>
+    <vu-checkbox value="1">福建</vu-checkbox>
     <vu-checkbox value="2">厦门</vu-checkbox>
     <vu-checkbox value="3">漳浦</vu-checkbox>
     <vu-checkbox value="4">泉州</vu-checkbox>
@@ -29,10 +29,10 @@ export default {
 <!-- 可直接通过style内联样式修改组件宽高 -->
 <!-- 当columns为Array时(例如[1,1,1]),复选框会分为三列，每列宽度比为1:1:1 -->
 <!-- 当columns为String时(默认为'100px'),复选框每列宽度为100px,直至排放不下时自动换行 -->
-<vu-checkbox-group v-model="value" :columns="[1,1,1]">
+<vu-checkbox-group :value="value" :columns="[1,1,1]">
   <!-- 将复选框标记为全选按钮会使该复选框独占一行 -->
   <vu-checkbox :all="true">全选</vu-checkbox>
-  <vu-checkbox value="1" :disable="true">福建</vu-checkbox>
+  <vu-checkbox value="1">福建</vu-checkbox>
   <vu-checkbox value="2">厦门</vu-checkbox>
   <vu-checkbox value="3">漳浦</vu-checkbox>
   <vu-checkbox value="4">泉州</vu-checkbox>
@@ -52,7 +52,7 @@ export default {
 #### Checkbox-group Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| value / v-model | 绑定值 | Array | 否 | [] | -- |
+| value / v-model | 绑定值 | Array | 是 | -- | -- |
 | columns | 单选框每列宽度权值 | Array,String | 否 | 100px | -- |
 | rowHeight | 单选框高度 | String | 否 | 50px | -- |
 | fontSize | 单选框文字大小 | String | 否 | 14px | -- |

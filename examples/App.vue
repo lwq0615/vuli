@@ -12,7 +12,7 @@
 
     <!-- <vu-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></vu-slide> -->
 
-    <!-- <vu-select name="test" :required="true">
+    <!-- <vu-select name="test" :required="true" :openSearch="false">
       <vu-select-option label="福建" :value="1"></vu-select-option>
       <vu-select-option label="漳州" :value="2"></vu-select-option>
       <vu-select-option label="漳浦" :value="3"></vu-select-option>
@@ -48,7 +48,7 @@
 
     <!-- <vu-input type="text" v-model="value" @invalid="test" :required="true"></vu-input> -->
 
-    <!-- <vu-checkbox-group @change="test" v-model="value">
+    <!-- <vu-checkbox-group @change="test" :value="value">
       <vu-checkbox :all="true">全选</vu-checkbox>
       <vu-checkbox value="1" :disable="true">福建</vu-checkbox>
       <vu-checkbox value="2" :disable="true">厦门</vu-checkbox>
@@ -68,7 +68,7 @@
 
     <!-- <vu-sider :step="10" :stepPoint="true" @click="test"></vu-sider> -->
 
-    <!-- <vu-upload ref="upload" action="http://localhost:8083/test" type="image">
+    <!-- <vu-upload :fileList="fileList" type="image">
       上传文件
     </vu-upload> -->
 
@@ -121,6 +121,12 @@
       <div slot="content">222</div>
     </vu-dialog> -->
 
+    <!-- <vu-pagination
+    :page="page"
+    @currentChange="test"
+    @sizeChange="test"
+    @totalChange="test"></vu-pagination> -->
+
   </div>
 </template>
 
@@ -129,7 +135,7 @@ export default {
   name: 'App',
   data(){
     return {
-      value: false
+      value: []
     }
   },
   methods: {
@@ -137,7 +143,6 @@ export default {
       console.log(e)
     },
     test1(e){
-      this.$refs.tt.show()
     }
   }
 }

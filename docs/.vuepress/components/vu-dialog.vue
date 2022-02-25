@@ -1,7 +1,6 @@
 <template>
     <transition name="vui-dialog-show">
-        <section class="vu-dialog_container" v-show="showDialog">
-            <div class="vu-dialog_modal" v-if="modal"></div>
+        <section :class="`vu-dialog_container ${modal ? 'modal' : ''}`" v-show="showDialog">
             <div class="dialog-box" :style="widthStyle+heightStyle" ref="dialogBox">
                 <div class="title">
                     {{$slots.title ? '' : '提示'}}
@@ -65,39 +64,33 @@ export default {
 
 
 <style lang="scss" scoped>
-.vu-dialog_container{
+.vu-dialog_container {
     position: fixed;
     z-index: 99;
-    .vu-dialog_modal{
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba($color: #000000, $alpha: 0.3);
-        z-index: 99;
-    }
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+    pointer-events: none;
     .dialog-box {
-        position: fixed;
+        pointer-events: auto;
         z-index: 100;
         user-select: text;
         background-color: white;
         border-radius: 5px;
-        padding: 10px 15px;
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         transition: all ease 0.3s;
-        transform: translateY(-50%) translateX(-50%);
-        top: 40%;
-        left: 50%;
+        padding: 10px 15px;
         .title {
             margin: 0;
             font-size: 17px;
             position: relative;
             user-select: none;
-            .close-icon{
+            .close-icon {
                 display: flex;
                 width: 20px;
                 height: 20px;
@@ -107,12 +100,17 @@ export default {
                 right: 10px;
                 top: 10px;
                 font-size: 23px;
-                color: #E44258;
+                color: #e44258;
                 cursor: pointer;
                 user-select: none;
             }
         }
     }
+}
+
+.vu-dialog_container.modal {
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    pointer-events: auto;
 }
 
 .vui-dialog-show-enter-active,
@@ -123,7 +121,7 @@ export default {
 .vui-dialog-show-leave-to {
     opacity: 0;
     .dialog-box {
-        top: 30%;
+        transform: translateY(-50px);
     }
 }
 </style>

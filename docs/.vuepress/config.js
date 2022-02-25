@@ -46,6 +46,7 @@ module.exports = {
                     '/componentDocs/slide',
                     '/componentDocs/image',
                     '/componentDocs/image-light',
+                    '/componentDocs/pagination',
                     '/componentDocs/upload'
                 ]
             },

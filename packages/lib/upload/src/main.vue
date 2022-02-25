@@ -67,7 +67,10 @@ export default {
             type: Boolean,
             default: true
         },
-        files: Array,
+        fileList: {
+            type: Array,
+            required: true
+        },
         tip: {
             type: String,
             default: '点击上传文件'
@@ -90,13 +93,8 @@ export default {
         headers: Object,
         data: [Object,Function]
     },
-    model: {
-        prop: 'files',
-        event: 'model'
-    },
     data(){
         return {
-            fileList: [],
             progress: []
         }
     },
@@ -106,15 +104,11 @@ export default {
         }
     },
     watch: {
-        files(newVal){
-            if(newVal !== this.fileList){
-                this.$emit('model',this.fileList)
+        fileList(newVal,oldVal){
+            if(newVal !== oldVal){
                 throw new Error("files is readonly")
             }
-        },
-        fileList(newVal) {
             this.$emit('change',newVal)
-            this.$emit('model',newVal)
         }
     },
     methods: {

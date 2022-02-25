@@ -8,7 +8,10 @@
 export default {
     name: 'vu-checkbox-group',
     props:{
-        value: Array,
+        value: {
+            type: Array,
+            required: true
+        },
         columns: [Array,String],
         rowHeight: {
             type: String,
@@ -30,7 +33,6 @@ export default {
     },
     data(){
         return {
-            activeValue: [],
             checkboxs: []
         }
     },
@@ -59,43 +61,35 @@ export default {
     },
     watch:{
         value: {
-            handler(newVal,oldVal){
-                if(newVal !== oldVal){
-                    this.activeValue = newVal
-                }
+            handler(newVal){
+                this.$emit('change',newVal)
             }
-        },
-        activeValue(newVal){
-            this.$emit('change',newVal)
         }
-    },
-    created(){
-        this.activeValue = this.value || []
     },
     methods: {
         checkboxClick(value){
-            if(this.activeValue.includes(value)){
-                this.activeValue.splice(this.activeValue.indexOf(value),1)
+            if(this.value.includes(value)){
+                this.value.splice(this.value.indexOf(value),1)
             }else{
-                this.activeValue.push(value)
+                this.value.push(value)
             }
         },
         createCheckbox(dom){
             this.checkboxs.push(dom)
         },
         delCheckbox(dom){
-            if(this.activeValue.includes(dom.value)){
-                this.activeValue.splice(this.activeValue.indexOf(dom.value),1)
+            if(this.value.includes(dom.value)){
+                this.value.splice(this.value.indexOf(dom.value),1)
             }
             this.checkboxs.splice(this.checkboxs.indexOf(dom),1)
         },
         checkAll(){
             if(this.allFlg(true)){
-                this.activeValue.splice(0)
+                this.value.splice(0)
             }else{
                 this.checkboxs.forEach(item => {
-                    if(!item.disable && !this.activeValue.includes(item.value)){
-                        this.activeValue.push(item.value)
+                    if(!item.disable && !this.value.includes(item.value)){
+                        this.value.push(item.value)
                     }
                 })
             }
@@ -106,9 +100,9 @@ export default {
                 this.checkboxs.forEach(item => {
                     item.disable ? null : num++
                 })
-                return this.activeValue.length === num
+                return this.value.length === num
             }else{
-                return this.activeValue.length === this.checkboxs.length
+                return this.value.length === this.checkboxs.length
             }
         }
     }
