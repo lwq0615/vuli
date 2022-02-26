@@ -8,10 +8,10 @@
     </div>
 </template>
 <script>
-import lMessage from './message.vue'
+import vuMessage from './message.vue'
 export default {
     components: {
-        lMessage
+        vuMessage
     },
     data() {
         return {
