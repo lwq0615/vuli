@@ -83,8 +83,8 @@ export default {
                 that.style = `transition:all ${that.time} ease;transform:translateX(0%);`
                 that.o = setTimeout(function(){
                     that.index-1 < 0 ? that.index = that.imgs.length-1 : that.index--
-                    that.o = null
                     that.style = 'transform:translateX(-33.33%);'
+                    that.o = null
                 },1000)
             }
         },
