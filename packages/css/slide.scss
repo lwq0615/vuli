@@ -27,6 +27,9 @@
     .icon{
         position: absolute;
         top: 50%;
+        font-family: fangsong;
+        font-weight: 600;
+        font-size: 16px;
         transform: translateY(-50%);
         width: 30px;
         height: 30px;
@@ -35,7 +38,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
         color: #E44258;
         cursor: pointer;
         z-index: 3;

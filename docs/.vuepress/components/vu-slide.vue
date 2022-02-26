@@ -138,7 +138,9 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
+        font-family: fangsong;
+        font-weight: 600;
+        font-size: 16px;
         color: #E44258;
         cursor: pointer;
         z-index: 3;
