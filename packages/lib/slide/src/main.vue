@@ -22,7 +22,7 @@ export default {
         },
         time: {
             type: String,
-            default: '1s'
+            default: '0.5s'
         },
         auto: {
             type: Number,
@@ -65,9 +65,9 @@ export default {
                 that.style = `transition:all ${that.time} ease;transform:translateX(-66.66%);`
                 that.o = setTimeout(function(){
                     that.index+1 == that.imgs.length ? that.index = 0 : that.index++
-                    that.o = null
                     that.style = 'transform:translateX(-33.33%);'
-                },1000)
+                    that.o = null
+                },parseFloat(this.time)*1000)
             }
         },
         last(){
@@ -83,9 +83,9 @@ export default {
                 that.style = `transition:all ${that.time} ease;transform:translateX(0%);`
                 that.o = setTimeout(function(){
                     that.index-1 < 0 ? that.index = that.imgs.length-1 : that.index--
-                    that.style = 'transform:translateX(-33.33%);'
                     that.o = null
-                },1000)
+                    that.style = 'transform:translateX(-33.33%);'
+                },parseFloat(this.time)*1000)
             }
         },
         imgClick(){

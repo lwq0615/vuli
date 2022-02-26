@@ -20,7 +20,7 @@
 | ---  | --- | ---  | ---      | ---   | ---   |
 | imgs | 图片资源路径 | Array | 是 | -- | -- |
 | cutType | 图片裁剪方式 | String | 否 | cover | 参考object-fit属性 |
-| time | 过渡动画时长 | String | 否 | 1s | -- |
+| time | 过渡动画时长 | String | 否 | 0.5s | -- |
 | auto | 是否自动切换 | Number | 否 | 0 | 单位为毫秒 |
 | showBtn | 是否显示切换按钮 | Boolean | 否 | true |-- |
 
