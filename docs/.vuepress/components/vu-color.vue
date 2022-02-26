@@ -1,7 +1,7 @@
 <template>
     <div class="vu-color_container">
-        <div class="color-block" :style="colorStyle" @click="checkColor"></div>
-        <input type="color" v-model="activeValue" ref="input" :name="name">
+        <div class="color-block" :style="colorStyle" @click="checkColor">></div>
+        <input type="color" :value="value" ref="input" :name="name" @change="change">
     </div>
 </template>
 
@@ -12,43 +12,33 @@ export default {
     props: {
         value: {
             type: String,
-            default: '#E44258'
+            required: true
         },
         name: String
     },
     model: {
         prop: 'value',
-        event: 'change'
-    },
-    data(){
-        return {
-            activeValue: '#fff'
-        }
+        event: 'model'
     },
     watch: {
-        value(newVal){
-            if(newVal !== this.activeValue){
-                this.activeValue = newVal
-            }
-        },
-        activeValue(newVal){
-            if(newVal !== this.value){
+        value(newVal,oldVal){
+            if(newVal !== oldVal){
                 this.$emit('change',newVal)
             }
         }
     },
     computed:{
         colorStyle(){
-            return `background-color: ${this.activeValue};`
+            return `background-color: ${this.value};`
         }
-    },
-    created(){
-        this.activeValue = this.value
     },
     methods: {
         checkColor(){
-            this.$emit('click',this.activeValue)
+            this.$emit('click',this.value)
             this.$refs.input.click()
+        },
+        change(e){
+            this.$emit('model',e.target.value)
         }
     }
 }

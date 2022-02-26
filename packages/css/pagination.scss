@@ -73,7 +73,7 @@
                     top: 0;
                     transform: rotateZ(270deg);
                     width: 20px;
-                    height: 28px;
+                    height: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -91,6 +91,7 @@
                     z-index: 99;
                     box-shadow: 0 0 1px rgba($color: #000000, $alpha: 0.4);
                     overflow: hidden;
+                    margin: 5px 0;
                     border-radius: 2px;
                     .size-item {
                         color: #606266;
@@ -104,13 +105,12 @@
                         transition: all ease 0.1s;
                         padding-right: 20px;
                     }
-                    .size-item:hover {
-                        background-color: #e44258;
-                        color: white;
+                    .size-item.active{
+                        background-color: #E44258 !important;
+                        color: white !important;
                     }
-                    .size-item.active {
-                        background-color: #e44258;
-                        color: white;
+                    .size-item:hover {
+                        background-color: #F5F7FA;
                     }
                 }
             }

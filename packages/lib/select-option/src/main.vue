@@ -1,11 +1,9 @@
 <template>
     <div 
-        class="options-list" 
-        v-show="!$parent.openSearch || !$parent.showOptions || label.includes($parent.form.label || '')"
-        @mousedown="checkOption"
-        @click="$emit('click',{value,label})"
-        :style="`color:${value == $parent.form.value ? '#E44258' : '#606266'};background-color:${value == $parent.form.value ? '#f5f7fa' : ''};`"
-    >{{label}}</div>
+    :class="`options-list ${value == $parent.form.value ? 'active' : ''}`" 
+    v-show="!$parent.openSearch || !$parent.showOptions || label.includes($parent.form.label || '')"
+    @mousedown="$event.preventDefault()"
+    @click="checkOption">{{label}}</div>
 </template>
 
 <script>
@@ -45,7 +43,11 @@ export default {
                 value: this.value,
                 label: this.label
             }
-            this.$parent.checkOption(option)
+            this.$emit('click',option)
+            if(this.$parent.$options._componentTag === 'vu-select'){
+                this.$parent.checkOption(option)
+                this.$parent.$refs.showText.blur()
+            }
         }
     }
 }

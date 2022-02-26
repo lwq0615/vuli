@@ -8,7 +8,7 @@
                 @click="$event.stopPropagation()">
                     <transition name="fade">
                         <div class="tip" v-show="tip && showTipFlg">
-                            <div class="text">{{format(activeValue)}}</div>
+                            <div class="text">{{format(value)}}</div>
                             <div class="sjx"></div>
                         </div>
                     </transition>
@@ -18,10 +18,15 @@
             class="point" 
             v-for="index in ponitCount" 
             :key="index" 
-            v-show="stepPoint && index > activeValue/step"
+            v-show="stepPoint && index > value/step"
             @click="changeValue(index*step)"
             :style="`left: ${index*step}%;`"></div>
         </div>
+        <input 
+        type="text" 
+        style="display: none;" 
+        v-model="value" 
+        :name="name">
     </div>
 </template>
 
@@ -29,7 +34,10 @@
 export default {
     name: 'vu-sider',
     props: {
-        value: Number,
+        value: {
+            type: Number,
+            required: true
+        },
         color: {
             type: String,
             default: '#E44258'
@@ -56,7 +64,8 @@ export default {
         stepPoint: {
             type: Boolean,
             default: false
-        }
+        },
+        name: String
     },
     model: {
         prop: 'value',
@@ -64,16 +73,12 @@ export default {
     },
     data(){
         return {
-            activeValue: 0,
             showTipFlg: false
         }
     },
-    created(){
-        this.activeValue = this.value || this.activeValue
-    },
     computed: {
         widthStyle(){
-            return `width:${this.activeValue || 0}%;`
+            return `width:${this.value || 0}%;`
         },
         colorStyle(){
             return `background-color:${this.disable ? '#c0c4cc' : this.color};`
@@ -145,7 +150,7 @@ export default {
             }
         },
         siderClick(e){
-            this.$emit('click',this.activeValue)
+            this.$emit('click',this.value)
             if(this.disable){
                 return
             }
@@ -163,9 +168,8 @@ export default {
                     percentage = Math.floor(percentage/this.step)*this.step
                 }
             }
-            if(this.activeValue !== percentage){
+            if(this.value !== percentage){
                 this.$emit('change',percentage)
-                this.activeValue = percentage
             }
         },
         showTip(bool){

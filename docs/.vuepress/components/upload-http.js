@@ -22,7 +22,7 @@ let request =  function(url,data,options,headers,body){
         let xhr = createXHR()
         xhr.open('post',url)
         let formData = new FormData()
-        formData.append('file',data)
+        formData.append(options.name || 'file',data)
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) { 
                 if (xhr.status == 200 || xhr.status == 0) {  

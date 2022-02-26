@@ -9,7 +9,7 @@
         style="display:none;" 
         :value="value" 
         :name="$parent.name" 
-        :checked="$parent.activeValue === value"
+        :checked="$parent.value === value"
         @invalid="invalid"
         :required="$parent.required">
     </div>
@@ -20,7 +20,7 @@ export default {
     name: 'vu-radio',
     props: {
         value: {
-            type: [String,Number],
+            type: [String,Number,Boolean],
             default: null
         },
         disable: {
@@ -32,7 +32,7 @@ export default {
         textActiveStyle(){
             if(this.$parent.$options._componentTag === 'vu-radio-group'){
                 let style = ''
-                if(this.$parent.activeValue === this.value){
+                if(this.$parent.value === this.value){
                     if(this.disable){
                         style += `color: #c0c4cc;`
                     }else{
@@ -73,7 +73,7 @@ export default {
         inputActiveStyle(){
             if(this.$parent.$options._componentTag === 'vu-radio-group'){
                 let style = ''
-                if(this.$parent.activeValue === this.value){
+                if(this.$parent.value === this.value){
                     if(this.disable){
                         style += `background-color: #c0c4cc;`
                         style += `border: ${this.$parent.iconSize/2.66}px solid #f5f7fa;`
@@ -105,9 +105,9 @@ export default {
             }
             this.$parent.changeValue(this.value)
         },
-        invalid(){
-            if(this.$parent.$children.indexOf(this) === 0){
-                this.$parent.$emit('invalid')
+        invalid(e){
+            if(this.$parent.$options._componentTag === 'vu-radio-group' && this.$parent.$children.indexOf(this) === 0){
+                this.$parent.$emit('invalid',e)
             }
         }
     }

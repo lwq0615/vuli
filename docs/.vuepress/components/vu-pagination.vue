@@ -186,6 +186,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.rotate-top-enter-active,
+.rotate-top-leave-active {
+    transform-origin: 0% 0%;
+    transition: transform 0.2s;
+}
+.rotate-top-enter, .rotate-top-leave-to {
+    transform-origin: 0% 0%;
+    transform: rotateX(90deg);
+}
+
 .vu-pagination_container {
     display: inline-block;
     text-align: center;
@@ -261,7 +271,7 @@ export default {
                     top: 0;
                     transform: rotateZ(270deg);
                     width: 20px;
-                    height: 28px;
+                    height: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -277,6 +287,7 @@ export default {
                     left: 0;
                     right: 0;
                     z-index: 99;
+                    margin: 5px 0;
                     box-shadow: 0 0 1px rgba($color: #000000, $alpha: 0.4);
                     overflow: hidden;
                     border-radius: 2px;
@@ -292,13 +303,12 @@ export default {
                         transition: all ease 0.1s;
                         padding-right: 20px;
                     }
-                    .size-item:hover {
-                        background-color: #e44258;
-                        color: white;
+                    .size-item.active{
+                        background-color: #E44258 !important;
+                        color: white !important;
                     }
-                    .size-item.active {
-                        background-color: #e44258;
-                        color: white;
+                    .size-item:hover {
+                        background-color: #F5F7FA;
                     }
                 }
             }

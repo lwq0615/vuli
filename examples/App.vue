@@ -12,7 +12,7 @@
 
     <!-- <vu-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></vu-slide> -->
 
-    <!-- <vu-select name="test" :required="true" :openSearch="false">
+    <!-- <vu-select name="test" :required="true" :openSearch="false" deleteBtn>
       <vu-select-option label="福建" :value="1"></vu-select-option>
       <vu-select-option label="漳州" :value="2"></vu-select-option>
       <vu-select-option label="漳浦" :value="3"></vu-select-option>
@@ -34,7 +34,7 @@
       <div slot="back">back</div>
     </vu-rotate-card> -->
 
-    <!-- <vu-radio-group v-model="value">
+    <!-- <vu-radio-group v-model="value" name="tt" @change="test">
       <vu-radio :value="1">福建</vu-radio>
       <vu-radio :value="2" :disable="true">泉州</vu-radio>
       <vu-radio :value="3" :disable="true">福州</vu-radio>
@@ -46,7 +46,7 @@
 
     <!-- <vu-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></vu-switch> -->
 
-    <!-- <vu-input type="text" v-model="value" @invalid="test" :required="true"></vu-input> -->
+    <!-- <vu-input type="text" v-model="value" clearable></vu-input> -->
 
     <!-- <vu-checkbox-group @change="test" :value="value">
       <vu-checkbox :all="true">全选</vu-checkbox>
@@ -56,7 +56,7 @@
       <vu-checkbox value="4">泉州</vu-checkbox>
     </vu-checkbox-group> -->
 
-    <!-- <vu-color></vu-color> -->
+    <!-- <vu-color v-model="value" @change="test1"></vu-color> -->
     
     <!-- <vu-calculator></vu-calculator> -->
 
@@ -66,7 +66,7 @@
     <vu-tag size="big" color="info">标签</vu-tag>
     <vu-tag>标签</vu-tag> -->
 
-    <!-- <vu-sider :step="10" :stepPoint="true" @click="test"></vu-sider> -->
+    <!-- <vu-sider :step="10" :stepPoint="true" v-model="value" @change="test"></vu-sider> -->
 
     <!-- <vu-upload :fileList="fileList" type="image">
       上传文件
@@ -127,6 +127,8 @@
     @sizeChange="test"
     @totalChange="test"></vu-pagination> -->
 
+    <!-- <vu-cascader :option="option" v-model="value"></vu-cascader> -->
+
   </div>
 </template>
 
@@ -143,6 +145,7 @@ export default {
       console.log(e)
     },
     test1(e){
+      this.value = ['1-1','2-2']
     }
   }
 }

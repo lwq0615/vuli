@@ -29,13 +29,15 @@ module.exports = {
                 title: 'Form',
                 collapsable: false,
                 children: [
+                    '/componentDocs/input',
                     '/componentDocs/select',
+                    '/componentDocs/cascader',
                     '/componentDocs/radio',
                     '/componentDocs/checkbox',
                     '/componentDocs/color',
                     '/componentDocs/sider',
-                    '/componentDocs/input',
-                    '/componentDocs/switch'
+                    '/componentDocs/switch',
+                    '/componentDocs/upload'
                 ]
             },
             {
@@ -46,8 +48,7 @@ module.exports = {
                     '/componentDocs/slide',
                     '/componentDocs/image',
                     '/componentDocs/image-light',
-                    '/componentDocs/pagination',
-                    '/componentDocs/upload'
+                    '/componentDocs/pagination'
                 ]
             },
             {

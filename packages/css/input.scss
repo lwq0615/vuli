@@ -43,9 +43,9 @@
         position: absolute;
         right: 5px;
         top: 50%;
-        transform: translateY(-50%);
-        height: 12px;
-        width: 12px;
+        transform: translateY(-50%) scale(0.8);
+        height: 16px;
+        width: 16px;
         border-radius: 50%;
         border: 1px solid #dddddd;
         color: #DCDFE6;
@@ -55,7 +55,9 @@
         align-items: center;
         cursor: pointer;
         user-select: none;
-        font-family: Avenir, Helvetica, Arial, sans-serif;
+        font-family: fangsong;
+        font-weight: 600;
+        font-size: 13px;
     }
 
     .search{

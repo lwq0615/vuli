@@ -7,7 +7,7 @@
         :type="type" 
         :readonly="disable" 
         :placeholder="placeholder" 
-        v-model="activeValue"
+        :value="value"
         :maxlength="maxlength"
         :minlength="minlength"
         :name="name"
@@ -16,8 +16,8 @@
         @blur="$emit('blur',$event)"
         @focus="$emit('focus',$event)"
         @click="$emit('click',$event)"
-        @input="$emit('input',$event)"
-        @change="$emit('change',$event)">
+        @change="$emit('change',$event)"
+        @input="changeValue">
 
         <textarea 
         v-else
@@ -26,7 +26,7 @@
         :readonly="disable" 
         :required="required"
         :placeholder="placeholder" 
-        v-model="activeValue"
+        :value="value"
         :maxlength="maxlength"
         :minlength="minlength"
         :cols="cols" 
@@ -36,8 +36,8 @@
         @blur="$emit('blur',$event)"
         @focus="$emit('focus',$event)"
         @click="$emit('click',$event)"
-        @input="$emit('input',$event)"
-        @change="$emit('change',$event)"></textarea>
+        @change="$emit('change',$event)"
+        @input="changeValue"></textarea>
 
         <div class="clear" @click="clearValue" v-show="clearable && !search && type !== 'search'">×</div>
         <div class="search" @click="searchValue" v-show="search && type !== 'textarea'">{{search}}</div>
@@ -50,7 +50,7 @@ export default {
     props: {
         value: {
             type: [String,Number],
-            default: ''
+            required: true
         },
         disable: {
             type: Boolean,
@@ -94,11 +94,6 @@ export default {
         prop: 'value',
         event: 'model'
     },
-    data(){
-        return {
-            activeValue: null
-        }
-    },
     computed: {
         disableClass(){
             return this.disable ? 'disable' : ''
@@ -131,28 +126,25 @@ export default {
         }
     },
     watch: {
-        activeValue(newVal,oldVal){
+        value(newVal,oldVal){
             if(newVal !== oldVal){
-                this.$emit('model',newVal)
-            }
-        },
-        value(newVal){
-            if(newVal !== this.activeValue){
                 if(this.maxlength && newVal.length > this.maxlength){
-                    this.activeValue = newVal.substring(0,this.maxlength)
-                }else{
-                    this.activeValue = newVal
+                    this.$emit('model',newVal.substring(0,this.maxlength))
                 }
             }
         }
     },
     methods: {
         clearValue(){
-            this.activeValue = null
+            this.$emit('model',"")
             this.$emit('clear')
         },
         searchValue(){
-            this.$emit('search',this.activeValue)
+            this.$emit('search',this.value)
+        },
+        changeValue(e){
+            this.$emit('input',e)
+            this.$emit('model',e.target.value)
         }
     }
 }

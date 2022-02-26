@@ -1,11 +1,9 @@
 <template>
     <div 
-        class="options-list" 
-        v-show="!$parent.openSearch || !$parent.showOptions || label.includes($parent.form.label || '')"
-        @mousedown="checkOption"
-        @click="$emit('click',{value,label})"
-        :style="`color:${value == $parent.form.value ? '#E44258' : '#606266'};background-color:${value == $parent.form.value ? '#f5f7fa' : ''};`"
-    >{{label}}</div>
+    :class="`options-list ${value == $parent.form.value ? 'active' : ''}`" 
+    v-show="!$parent.openSearch || !$parent.showOptions || label.includes($parent.form.label || '')"
+    @mousedown="$event.preventDefault()"
+    @click="checkOption">{{label}}</div>
 </template>
 
 <script>
@@ -45,7 +43,11 @@ export default {
                 value: this.value,
                 label: this.label
             }
-            this.$parent.checkOption(option)
+            this.$emit('click',option)
+            if(this.$parent.$options._componentTag === 'vu-select'){
+                this.$parent.checkOption(option)
+                this.$parent.$refs.showText.blur()
+            }
         }
     }
 }
@@ -57,12 +59,17 @@ export default {
     text-align: left;
     padding-left: 15px;
     width: 100%;
-    overflow: hidden; //超出的文本隐藏
-    text-overflow: ellipsis; //溢出用省略号显示
-    white-space: nowrap; //溢出不换行
+    overflow: hidden; 
+    color: #606266;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
     cursor: pointer;
 }
+.options-list.active{
+    background-color: #E44258 !important;
+    color: white !important;
+}
 .options-list:hover {
-    background-color: #f5f7fa;
+    background-color: #F5F7FA;
 }
 </style>

@@ -96,7 +96,7 @@ export default {
 
 **注意**
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    多文件上传时，每个文件都会单独调用一次上传接口，后台接收文件数据的name为file<br>
+    多文件上传时，每个文件都会单独调用一次上传接口，后台接收文件数据的name默认为file，也可以通过name属性指定<br>
     使用data附带请求参数时，name为data的每个key
 </div>
 
@@ -110,6 +110,7 @@ export default {
 | limit | 最大上传数量 | Number | 否 | -- |-- |
 | autoUpload | 选择文件后是否自动上传 | Boolean | 否 | false |-- |
 | action | 上传的服务器地址 | String | 否 | -- | -- |
+| name | 上传文件的name | String | 否 | file | -- |
 | type | 组件样式 | String | 否 | file | file或image |
 | cutType | type='image'时图片裁剪方式 | String | 否 | cover | 参考object-fit属性 |
 | headers | 请求的header | Object | 否 | -- | -- |

@@ -51,7 +51,7 @@ export default {
 #### Radio-group Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| value / v-model | 绑定值 | String,Number | 否 | null | -- |
+| value / v-model | 绑定值 | String,Number | 是 | -- | -- |
 | columns | 单选框每列宽度权值 | Array,String | 否 | 100px | -- |
 | rowHeight | 单选框高度 | String | 否 | 50px | -- |
 | fontSize | 单选框文字大小 | String | 否 | 14px | -- |
@@ -64,7 +64,7 @@ export default {
 #### Radio Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| value | 单选框的值 | String,Number | 否 | null | -- |
+| value | 单选框的值 | String,Number,Boolean | 否 | null | -- |
 | disable | 是否禁用 | Boolean | 否 | false | -- |
 
 
@@ -72,7 +72,7 @@ export default {
 | 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
 | change | 值改变 | 改变后的值 |
-| invalid | 提交值无效 | -- |
+| invalid | 提交值无效 | event |
 
 
 #### Radio Events

@@ -35,7 +35,7 @@ export default {
 #### Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| value / v-model | 绑定值 | String | 否 | #E44258 | -- |
+| value / v-model | 绑定值 | String | 是 | -- | -- |
 | name | input color元素的name属性 | String | 否 | -- | -- |
 
 

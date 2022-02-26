@@ -8,11 +8,13 @@
             v-model="form.label"
             :style="disableStyle+cursorStyle"
             :readonly="!openSearch || disable"
+            ref="showText"
         >
         <div class="options" :style="heightStyle">
             <slot></slot>
         </div>
-        <div class="delete-btn" @click="deleteCheck" v-show="deleteBtn" :style="cursorStyle">×</div>
+        <div class="delete-btn" @click="deleteCheck" v-if="deleteBtn" :style="cursorStyle">×</div>
+        <div :class="`arrow-btn ${showOptions ? 'active' : ''}`" @click="deleteCheck" v-else :style="cursorStyle">></div>
         <input 
         type="text" 
         style="display: none;" 
@@ -33,7 +35,7 @@ export default {
         },
         deleteBtn: {
             type: Boolean,
-            default: true
+            default: false
         },
         openSearch: {
             type: Boolean,

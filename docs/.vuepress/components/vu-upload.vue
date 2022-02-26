@@ -4,8 +4,7 @@
         type="file" 
         :accept="accept" 
         :multiple="multiple" 
-        @change="filesChange" 
-        :name="name"
+        @change="filesChange"
         ref="upload">
 
         <a ref="a"></a>
@@ -196,7 +195,8 @@ export default {
                     },
                     onerror: (err) => {
                         this.$emit('error',err,file)
-                    }
+                    },
+                    name: this.name
                 },this.headers,data)
             }
         },

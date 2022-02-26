@@ -8,11 +8,13 @@
             v-model="form.label"
             :style="disableStyle+cursorStyle"
             :readonly="!openSearch || disable"
+            ref="showText"
         >
         <div class="options" :style="heightStyle">
             <slot></slot>
         </div>
-        <div class="delete-btn" @click="deleteCheck" v-show="deleteBtn" :style="cursorStyle">×</div>
+        <div class="delete-btn" @click="deleteCheck" v-if="deleteBtn" :style="cursorStyle">×</div>
+        <div :class="`arrow-btn ${showOptions ? 'active' : ''}`" @click="deleteCheck" v-else :style="cursorStyle">></div>
         <input 
         type="text" 
         style="display: none;" 
@@ -33,7 +35,7 @@ export default {
         },
         deleteBtn: {
             type: Boolean,
-            default: true
+            default: false
         },
         openSearch: {
             type: Boolean,
@@ -165,8 +167,8 @@ export default {
 .vu-select_container {
     display: inline-block;
     position: relative;
-    width: 200px;
     height: 40px;
+    width: 200px;
     .show-text {
         background-color: #fff;
         border-radius: 4px;
@@ -174,12 +176,12 @@ export default {
         box-sizing: border-box;
         color: #606266;
         display: inline-block;
-        font-size: inherit;
+        font-size: 16px;
         text-align: left;
         height: 100%;
         outline: none;
         padding: 0 15px;
-        transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all ease 0.2s;
         flex: 1;
         width: 100%;
         cursor: pointer;
@@ -187,7 +189,10 @@ export default {
         text-overflow: ellipsis; 
         white-space: nowrap;
     }
-
+    .show-text:focus{
+        border: 1px solid #E44258;
+    }
+    
     .options {
         overflow-y: auto;
         overflow-x: hidden;
@@ -203,6 +208,25 @@ export default {
         top: 100%;
         height: 50px;
         transition: all ease 0.3s;
+
+        .options-list {
+            line-height: 34px;
+            text-align: left;
+            padding-left: 15px;
+            width: 100%;
+            overflow: hidden;
+            color: #606266;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .options-list.active{
+            background-color: #E44258 !important;
+            color: white !important;
+        }
+        .options-list:hover {
+            background-color: #F5F7FA;
+        }
     }
     .options::-webkit-scrollbar {
         width: 6px;
@@ -229,7 +253,32 @@ export default {
         color: #606266;
         cursor: pointer;
         user-select: none;
-        font-family: Avenir, Helvetica, Arial, sans-serif;
+        font-family: fangsong;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .arrow-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        height: 15px;
+        width: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%) rotateZ(90deg);
+        color: #dcdfe6;
+        cursor: pointer;
+        user-select: none;
+        font-family: fangsong;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all ease 0.2s;
+        pointer-events: none;
+    }
+    .arrow-btn.active{
+        transform: translateY(-50%) rotateZ(270deg);
     }
 }
 </style>>

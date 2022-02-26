@@ -56,7 +56,7 @@ export default {
 #### Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| value / v-model | 绑定值 | String,Number | 否 | -- | --|
+| value / v-model | 绑定值 | String,Number | 是 | -- | --|
 | color | 组件颜色 | String | 否 | #E44258 | 颜色的十六进制代码 |
 | iconSize | 滑块大小 | String | 否 | 13px | -- |
 | format | 定义tip文本展示内容 | Function | 否 | 直接展示当前value | -- |
@@ -64,6 +64,7 @@ export default {
 | disable | 是否禁用 | Boolean | 否 | false |-- |
 | step | 是否开启间断点 | Number | 否 | -- | 1-99 |
 | stepPoint | 是否显示间断点 | Boolean | 否 | false | -- |
+| name | input元素的name属性 | String | 否 | -- | -- |
 
 
 #### Events

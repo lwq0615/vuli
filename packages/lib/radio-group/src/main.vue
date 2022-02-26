@@ -9,8 +9,7 @@ export default {
     name: 'vu-radio-group',
     props:{
         value: {
-            type: [String,Number],
-            default: null
+            required: true
         },
         columns: [Array,String],
         rowHeight: {
@@ -41,8 +40,7 @@ export default {
     },
     data(){
         return {
-            radios: [],
-            activeValue: undefined
+            radios: []
         }
     },
     computed: {
@@ -70,27 +68,26 @@ export default {
     },
     watch:{
         value: {
-            handler(newVal){
-                this.changeValue(newVal)
+            handler(newVal,oldVal){
+                if(newVal !== oldVal){
+                    this.$emit('change',newVal)
+                }
             }
         }
     },
-    created(){
-        this.activeValue = this.value
-    },
     methods: {
         changeValue(value){
-            if(this.activeValue !== value){
-                this.$emit('change',value)
-                this.activeValue = value
+            if(this.value !== value){
                 this.$emit('model',value)
+            }else {
+                this.$emit('model',null)
             }
         },
         createRadio(dom){
             this.radios.push(dom)
         },
         delRadio(dom){
-            if(dom.value === this.activeValue){
+            if(dom.value === this.value){
                 this.changeValue(null)
             }
             this.radios.splice(this.radios.indexOf(dom),1)

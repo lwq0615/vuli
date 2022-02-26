@@ -10,12 +10,12 @@
         box-sizing: border-box;
         color: #606266;
         display: inline-block;
-        font-size: inherit;
+        font-size: 16px;
         text-align: left;
         height: 100%;
         outline: none;
         padding: 0 15px;
-        transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all ease 0.2s;
         flex: 1;
         width: 100%;
         cursor: pointer;
@@ -23,7 +23,10 @@
         text-overflow: ellipsis; 
         white-space: nowrap;
     }
-
+    .show-text:focus{
+        border: 1px solid #E44258;
+    }
+    
     .options {
         overflow-y: auto;
         overflow-x: hidden;
@@ -46,12 +49,17 @@
             padding-left: 15px;
             width: 100%;
             overflow: hidden;
+            color: #606266;
             text-overflow: ellipsis;
             white-space: nowrap;
             cursor: pointer;
         }
+        .options-list.active{
+            background-color: #E44258 !important;
+            color: white !important;
+        }
         .options-list:hover {
-            background-color: #f5f7fa;
+            background-color: #F5F7FA;
         }
     }
     .options::-webkit-scrollbar {
@@ -79,6 +87,31 @@
         color: #606266;
         cursor: pointer;
         user-select: none;
-        font-family: Avenir, Helvetica, Arial, sans-serif;
+        font-family: fangsong;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .arrow-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        height: 15px;
+        width: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%) rotateZ(90deg);
+        color: #dcdfe6;
+        cursor: pointer;
+        user-select: none;
+        font-family: fangsong;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all ease 0.2s;
+        pointer-events: none;
+    }
+    .arrow-btn.active{
+        transform: translateY(-50%) rotateZ(270deg);
     }
 }

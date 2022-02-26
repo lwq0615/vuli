@@ -1,4 +1,4 @@
-# Select 下拉框
+# Select 选择器
 
 ### 示例
 
@@ -55,7 +55,7 @@ export default {
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
 | value / v-model | 绑定值 | String,Number | 否 | -- | --|
-| deleteBtn | 是否显示清空按钮 | Boolean | 否 | true | -- |
+| deleteBtn | 是否显示清空按钮 | Boolean | 否 | false | -- |
 | openSearch | 是否开启搜索 | Boolean | 否 | true | --|
 | disable | 是否禁用 | Boolean | 否 | false | -- |
 | name | select元素的name属性 | String | 否 | -- | -- |
