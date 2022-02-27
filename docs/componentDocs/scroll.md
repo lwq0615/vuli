@@ -6,7 +6,7 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <vu-scroll @scrollEnd="add" style="background-color:white;">
+    <vu-scroll @scrollEnd="add">
        <div v-for="i in value" :key="i" style="background-color:#DCDFE6;margin: 2px 0;line-height:30px;">{{ i }}</div>
     </vu-scroll>
 </div>
@@ -28,8 +28,8 @@ export default {
 
 ### 代码
 ```html
-<!--可直接在style内联样式中修改组件宽高-->
-<vu-scroll @scrollEnd="add" style="background-color:white;">
+<!--可直接在style内联样式中修改组件宽高等样式-->
+<vu-scroll @scrollEnd="add">
     <div v-for="i in value" :key="i" style="background-color:#DCDFE6;margin: 2px 0;line-height:30px;">{{ i }}</div>
 </vu-scroll>
 

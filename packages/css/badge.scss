@@ -1,0 +1,17 @@
+.vu-badge_container {
+    position: relative;
+    display: inline-block;
+    .badge{
+        padding: 1px 6px;
+        background-color: #E44258;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%,-40%);
+        z-index: 3;
+        font-size: 12px;
+        border-radius: 100px;
+        border: 1px solid white;
+    }
+}

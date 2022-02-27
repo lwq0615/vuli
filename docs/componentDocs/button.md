@@ -1,7 +1,5 @@
 # Button 按钮
 
-*可作为form表单submit按钮使用*
-
 ### 示例
 
 *small*
@@ -41,7 +39,7 @@ big
 #### Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| color | 按钮背景色 | String | 否 | #E44258 | -- |
+| color | 按钮背景色 | String | 否 | #E44258 | primary,success,info,error,warning<br>与颜色代码 |
 | size | 按钮大小 | String | 否 | default | small,default,big |
 
 #### Events

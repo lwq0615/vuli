@@ -47,6 +47,9 @@ export default {
     }
   },
   mounted(){
+    setTimeout(() => {
+      this.$parent.changeMsgStyle()
+    },1)
     this.destroy = setTimeout(() => {
       this.$parent.removeMsg(this.option)
     },this.option.duration || 3000)
@@ -97,7 +100,11 @@ export default {
         float: right;
         cursor: pointer;
         user-select: none;
-        font-size: 16px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        font-family: fangsong;
+        font-weight: 600;
     }
 }
 </style>

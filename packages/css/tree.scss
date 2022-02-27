@@ -1,0 +1,49 @@
+.vu-tree_container{
+    .vu-ul_container{
+        padding: 0;
+        margin: 0;
+        width: 200px;
+        ul,li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: #606266;
+            cursor: pointer;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: all ease 0.2s;
+        }
+        ul{
+            padding-left: 15px;
+        }
+        li{
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            border-radius: 2px;
+            .arrow{
+                display: inline-block;
+                font-family: fangsong;
+                font-weight: 600;
+                font-size: 12px;
+                margin-right: 3px;
+                transition: all ease 0.1s;
+                transform: rotateZ(0deg);
+                margin-right: 5px;
+            }
+        }
+        li.open .arrow{
+            transform: rotateZ(90deg);
+        }
+        li.active{
+            background-color: #E44258 !important;
+            color: white !important;
+        }
+        li:hover{
+            background-color: #F5F7FA;
+        }
+    }
+}
+.vu-tree_container>.vu-ul_container>ul{
+    padding-left: 0;
+}

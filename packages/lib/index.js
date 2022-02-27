@@ -29,6 +29,8 @@ import scroll from './scroll'
 import dialog from './dialog'
 import pagination from './pagination'
 import cascader from './cascader'
+import badge from './badge'
+import tree from './tree'
 
 const components = [
     button,
@@ -59,7 +61,9 @@ const components = [
     scroll,
     dialog,
     pagination,
-    cascader
+    cascader,
+    badge,
+    tree
 ]
 
 const install = function(Vue){
@@ -103,7 +107,9 @@ export {
     scroll,
     dialog,
     pagination,
-    cascader
+    cascader,
+    badge,
+    tree
 }
 
 export default { install }

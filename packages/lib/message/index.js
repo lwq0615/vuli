@@ -11,8 +11,8 @@ const Message = function (option = {}) {
         }
     }
     instance.addMsg(option)
-    instance.$mount(); 
-    document.body.appendChild(instance.$el);
+    instance.$mount()
+    document.body.appendChild(instance.$el)
 }
 
 let types = ['success', 'error', 'warning', 'info']

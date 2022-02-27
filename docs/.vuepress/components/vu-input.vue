@@ -215,17 +215,17 @@ export default {
 
     .search{
         position: absolute;
-        right: 1px;
-        top: 1px;
-        bottom: 1px;
+        right: 0;
+        top: 0;
+        bottom: 0;
         border-radius: 0 3px 3px 0;
         border: none;
         border-left: 1px solid #e4e7ed;
-        color: #E44258;
+        color: white;
         padding: 0 10px;
         font-size: 13px;
         display: flex;
-        background-color: #f5f7fa;
+        background-color: #E44258;
         justify-content: center;
         align-items: center;
         cursor: pointer;

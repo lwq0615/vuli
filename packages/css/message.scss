@@ -18,7 +18,11 @@
             float: right;
             cursor: pointer;
             user-select: none;
-            font-size: 16px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            font-family: fangsong;
+            font-weight: 600;
         }
     }
 }

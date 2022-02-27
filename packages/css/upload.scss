@@ -2,6 +2,7 @@
     display: inline-block;
     width: 400px;
     padding: 5px;
+    border-radius: 3px;
     input {
         display: none;
     }
@@ -127,4 +128,9 @@
             user-select: none;
         }
     }
+}
+
+.vu-upload_container.drop{
+    background-color: rgba($color: #e44258, $alpha: 0.05);
+    border: 1px dashed #e44258;
 }

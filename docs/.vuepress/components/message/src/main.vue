@@ -25,9 +25,6 @@ export default {
             option.opacity = 0
             option.top = this.msgLen-1
             this.msgList.push(option)
-            setTimeout(() => {
-                this.changeMsgStyle()
-            },1)
         },
         removeMsg(option){
             this.msgLen--

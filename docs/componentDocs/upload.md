@@ -112,6 +112,7 @@ export default {
 | action | 上传的服务器地址 | String | 否 | -- | -- |
 | name | 上传文件的name | String | 否 | file | -- |
 | type | 组件样式 | String | 否 | file | file或image |
+| dropable | 开启拖拽上传 | Boolean | 否 | true | -- |
 | cutType | type='image'时图片裁剪方式 | String | 否 | cover | 参考object-fit属性 |
 | headers | 请求的header | Object | 否 | -- | -- |
 | data | 请求时附带的参数 | Object,Function | 否 | -- | 类型为Function时回调参数为上传的文件 |

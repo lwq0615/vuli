@@ -11,8 +11,8 @@ const Message = function (option = {}) {
         }
     }
     instance.addMsg(option)
-    instance.$mount(); // 渲染组件
-    document.body.appendChild(instance.$el); // 挂载到 body 下
+    instance.$mount();
+    document.body.appendChild(instance.$el);
 }
 
 let types = ['success', 'error', 'warning', 'info']

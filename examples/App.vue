@@ -46,7 +46,7 @@
 
     <!-- <vu-switch v-model="value" @change="test" :openValue="123" :closeValue="'close'"></vu-switch> -->
 
-    <!-- <vu-input type="text" v-model="value" clearable></vu-input> -->
+    <!-- <vu-input type="search" v-model="value" search="搜索"></vu-input> -->
 
     <!-- <vu-checkbox-group @change="test" :value="value">
       <vu-checkbox :all="true">全选</vu-checkbox>
@@ -68,7 +68,7 @@
 
     <!-- <vu-sider :step="10" :stepPoint="true" v-model="value" @change="test"></vu-sider> -->
 
-    <!-- <vu-upload :fileList="fileList" type="image">
+    <!-- <vu-upload :fileList="fileList" type="file" accept="png">
       上传文件
     </vu-upload> -->
 
@@ -129,6 +129,12 @@
 
     <!-- <vu-cascader :option="option" v-model="value"></vu-cascader> -->
 
+    <!-- <vu-badge isDot text="12">
+      <vu-button>按钮</vu-button>
+    </vu-badge> -->
+
+    <vu-tree :option="option"></vu-tree>
+
   </div>
 </template>
 
@@ -137,7 +143,53 @@ export default {
   name: 'App',
   data(){
     return {
-      value: []
+      value: 30,
+      option: [
+        {
+          label: '食物',
+          value: 'food',
+          children: [
+            {
+              label: '水果',
+              value: 'fruits',
+              children: [
+                {label:'香蕉',alue: '3-1'},
+                {label:'苹果',value: '3-2'},
+                {label:'鸭梨',value: '3-3'},
+                {label:'荔枝',value: '3-4'},
+                {label:'栗子',value: '3-5'},
+                {label:'李子',value: '3-6'},
+                {label:'樱桃',value: '3-7'},
+                {label:'凤梨',value: '3-8'},
+                {label:'火龙果',value: '3-9'}
+              ]
+            },
+            {
+              label: '肉食',
+              default: true,
+              value: 'meat',
+              children: [
+                {label:'牛肉',value: '3-1'},
+                {label:'鱼肉',value: '3-2'},
+                {label:'猪肉',value: '3-3'},
+              ]
+            },
+            {
+              label: '其他',
+              value: 'other'
+            }
+          ]
+        },
+        {
+          label: '饮品',
+          value: 'drinks',
+          children: [
+            {label: '芬达',value: '2-1'},
+            {label: '可乐',value: '2-2'},
+            {label: '雪碧',value: '2-3'}
+          ]
+        }
+      ]
     }
   },
   methods: {
@@ -145,7 +197,10 @@ export default {
       console.log(e)
     },
     test1(e){
-      this.value = ['1-1','2-2']
+      this.$message({
+        content: '123',
+        close: true
+      })
     }
   }
 }

@@ -57,6 +57,7 @@ module.exports = {
                 children: [
                     '/componentDocs/message',
                     '/componentDocs/alert',
+                    '/componentDocs/badge',
                     '/componentDocs/tooltip'
                 ]
             },

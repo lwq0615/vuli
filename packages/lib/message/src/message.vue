@@ -47,6 +47,9 @@ export default {
     }
   },
   mounted(){
+    setTimeout(() => {
+      this.$parent.changeMsgStyle()
+    },1)
     this.destroy = setTimeout(() => {
       this.$parent.removeMsg(this.option)
     },this.option.duration || 3000)

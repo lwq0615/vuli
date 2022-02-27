@@ -1,5 +1,9 @@
 <template>
-    <div class="vu-upload_container">
+    <div 
+    :class="`vu-upload_container ${droping ? 'drop' : ''}`"
+    @dragover="dragover" 
+    @drop="drop"
+    @dragleave="droping = false">
         <input 
         type="file" 
         :accept="accept" 
@@ -51,14 +55,14 @@
 </template>
 
 <script>
-import lButton from './vu-button.vue'
+import vuButton from './vu-button.vue'
 import message from './message/index.js'
 import request from './upload-http.js'
 import imageLight from './image-light/index.js'
 export default {
     name: 'vu-upload',
     components: {
-        lButton
+        vuButton
     },
     props: {
         accept: String,
@@ -90,11 +94,16 @@ export default {
             default: 'cover'
         },
         headers: Object,
-        data: [Object,Function]
+        data: [Object,Function],
+        dropable: {
+            type: Boolean,
+            default: true
+        }
     },
     data(){
         return {
-            progress: []
+            progress: [],
+            droping: false
         }
     },
     computed: {
@@ -206,6 +215,20 @@ export default {
         bigImage(file){
             this.$emit('fileClick',file)
             imageLight(window.URL.createObjectURL(file))
+        },
+        dragover(e){
+            e.preventDefault()
+            this.droping = true
+        },
+        drop(e){
+            e.preventDefault()
+            let obj = {
+                target: {
+                    files: e.dataTransfer.files
+                }
+            }
+            this.filesChange(obj)
+            this.droping = false
         }
     }
 }
@@ -216,6 +239,7 @@ export default {
     display: inline-block;
     width: 400px;
     padding: 5px;
+    border-radius: 3px;
     input {
         display: none;
     }
@@ -341,5 +365,10 @@ export default {
             user-select: none;
         }
     }
+}
+
+.vu-upload_container.drop{
+    background-color: rgba($color: #e44258, $alpha: 0.05);
+    border: 1px dashed #e44258;
 }
 </style>

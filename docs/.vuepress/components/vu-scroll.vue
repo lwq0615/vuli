@@ -42,9 +42,9 @@ export default {
     overflow: auto;
 }
 .vu-scroll_container::-webkit-scrollbar {
-    background-color: #DCDFE6;
+    background-color: transparent;
     border-radius: 100px;
-    width: 10px;
+    width: 6px;
 }
 .vu-scroll_container::-webkit-scrollbar-thumb {
     background-color: rgba($color: #e44258, $alpha: 0.8);
