@@ -133,7 +133,7 @@
       <vu-button>按钮</vu-button>
     </vu-badge> -->
 
-    <vu-tree :option="option"></vu-tree>
+    <!-- <vu-tree :option="option" @click="test"></vu-tree> -->
 
   </div>
 </template>
@@ -143,7 +143,7 @@ export default {
   name: 'App',
   data(){
     return {
-      value: 30,
+      value: ['food','fruits'],
       option: [
         {
           label: '食物',
@@ -153,7 +153,7 @@ export default {
               label: '水果',
               value: 'fruits',
               children: [
-                {label:'香蕉',alue: '3-1'},
+                {label:'香蕉',value: '3-1'},
                 {label:'苹果',value: '3-2'},
                 {label:'鸭梨',value: '3-3'},
                 {label:'荔枝',value: '3-4'},
@@ -197,10 +197,7 @@ export default {
       console.log(e)
     },
     test1(e){
-      this.$message({
-        content: '123',
-        close: true
-      })
+      this.value = ['food','fruits']
     }
   }
 }

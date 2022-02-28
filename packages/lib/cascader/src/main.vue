@@ -97,19 +97,11 @@ export default {
             }
             this.oldVal = [...newVal]
             this.label = []
-            for(let i=0;i<newVal.length;i++){
-                for(let item of this.menuList[i]) {
-                    if(item.value === newVal[i]){
-                        if(!this.showLast){
-                            this.label[i] = item.label
-                        }else if(!item.children){
-                            this.label[0] = item.label
-                        }
-                        break
-                    }
-                }
-            }
+            this.updateLabel(newVal)
         }
+    },
+    created(){
+        this.updateLabel(this.value)
     },
     methods: {
         checkValue(item,level){
@@ -159,6 +151,21 @@ export default {
             this.$emit('clear')
             this.value.splice(0)
             this.label.splice(0)
+        },
+        updateLabel(newVal){
+            let i = 0
+            let temp = this.option
+            this.label = []
+            while(i < newVal.length){
+                for(let item of temp) {
+                    if(item.value === newVal[i]){
+                        this.label.push(item.label)
+                        temp = item.children
+                        break
+                    }
+                }
+                i++
+            }
         }
     }
 }

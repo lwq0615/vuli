@@ -2,6 +2,7 @@
     <section class="vu-tree_container">
         <vu-ul
         :option="option"
+        :open="true"
         :parent="parentNode"></vu-ul>
     </section>
 </template>

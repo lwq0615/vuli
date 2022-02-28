@@ -21,6 +21,7 @@ module.exports = {
                     '/componentDocs/button',
                     '/componentDocs/tabs',
                     '/componentDocs/tag',
+                    '/componentDocs/tree',
                     '/componentDocs/scroll',
                     '/componentDocs/rotate-card'
                 ]

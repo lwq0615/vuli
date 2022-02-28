@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import vuLi from './li.vue'
+import vuLi from './vu-li.vue'
 export default {
     components: {
         vuLi

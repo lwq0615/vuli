@@ -1,9 +1,9 @@
 <template>
     <div 
     :class="`vu-upload_container ${droping ? 'drop' : ''}`"
-    @dragover="dragover" 
-    @drop="drop"
-    @dragleave="droping = false">
+    @dragover="dropable && dragover($event)" 
+    @drop="dropable && drop($event)"
+    @dragleave="dropable && (droping = false)">
         <input 
         type="file" 
         :accept="accept" 

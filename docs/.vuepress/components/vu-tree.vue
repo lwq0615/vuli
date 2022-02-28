@@ -1,3 +1,36 @@
+<template>
+    <section class="vu-tree_container">
+        <vu-ul
+        :option="option"
+        :open="true"
+        :parent="parentNode"></vu-ul>
+    </section>
+</template>
+
+<script>
+import vuUl from './vu-ul.vue'
+export default {
+    name: 'vu-tree',
+    components: {
+        vuUl
+    },
+    props: {
+        option: Array,
+        lineHeight: {
+            type: String,
+            default: '25px'
+        }
+    },
+    data(){
+        return {
+            parentNode: this,
+            activeNode: null
+        }
+    }
+}
+</script>
+
+<style lang="scss">
 .vu-tree_container{
     width: 200px;
     .vu-ul_container{
@@ -25,10 +58,10 @@
             border-radius: 2px;
             .arrow{
                 display: inline-block;
-                font-family: fangsong;
-                font-weight: 600;
                 height: auto;
                 width: auto;
+                font-family: fangsong;
+                font-weight: 600;
                 font-size: 12px;
                 margin-right: 3px;
                 transition: all ease 0.1s;
@@ -51,3 +84,4 @@
 .vu-tree_container>.vu-ul_container>ul{
     padding-left: 0;
 }
+</style>

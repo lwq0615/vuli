@@ -15,7 +15,7 @@
 <script>
 export default {
     components: {
-        vuUl: () => import('./ul.vue')
+        vuUl: () => import('./vu-ul.vue')
     },
     props: {
         item: Object,
