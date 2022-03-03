@@ -75,17 +75,17 @@ export default {
 | change | 值改变 | 改变后的值 |
 
 
+#### Checkbox Events
+| 事件名 | 触发条件 | 回调参数 |
+|  ---  | ---  | ---  | 
+| click | 点击复选框 | 复选框的value值 |
+
+
 #### Checkbox-group Methods
 | 方法名 | 说明 | 所需参数 | 参数说明 |
 |  ---  | ---  | ---  | --- |
 | checkAll | 全选(不包含禁用的复选框) | --  | -- |
 | allFlg | 返回当前是否全选 | disable | Boolean类型,为true时不计算禁用的复选框 |
-
-
-#### Checkbox Events
-| 事件名 | 触发条件 | 回调参数 |
-|  ---  | ---  | ---  | 
-| click | 点击复选框 | 复选框的value值 |
 
 
 #### Checkbox Methods

@@ -135,6 +135,52 @@
 
     <!-- <vu-tree :option="option" @click="test"></vu-tree> -->
 
+    <vu-table
+    ref="test"
+    width="800px"
+    :tableData="tableData"
+    @select="test">
+      <vu-table-column
+        prop="date"
+        label="日期"
+        width="80px">
+      </vu-table-column>
+      <vu-table-column label="配送信息"
+          v-if="value">
+        <vu-table-column
+        prop="name"
+        label="姓名"
+        width="180px"
+        v-slot="data">
+          <vu-button>
+            {{data.row.name+'-'+data.index}}
+          </vu-button>
+        </vu-table-column>
+        <vu-table-column label="地址">
+          <vu-table-column
+            prop="province"
+            label="省份"
+            width="180px">
+          </vu-table-column>
+          <vu-table-column
+            prop="city"
+            label="市区"
+            width="180px">
+          </vu-table-column>
+          <vu-table-column
+            prop="address"
+            label="地址"
+            width="280px">
+          </vu-table-column>
+          <vu-table-column
+            prop="zip"
+            label="邮编"
+            width="80px">
+          </vu-table-column>
+        </vu-table-column>
+      </vu-table-column>
+    </vu-table>
+
   </div>
 </template>
 
@@ -143,53 +189,36 @@ export default {
   name: 'App',
   data(){
     return {
-      value: ['food','fruits'],
-      option: [
-        {
-          label: '食物',
-          value: 'food',
-          children: [
-            {
-              label: '水果',
-              value: 'fruits',
-              children: [
-                {label:'香蕉',value: '3-1'},
-                {label:'苹果',value: '3-2'},
-                {label:'鸭梨',value: '3-3'},
-                {label:'荔枝',value: '3-4'},
-                {label:'栗子',value: '3-5'},
-                {label:'李子',value: '3-6'},
-                {label:'樱桃',value: '3-7'},
-                {label:'凤梨',value: '3-8'},
-                {label:'火龙果',value: '3-9'}
-              ]
-            },
-            {
-              label: '肉食',
-              default: true,
-              value: 'meat',
-              children: [
-                {label:'牛肉',value: '3-1'},
-                {label:'鱼肉',value: '3-2'},
-                {label:'猪肉',value: '3-3'},
-              ]
-            },
-            {
-              label: '其他',
-              value: 'other'
-            }
-          ]
-        },
-        {
-          label: '饮品',
-          value: 'drinks',
-          children: [
-            {label: '芬达',value: '2-1'},
-            {label: '可乐',value: '2-2'},
-            {label: '雪碧',value: '2-3'}
-          ]
-        }
-      ]
+      value: true,
+      tableData: [{
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200333
+      },{
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200334
+      },{
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200333
+      },{
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200333
+      }]
     }
   },
   methods: {
@@ -197,7 +226,7 @@ export default {
       console.log(e)
     },
     test1(e){
-      this.value = ['food','fruits']
+      this.tableData.pop()
     }
   }
 }

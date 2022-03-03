@@ -30,7 +30,8 @@ export default {
     },
     computed: {
         textActiveStyle(){
-            if(this.$parent.$options._componentTag === 'vu-checkbox-group'){
+            let parent = this.findParent()
+            if(parent){
                 let style = ''
                 if(this.active()){
                     if(this.disable){
@@ -51,18 +52,20 @@ export default {
             }
         },
         fontSizeStyle(){
-            if(this.$parent.$options._componentTag === 'vu-checkbox-group'){
-                return `font-size:${this.$parent.fontSize};`
+            let parent = this.findParent()
+            if(parent){
+                return `font-size:${parent.fontSize};`
             }else{
                 return null
             }
         },
         inputStyle(){
-            if(this.$parent.$options._componentTag === 'vu-checkbox-group'){
+            let parent = this.findParent()
+            if(parent){
                 let style = ''
-                style += `width:${this.$parent.iconSize}px;`
-                style += `height:${this.$parent.iconSize}px;`
-                style += `font-size:${this.$parent.iconSize/2}px;`
+                style += `width:${parent.iconSize}px;`
+                style += `height:${parent.iconSize}px;`
+                style += `font-size:${parent.iconSize/2}px;`
                 if(this.disable){
                     style += `background-color: #f5f7fa;`
                 }
@@ -72,7 +75,8 @@ export default {
             }
         },
         inputActiveStyle(){
-            if(this.$parent.$options._componentTag === 'vu-checkbox-group'){
+            let parent = this.findParent()
+            if(parent){
                 let style = ''
                 if(this.active()){
                     if(this.disable){
@@ -95,13 +99,15 @@ export default {
         }
     },
     created(){
-        if(!this.all && this.$parent.$options._componentTag === 'vu-checkbox-group'){
-            this.$parent.createCheckbox(this)
+        let parent = this.findParent()
+        if(parent){
+            parent.createCheckbox(this)
         }
     },
     destroyed(){
-        if(!this.all && this.$parent.$options._componentTag === 'vu-checkbox-group'){
-            this.$parent.delCheckbox(this)
+        let parent = this.findParent()
+        if(parent){
+            parent.delCheckbox(this)
         }
     },
     methods: {
@@ -110,22 +116,35 @@ export default {
             if(this.disable){
                 return
             }
-            if(this.all){
-                this.$parent.checkAll()
-            }else{
-                this.$parent.checkboxClick(this.value)
+            let parent = this.findParent()
+            if(parent){
+                if(this.all){
+                    parent.checkAll()
+                }else{
+                    parent.checkboxClick(this.value)
+                }
             }
         },
         active(){
-            if(this.$parent.$options._componentTag === 'vu-checkbox-group'){
+            let parent = this.findParent()
+            if(parent){
                 if(this.all){
-                    return this.$parent.allFlg()
+                    return parent.allFlg()
                 }else{
-                    if(this.$parent.value.includes(this.value)){
+                    if(parent.value.includes(this.value)){
                         return true
                     }
                 }
             }
+        },
+        findParent(){
+            let parent = this.$parent
+            while(parent){
+                if(parent.$options._componentTag === 'vu-checkbox-group'){
+                    return parent
+                }
+            }
+            return false
         }
     }
 }

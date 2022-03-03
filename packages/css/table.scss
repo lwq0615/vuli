@@ -1,0 +1,84 @@
+.vu-table_container {
+    border-collapse: unset;
+    overflow: auto;
+    display: inline-block;
+    border-spacing: 0;
+    border-radius: 3px;
+    position: relative;
+    border: 1px solid #dcdfe6;
+    .vu-table-tr {
+        transition: all ease 0.1s;
+        .vu-table-td,
+        .vu-table-th {
+            padding: 7px 5px;
+            border-bottom: 1px solid #dcdfe6;
+            color: #606266;
+            overflow: hidden;
+            word-wrap: break-word;
+            position: sticky;
+            background-color: white;
+            .checkbox {
+                margin: 0 3px;
+                width: 16px;
+                height: 16px;
+                font-size: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: auto;
+                border-radius: 3px;
+                background-color: white;
+                border: 1px solid #e4e7ed;
+                box-sizing: border-box;
+                color: white;
+                user-select: none;
+                transition: all ease 0.3s;
+                cursor: pointer;
+            }
+            .checkbox.checked{
+                background-color: #E44258;
+            }
+        }
+        .vu-table-th {
+            background-color: #f1f1f1 !important;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .vu-table-td {
+            text-align: left;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    .vu-table-tr:hover {
+        .vu-table-td,.vu-table-th{
+            background-color: #f5f7fa;
+        }
+    }
+    .vu-table-tr:last-child {
+        border-bottom: none;
+    }
+    .vu-table-tr.active {
+        .vu-table-td,
+        .vu-table-th {
+            background-color: #ffe4e4 !important;
+        }
+    }
+}
+
+.vu-table_container.border {
+    .vu-table-tr {
+        .vu-table-td,
+        .vu-table-th {
+            border: 1px solid #dcdfe6;
+        }
+    }
+}
+
+.vu-table_container.striped {
+    .vu-table-tr:nth-child(2n + 1) {
+        .vu-table-td {
+            background-color: #f5f7fa;
+        }
+    }
+}

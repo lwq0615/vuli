@@ -45,6 +45,7 @@ module.exports = {
                 title: 'Data',
                 collapsable: false,
                 children: [
+                    '/componentDocs/table',
                     '/componentDocs/progress',
                     '/componentDocs/slide',
                     '/componentDocs/image',

@@ -31,6 +31,8 @@ import pagination from './pagination'
 import cascader from './cascader'
 import badge from './badge'
 import tree from './tree'
+import table from './table'
+import tableColumn from './table-column'
 
 const components = [
     button,
@@ -63,7 +65,9 @@ const components = [
     pagination,
     cascader,
     badge,
-    tree
+    tree,
+    table,
+    tableColumn
 ]
 
 const install = function(Vue){
@@ -109,7 +113,9 @@ export {
     pagination,
     cascader,
     badge,
-    tree
+    tree,
+    table,
+    tableColumn
 }
 
 export default { install }
