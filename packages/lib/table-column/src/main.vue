@@ -3,7 +3,7 @@
         <slot :row="parentTr.data" :index="parentTr.index">{{parentTr.data[prop]}}</slot>
     </span>
     <span v-else v-show="false">
-        <slot :row="mainNode.tableData[0]" :index="0"></slot>
+        <slot :row="mainNode.tableData[0] || {}" :index="0"></slot>
     </span>
 </template>
 
