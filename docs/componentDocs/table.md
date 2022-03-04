@@ -6,7 +6,7 @@
 *吸附列*
 
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <vu-table :tableData="tableData" style="width:100%;">
+    <vu-table :tableData="tableData" width="100%">
         <vu-table-column
         prop="date"
         label="日期"
@@ -93,7 +93,7 @@ export default {
 
 ### 代码
 ```html
-<vu-table :tableData="tableData" style="width:100%;">
+<vu-table :tableData="tableData" width="100%">
     <vu-table-column
     prop="date"
     label="日期"
@@ -373,6 +373,8 @@ export default {
 | checkable | 行可选 | Boolean | 否 | true | -- |
 | selection | 开启多选(开启后默认作为左吸附列) | Boolean | 否 | true | -- |
 | lineHeight | 表格行高 | String | 否 | 25px | -- |
+| width | 表格宽度 | String | 否 | auto | -- |
+| height | 表格高度 | String | 否 | auto | -- |
 
 
 #### Table-column Attributes
