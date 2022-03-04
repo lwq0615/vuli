@@ -6,13 +6,13 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <vu-slide :imgs="['/vui/2.jpg','/vui/1.jpg','/vui/3.jpg']"></vu-slide>
+    <vu-slide :imgs="['/vuli/2.jpg','/vuli/1.jpg','/vuli/3.jpg']"></vu-slide>
 </div>
 
 ### 代码
 ```html
 <!--可直接在style内联样式中修改组件宽高-->
-<vu-slide :imgs="['/vui/1.jpg','/vui/2.jpg','/vui/3.jpg']"></vu-slide>
+<vu-slide :imgs="['/vuli/1.jpg','/vuli/2.jpg','/vuli/3.jpg']"></vu-slide>
 ```
 
 #### Attributes

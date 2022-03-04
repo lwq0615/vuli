@@ -23,7 +23,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname,'dist/lib'),
-        library: 'vui',
+        library: 'vuli',
         libraryTarget: 'umd'
     },
     plugins: [

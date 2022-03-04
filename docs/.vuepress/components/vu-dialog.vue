@@ -1,5 +1,5 @@
 <template>
-    <transition name="vui-dialog-show">
+    <transition name="vu-dialog-show">
         <section :class="`vu-dialog_container ${modal ? 'modal' : ''}`" v-show="showDialog">
             <div class="dialog-box" :style="widthStyle+heightStyle" ref="dialogBox">
                 <div class="title">
@@ -113,12 +113,12 @@ export default {
     pointer-events: auto;
 }
 
-.vui-dialog-show-enter-active,
-.vui-dialog-show-leave-active {
+.vu-dialog-show-enter-active,
+.vu-dialog-show-leave-active {
     transition: all 0.3s;
 }
-.vui-dialog-show-enter,
-.vui-dialog-show-leave-to {
+.vu-dialog-show-enter,
+.vu-dialog-show-leave-to {
     opacity: 0;
     .dialog-box {
         transform: translateY(-50px);

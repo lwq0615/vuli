@@ -5,7 +5,7 @@
 *grid方格布局*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
     <vu-image style="width:100%;height:500px;">
-        <vu-image-item :src="'/vui/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index" lazy></vu-image-item>
+        <vu-image-item :src="'/vuli/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index" lazy></vu-image-item>
     </vu-image>
 </div>
 
@@ -13,7 +13,7 @@
 ```html
 <!-- 可直接通过style内联样式修改组件宽高 -->
 <vu-image style="width:100%;height:500px;">
-    <vu-image-item :src="'/vui/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index" lazy></vu-image-item>
+    <vu-image-item :src="'/vuli/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index" lazy></vu-image-item>
 </vu-image>
 ```
 
@@ -22,7 +22,7 @@
 *fall瀑布布局*
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
     <vu-image style="width:100%;height:500px;" type="fall">
-        <vu-image-item :src="'/vui/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index"></vu-image-item>
+        <vu-image-item :src="'/vuli/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index"></vu-image-item>
     </vu-image>
 </div>
 
@@ -30,7 +30,7 @@
 ```html
 <!-- 可直接通过style内联样式修改组件宽高 -->
  <vu-image style="width:100%;height:500px;" type="fall">
-    <vu-image-item :src="'/vui/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index"></vu-image-item>
+    <vu-image-item :src="'/vuli/'+(index%3+1)+'.jpg'" v-for="(item,index) in 20" :key="index"></vu-image-item>
 </vu-image>
 ```
 

@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/vui/',
+    base: '/vuli/',
     head: [
         [
             'link', 

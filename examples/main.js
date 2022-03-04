@@ -2,9 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 
 import '../packages/css/index.scss'
-import Vui from '../packages/lib/index.js'
+import Vuli from '../packages/lib/index.js'
 
-Vue.use(Vui)
+Vue.use(Vuli)
 
 Vue.config.productionTip = false
 

@@ -135,7 +135,7 @@
 
     <!-- <vu-tree :option="option" @click="test"></vu-tree> -->
 
-    <vu-table
+    <!-- <vu-table
     ref="test"
     width="800px"
     :tableData="tableData"
@@ -179,7 +179,7 @@
           </vu-table-column>
         </vu-table-column>
       </vu-table-column>
-    </vu-table>
+    </vu-table> -->
 
   </div>
 </template>
@@ -189,36 +189,7 @@ export default {
   name: 'App',
   data(){
     return {
-      value: true,
-      tableData: [{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200333
-      },{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200334
-      },{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200333
-      },{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200333
-      }]
+      value: true
     }
   },
   methods: {

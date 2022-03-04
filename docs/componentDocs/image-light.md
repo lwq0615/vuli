@@ -12,7 +12,7 @@ import imageLight from '../.vuepress/components/image-light/index.js'
 export default {
   methods: {
     image(){
-      imageLight("/vui//2.jpg")
+      imageLight("/vuli//2.jpg")
     }
   }
 }
@@ -29,7 +29,7 @@ export default {
     image(){
       //$imageLight为全局方法，可通过this直接调用
       //参数为图片的资源地址
-      this.$imageLight("/vui/2.jpg")
+      this.$imageLight("/vuli/2.jpg")
     }
   }
 }
@@ -39,7 +39,7 @@ export default {
 
 #### 单独引用
 ```js
-import { imageLight } from 'vui';
+import { imageLight } from 'vuli';
 
 imageLight("/2.jpg")
 ```

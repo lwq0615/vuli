@@ -1,10 +1,10 @@
-# Vui组件库
+# Vuli组件库
 
 ### 快速开始
 
 ### 1.安装组件库
 ```bash
-npm install vui
+npm install vuli
 ```
 
 ### 2.引用组件库
@@ -12,15 +12,15 @@ npm install vui
 #### 全部引入
 ```js
 //main.js
-import 'vui/dist/css/index.css'
-import Vui from 'vui'
-Vue.use(Vui)
+import 'vuli/dist/css/index.css'
+import Vuli from 'vuli'
+Vue.use(Vuli)
 ```
 
 #### 按需引入
 ```js
 //main.js
-import 'vui/dist/css/index.css'
-import { button } from 'vui'
+import 'vuli/dist/css/index.css'
+import { button } from 'vuli'
 Vue.use(button)
 ```

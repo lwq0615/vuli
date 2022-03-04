@@ -1,5 +1,5 @@
 <template>
-    <transition name="vui-alert-show">
+    <transition name="vu-alert-show">
         <div class="vu-alert_container" v-show="showAlert">
             <div class="alert-box" @click="stopPropagation" :style="widthStyle+heightStyle">
                 <div class="title">

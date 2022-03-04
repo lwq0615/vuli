@@ -1,5 +1,5 @@
 <template>
-    <transition name="vui-alert-show">
+    <transition name="vu-alert-show">
         <div class="vu-alert_container" v-show="showAlert">
             <div class="alert-box" @click="stopPropagation" :style="widthStyle+heightStyle">
                 <div class="title">
@@ -163,12 +163,12 @@ export default {
     }
 }
 
-.vui-alert-show-enter-active,
-.vui-alert-show-leave-active {
+.vu-alert-show-enter-active,
+.vu-alert-show-leave-active {
     transition: all 0.3s;
 }
-.vui-alert-show-enter,
-.vui-alert-show-leave-to {
+.vu-alert-show-enter,
+.vu-alert-show-leave-to {
     opacity: 0;
     .alert-box {
         transform: rotateY(45deg) rotateX(45deg);

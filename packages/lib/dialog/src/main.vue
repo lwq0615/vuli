@@ -1,5 +1,5 @@
 <template>
-    <transition name="vui-dialog-show">
+    <transition name="vu-dialog-show">
         <section :class="`vu-dialog_container ${modal ? 'modal' : ''}`" v-show="showDialog">
             <div class="dialog-box" :style="widthStyle+heightStyle" ref="dialogBox">
                 <div class="title">

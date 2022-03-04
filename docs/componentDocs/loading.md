@@ -35,7 +35,7 @@
     content: "";
     display: block;
     transform: translate(-50%,-50%);
-    background-image: url(/vui/loading.png);
+    background-image: url(/vuli/loading.png);
     background-size: cover;
     width: 20%;
     height: 20%;

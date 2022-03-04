@@ -80,7 +80,7 @@ export default {
 
 #### 单独引用
 ```js
-import { alert } from 'vui';
+import { alert } from 'vuli';
 
 alert({
   title: '提示',
