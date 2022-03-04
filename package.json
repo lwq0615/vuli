@@ -1,7 +1,7 @@
 {
   "name": "vuli",
   "version": "1.1.0",
-  "description": "Vuli组件库",
+  "description": "Vue组件库",
   "main": "dist/lib/index.js",
   "keywords": [
     "vuli",

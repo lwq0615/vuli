@@ -1,4 +1,4 @@
-# Image-Light 图片预览
+# Image-light 图片预览
 
 ### 示例
 
