@@ -1,7 +1,7 @@
 <template>
     <div class="vu-checkbox_container" :style="oneColumn">
         <div class="flex" @click="check">
-            <div class="input" :style="inputStyle+inputActiveStyle">{{active() ? '√' : ''}}</div>
+            <div class="input" :style="inputStyle+inputActiveStyle">{{active ? '√' : ''}}</div>
             <div class="text" :style="fontSizeStyle+textActiveStyle"><slot></slot></div>
         </div>
         <input 
@@ -10,7 +10,7 @@
         style="display:none;" 
         :value="value" 
         :name="$parent.name" 
-        :checked="active()">
+        :checked="active">
     </div>
 </template>
 
@@ -28,12 +28,17 @@ export default {
             default: false
         }
     },
+    data(){
+        return {
+            parent: this.findParent()
+        }
+    },
     computed: {
         textActiveStyle(){
-            let parent = this.findParent()
+            let parent = this.parent
             if(parent){
                 let style = ''
-                if(this.active()){
+                if(this.active){
                     if(this.disable){
                         style += `color: #c0c4cc;`
                     }else{
@@ -52,7 +57,7 @@ export default {
             }
         },
         fontSizeStyle(){
-            let parent = this.findParent()
+            let parent = this.parent
             if(parent){
                 return `font-size:${parent.fontSize};`
             }else{
@@ -60,7 +65,7 @@ export default {
             }
         },
         inputStyle(){
-            let parent = this.findParent()
+            let parent = this.parent
             if(parent){
                 let style = ''
                 style += `width:${parent.iconSize}px;`
@@ -75,10 +80,10 @@ export default {
             }
         },
         inputActiveStyle(){
-            let parent = this.findParent()
+            let parent = this.parent
             if(parent){
                 let style = ''
-                if(this.active()){
+                if(this.active){
                     if(this.disable){
                         style += `background-color: #c0c4cc;`
                     }else{
@@ -96,16 +101,29 @@ export default {
             }else{
                 return ''
             }
+        },
+        active(){
+            let parent = this.parent
+            if(parent){
+                if(this.all){
+                    return parent.allFlg()
+                }else{
+                    if(parent.value.includes(this.value)){
+                        return true
+                    }
+                }
+            }
+            return false
         }
     },
     created(){
-        let parent = this.findParent()
+        let parent = this.parent
         if(parent){
             parent.createCheckbox(this)
         }
     },
     destroyed(){
-        let parent = this.findParent()
+        let parent = this.parent
         if(parent){
             parent.delCheckbox(this)
         }
@@ -116,24 +134,12 @@ export default {
             if(this.disable){
                 return
             }
-            let parent = this.findParent()
+            let parent = this.parent
             if(parent){
                 if(this.all){
                     parent.checkAll()
                 }else{
                     parent.checkboxClick(this.value)
-                }
-            }
-        },
-        active(){
-            let parent = this.findParent()
-            if(parent){
-                if(this.all){
-                    return parent.allFlg()
-                }else{
-                    if(parent.value.includes(this.value)){
-                        return true
-                    }
                 }
             }
         },
@@ -153,6 +159,7 @@ export default {
 <style lang="scss" scoped>
 .vu-checkbox_container{
     display: inline-block;
+    vertical-align: middle;
     cursor: pointer;
     .flex{
         display: flex;
@@ -165,7 +172,7 @@ export default {
             font-family: auto;
             border-radius: 3px;
             background-color: white;
-            margin-right: 5px;
+            margin: 0 5px;
             border: 1px solid #e4e7ed;
             box-sizing: border-box;
             color: white;

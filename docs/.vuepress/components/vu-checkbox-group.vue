@@ -1,6 +1,7 @@
 <template>
     <div class="vu-checkbox-group_container">
-        <div class="grid" :style="columnsStyle+justifyStyle+rowHeightStyle"><slot></slot></div>
+        <div class="grid" :style="columnsStyle+justifyStyle+rowHeightStyle" v-if="grid"><slot></slot></div>
+        <template v-else><slot></slot></template>
     </div>
 </template>
 
@@ -11,6 +12,10 @@ export default {
         value: {
             type: Array,
             required: true
+        },
+        grid: {
+            type: Boolean,
+            default: true
         },
         columns: [Array,String],
         rowHeight: {
@@ -62,7 +67,7 @@ export default {
     watch:{
         value: {
             handler(newVal){
-                this.$emit('change',newVal)
+                this.$emit('change',[...newVal])
             }
         }
     },
@@ -88,7 +93,7 @@ export default {
                 this.value.splice(0)
             }else{
                 this.checkboxs.forEach(item => {
-                    if(!item.disable && !this.value.includes(item.value)){
+                    if(!item.disable && !this.value.includes(item.value) && !item.all){
                         this.value.push(item.value)
                     }
                 })

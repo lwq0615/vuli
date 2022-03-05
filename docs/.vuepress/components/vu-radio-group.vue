@@ -1,6 +1,7 @@
 <template>
     <div class="vu-radio-group_container">
-        <div class="grid" :style="`${columnsStyle+rowHeightStyle+justifyStyle}`"><slot></slot></div>
+        <div class="grid" :style="`${columnsStyle+rowHeightStyle+justifyStyle}`" v-if="grid"><slot></slot></div>
+        <template v-else><slot></slot></template>
     </div>
 </template>
 
@@ -10,6 +11,10 @@ export default {
     props:{
         value: {
             required: true
+        },
+        grid: {
+            type: Boolean,
+            default: true
         },
         columns: [Array,String],
         rowHeight: {

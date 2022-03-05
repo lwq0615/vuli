@@ -47,18 +47,25 @@ export default {
 }
 </script>
 ```
+<br>
+
+**注意**
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+    grid属性为false时，columns，rowHeight，justify属性不生效
+</div>
 
 #### Radio-group Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
 | value / v-model | 绑定值 | String,Number | 是 | -- | -- |
-| columns | 单选框每列宽度权值 | Array,String | 否 | 100px | -- |
-| rowHeight | 单选框高度 | String | 否 | 50px | -- |
 | fontSize | 单选框文字大小 | String | 否 | 14px | -- |
 | iconSize | 按钮大小 | Number | 否 | 16 | -- |
 | name | input radio元素的name属性 | String | 否 | -- | -- |
-| justify | 复选框在每列的位置 | String | 否 | left | left,center,right |
 | required | 是否必填 | Boolean | 否 | false | -- |
+| grid | 开启grid布局模式 | Boolean | 否 | true | -- |
+| columns | 单选框每列宽度权值 | Array,String | 否 | 100px | -- |
+| rowHeight | 单选框高度 | String | 否 | 50px | -- |
+| justify | 复选框在每列的位置 | String | 否 | left | left,center,right |
 
 
 #### Radio Attributes

@@ -50,10 +50,10 @@
 
     <!-- <vu-checkbox-group @change="test" :value="value">
       <vu-checkbox :all="true">全选</vu-checkbox>
-      <vu-checkbox value="1" :disable="true">福建</vu-checkbox>
-      <vu-checkbox value="2" :disable="true">厦门</vu-checkbox>
-      <vu-checkbox value="3">漳浦</vu-checkbox>
-      <vu-checkbox value="4">泉州</vu-checkbox>
+      <vu-checkbox :value="1" :disable="true">福建</vu-checkbox>
+      <vu-checkbox :value="2" :disable="true">厦门</vu-checkbox>
+      <vu-checkbox :value="3">漳浦</vu-checkbox>
+      <vu-checkbox :value="4">泉州</vu-checkbox>
     </vu-checkbox-group> -->
 
     <!-- <vu-color v-model="value" @change="test1"></vu-color> -->
@@ -135,7 +135,7 @@
 
     <!-- <vu-tree :option="option" @click="test"></vu-tree> -->
 
-    <vu-table
+    <!-- <vu-table
     ref="test"
     width="800px"
     :tableData="tableData"
@@ -179,7 +179,7 @@
           </vu-table-column>
         </vu-table-column>
       </vu-table-column>
-    </vu-table>
+    </vu-table> -->
 
   </div>
 </template>
@@ -189,7 +189,7 @@ export default {
   name: 'App',
   data(){
     return {
-      value: true,
+      value: [],
       tableData: [{
           date: '2016-05-03',
           name: '王小虎',

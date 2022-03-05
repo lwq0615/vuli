@@ -124,7 +124,7 @@ export default {
         .input{
             border-radius: 50%;
             background-color: white;
-            margin-right: 5px;
+            margin: 0 5px;
             border: 1px solid #e4e7ed;
             box-sizing: border-box;
             transition: all ease 0.3s;
