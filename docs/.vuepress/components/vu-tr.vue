@@ -97,10 +97,10 @@ export default {
                         }else{
                             if(domObj[item.prop]){
                                 domObj[item.prop].innerText = ''
-                                let div = document.createElement('div')
                                 item.refreshDom()
-                                div.appendChild(item.$el)
-                                domObj[item.prop].appendChild(div)
+                                console.log(domObj)
+                                console.log(domObj[item.prop])
+                                domObj[item.prop].appendChild(item.$el)
                             }
                         }
                     }
