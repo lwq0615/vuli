@@ -56,8 +56,9 @@ export default {
 | ---  | --- | ---  | ---      | ---   | ---   |
 | value / v-model | 绑定值 | String,Number | 否 | -- | --|
 | deleteBtn | 是否显示清空按钮 | Boolean | 否 | false | -- |
-| openSearch | 是否开启搜索 | Boolean | 否 | true | --|
+| search | 是否开启搜索 | Boolean | 否 | true | --|
 | disable | 是否禁用 | Boolean | 否 | false | -- |
+| readonly | 是否只读 | Boolean | 否 | false | -- |
 | name | select元素的name属性 | String | 否 | -- | -- |
 | required | 是否必填 | Boolean | 否 | false | -- |
 

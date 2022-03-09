@@ -28,7 +28,7 @@
     bottom: 0;
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 99;
 }
 .loading::after{
     position: absolute;
@@ -36,9 +36,11 @@
     display: block;
     transform: translate(-50%,-50%);
     background-image: url(/vuli/loading.png);
-    background-size: cover;
-    width: 20%;
-    height: 20%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 40px;
+    height: 40px;
     left: 50%;
     top: 50%;
     z-index: 3;

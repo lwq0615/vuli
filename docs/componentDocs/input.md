@@ -104,6 +104,7 @@ export default {
 | ---  | --- | ---  | ---      | ---   | ---   |
 | value / v-model | 绑定值 | String,Number | 是 | -- | -- |
 | disable | 是否禁用 | Boolean | 否 | false | -- |
+| readonly | 是否只读 | Boolean | 否 | false | -- |
 | placeholder | 输入框占位文本 | String | 否 | '请输入' | -- |
 | maxlength | 原生属性，最大输入长度 | String,Number | 否 | -- | -- |
 | minlength | 原生属性，最小输入长度 | String,Number | 否 | -- | -- |

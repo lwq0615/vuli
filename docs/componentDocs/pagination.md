@@ -99,11 +99,13 @@ export default {
 | page | 分页信息 | Object | 是 | -- | current:当前页码,size:每页条数,total:总条数(每个参数都是必填的) |
 | elements | 需要的分页器元素 | String | 否 | last,current,next,size,total | last,current,next,size,<br>goto,total,sizeText |
 | sizeList | size元素列表的每页条数 | Array| 否 | [10,20,50,100] | -- |
+| sizeDirection | size元素列表展开方向 | String| 否 | top | top,bottom |
 
 
 #### Events
 | 事件名 | 触发条件 | 回调参数 |
 |  ---  | ---  | ---  | 
+| pageChange | 分页信息改变 | 改变后的分页信息 |
 | currentChange | 页码改变 | 改变后的页码 |
 | sizeChange | 每页条数改变 | 改变后的每页条数 |
 | totalChange | 总条数改变 | 改变后的总条数 |

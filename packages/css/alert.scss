@@ -49,31 +49,6 @@
             text-align: right;
             button{
                 margin-left: 10px;
-                padding: 7px 14px;
-                font-size: 13px;
-                border-radius: 4px;
-                border: 1px solid #e4e7ed;
-                background-color: white;
-                cursor: pointer;
-                transition: all linear 0.1s;
-            }
-            .error{
-                background-color: #E44258;
-                color: white;
-            }
-            .default:hover{
-                background-color: rgba($color: #E44258, $alpha: 0.1);
-                color: #E44258;
-            }
-            .error:hover{
-                background-color: rgba($color: #E44258, $alpha: 0.8);
-            }
-            .enter{
-                background-color: #409eff;
-                color: white;
-            }
-            .enter:hover{
-                background-color: rgba($color: #409eff, $alpha: 0.8);
             }
         }
     }

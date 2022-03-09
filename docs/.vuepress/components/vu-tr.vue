@@ -1,6 +1,13 @@
 <template>
-    <tr :class="`vu-table-tr ${mainNode.activeRow === this.index ? 'active' : ''}`" @click="trClick" ref="tr">
-        <td v-if="mainNode.selection" class="vu-table-td" colspan="1" :style="mainNode.tdStyle({sticky:'left'})">
+    <tr 
+    :class="`vu-table-tr ${mainNode.activeRow === this.index ? 'active' : ''}`" 
+    @click="trClick" 
+    v-if="refresh">
+        <td 
+        v-show="mainNode.selection" 
+        class="vu-table-td" 
+        colspan="1" 
+        :style="mainNode.tdStyle({sticky:'left'})+'width:auto;'">
             <div 
             :class="`checkbox ${checked}`" 
             @click="check">
@@ -24,11 +31,13 @@ export default {
         data: Object,
         index: Number,
         mainNode: Object,
-        thOption: Array
+        tdOption: Array
     },
     data(){
         return {
-            observer: null
+            observer: null,
+            domObj: {},
+            refresh: true
         }
     },
     computed: {
@@ -36,25 +45,14 @@ export default {
             if(this.data){
                 return this.mainNode.selectData.includes(this.data) ? 'checked' : ''
             }else{
-                return this.mainNode.selectData.length === this.mainNode.tableData.length ? 'checked' : ''
+                return this.tableData && this.mainNode.selectData.length === this.mainNode.tableData.length ? 'checked' : ''
             }
-        },
+        }
+    },
+    watch: {
         tdOption(){
-            return this.getChild(this.thOption)
+            this.refreshDom()
         }
-    },
-    mounted(){
-        if(this.data){
-            const observer = new MutationObserver(this.bindTd);
-            observer.observe(this.$el, {
-                childList: true,
-                subTree: true
-            })
-            this.observer = observer
-        }
-    },
-    beforeDestroy(){
-        this.observer.disconnect()
     },
     destroyed(){
         if(this.mainNode.selectData.includes(this.data)){
@@ -76,25 +74,15 @@ export default {
                 this.mainNode.selectRow()
             }
         },
-        getChild(options){
-            let res = []
-            for(let item of options){
-                if(item.children.length){
-                    res = res.concat(this.getChild(item.children))
-                }else{
-                    res.push(item)
-                }
-            }
-            return res
-        },
         bindTd(){
             let domObj = {}
-            for(let i=0;i<this.$refs.tr.children.length;i++){
-                let td = this.$refs.tr.children[i]
+            for(let i=0;i<this.$el.children.length;i++){
+                let td = this.$el.children[i]
                 if(td.nodeName === 'TD' && td.getAttribute('prop')){
                     domObj[td.getAttribute('prop')] = td
                 }
             }
+            this.domObj = domObj
             let getChild = function(parent){
                 for(let item of parent.$children){
                     if(item.$options._componentTag === 'vu-table-column'){
@@ -107,14 +95,24 @@ export default {
                         if(!last){
                             getChild(item)
                         }else{
-                            domObj[item.prop].innerText = ''
-                            item.refreshDom()
-                            domObj[item.prop].appendChild(item.$el)
+                            if(domObj[item.prop]){
+                                item.refreshDom()
+                                domObj[item.prop].appendChild(item.$el)
+                            }
                         }
                     }
                 }
             }
             getChild(this)
+        },
+        refreshDom(){
+            this.refresh = false
+            this.$nextTick(() => {
+                this.refresh = true
+                this.$nextTick(() => {
+                    this.bindTd()
+                })
+            })
         }
     }
 }

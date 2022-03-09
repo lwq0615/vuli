@@ -23,7 +23,7 @@ export default {
             },
             {
                 text: '确定',
-                type: 'enter',
+                type: 'error',
                 close: false,
                 click(){
                   message('提交成功')
@@ -59,7 +59,7 @@ export default {
             },
             {
                 text: '确定',
-                type: 'enter',
+                type: 'error',
                 close: false,
                 click(){
                   that.$message('提交成功')
@@ -96,14 +96,14 @@ alert({
 | height | 组件高度 | String | 否 | auto | -- |
 | content | 消息文本 | String | 否 | -- | -- |
 | contentHeight | 消息文本的最高高度，超出可滚动查看 | String | 否 | 200px | -- |
-| buttons | 按钮配置 | Array | 否 | 默认有'取消','确定'按钮 | 具体查看下方配置 |
+| buttons | 按钮配置 | Array | 否 | 默认有'取消','确定'按钮 | 具体查看button Attributes |
 
 
 #### button Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
 | text | 按钮文本 | String | 否 | 按钮 | -- |
-| type | 按钮样式 | String | 否 | default | default,error,enter |
+| type | 按钮样式 | String | 否 | default | button的color属性 |
 | close | 点击按钮时是否关闭弹窗 | Boolean | 否 | true | true,false |
 | click | 点击按钮时触发的事件 | function | 否 | -- | -- |
 

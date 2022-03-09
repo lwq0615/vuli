@@ -3,7 +3,7 @@
         <slot :row="parentTr.data" :index="parentTr.index">{{parentTr.data[prop]}}</slot>
     </span>
     <span v-else v-show="false">
-        <slot :row="{}" :index="0"></slot>
+        <slot :row="mainNode.tableData && mainNode.tableData[0] || {}" :index="0"></slot>
     </span>
 </template>
 
@@ -38,19 +38,25 @@ export default {
     mounted(){
         if(!this.parentTr){
             this.cutParentCol(1)
-            if(this.$parent.$options._componentTag === 'vu-table-column'){
-                this.$parent.option.children.push(this.option)
+            let temp = []
+            for(let item of this.$parent.$slots.default){
+                if(item.componentInstance instanceof this.constructor){
+                    temp.push(item.componentInstance)
+                }
+            }
+            if(this.$parent instanceof this.constructor){
+                this.$parent.option.children.splice(temp.indexOf(this),0,this.option)
             }else{
-                this.mainNode.thOption.push(this.option)
+                this.mainNode.thOption.splice(temp.indexOf(this),0,this.option)
             }
         }
     },
     destroyed(){
         if(!this.parentTr){
-            if(this.$parent.$options._componentTag === 'vu-table-column'){
+            if(this.$parent instanceof this.constructor){
                 this.$parent.option.children.splice(this.$parent.option.children.indexOf(this.option),1)
                 this.$parent.cutParentCol(-this.option.cols)
-            }else if(this.$parent.$options._componentTag === 'vu-table'){
+            }else if(this.$parent instanceof this.mainNode.constructor){
                 this.mainNode.thOption.splice(this.mainNode.thOption.indexOf(this.option),1)
             }
         }
@@ -74,9 +80,11 @@ export default {
             return null
         },
         cutParentCol(col){
-            this.option.cols += col
-            if(this.$parent.$options._componentTag === 'vu-table-column'){
-                this.$parent.cutParentCol(col)
+            if(this.$parent instanceof this.constructor){
+                this.$parent.option.cols += col
+                if(this.$parent.option.cols > 1){
+                    this.$parent.cutParentCol(col)
+                }
             }
         },
         refreshDom(){

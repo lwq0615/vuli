@@ -1,5 +1,4 @@
 .vu-pagination_container {
-    display: inline-block;
     text-align: center;
     .pagination {
         display: flex;
@@ -85,7 +84,6 @@
                 }
                 .size-list {
                     position: absolute;
-                    top: 100%;
                     left: 0;
                     right: 0;
                     z-index: 99;
@@ -112,6 +110,14 @@
                     .size-item:hover {
                         background-color: #F5F7FA;
                     }
+                }
+                .size-list.top {
+                    bottom: 100%;
+                    top: auto;
+                }
+                .size-list.bottom {
+                    bottom: auto;
+                    top: 100%;
                 }
             }
             .goto {

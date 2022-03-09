@@ -12,7 +12,7 @@
 
     <!-- <vu-slide :imgs="['/1.JPG','/2.jpg','/3.jpg']" ref="slide"></vu-slide> -->
 
-    <!-- <vu-select name="test" :required="true" :openSearch="false" deleteBtn>
+    <!-- <vu-select name="test" :required="true" :search="false" deleteBtn>
       <vu-select-option label="福建" :value="1"></vu-select-option>
       <vu-select-option label="漳州" :value="2"></vu-select-option>
       <vu-select-option label="漳浦" :value="3"></vu-select-option>
@@ -72,7 +72,7 @@
       上传文件
     </vu-upload> -->
 
-    <!-- <vu-row>
+    <!-- <vu-row rowGap="5px" colGap="25px">
       <vu-col :span="8">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
       </vu-col>
@@ -82,8 +82,6 @@
       <vu-col :span="8">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
       </vu-col>
-    </vu-row>
-    <vu-row gap="5px">
       <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
       </vu-col>
@@ -94,17 +92,6 @@
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
       </vu-col>
       <vu-col :span="6">
-        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </vu-col>
-    </vu-row>
-    <vu-row gap="5px">
-      <vu-col :span="6" :offset="1">
-        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </vu-col>
-      <vu-col :span="4" :offset="2">
-        <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
-      </vu-col>
-      <vu-col :span="8" :offset="1">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
       </vu-col>
     </vu-row> -->
@@ -138,15 +125,13 @@
     <!-- <vu-table
     ref="test"
     width="800px"
-    :tableData="tableData"
-    @select="test">
+    :tableData="tableData">
       <vu-table-column
         prop="date"
         label="日期"
         width="80px">
       </vu-table-column>
-      <vu-table-column label="配送信息"
-          v-if="value">
+      <vu-table-column label="配送信息">
         <vu-table-column
         prop="name"
         label="姓名"
@@ -181,73 +166,62 @@
       </vu-table-column>
     </vu-table> -->
 
+    <vu-crud 
+    ref="crud"
+    :option="tableOption" 
+    @pageRefresh="test"
+    :tableData="tableData"></vu-crud>
+
   </div>
 </template>
 
 <script>
+import tableOption from './powerOption.js'
+import axios from 'axios'
 export default {
   name: 'App',
   data(){
     return {
-      value: [],
+      value: true,
+      tableOption,
+      propDict: {},
       tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-08',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-06',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-07',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }]
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200333
+      },{
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200333
+      },{
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200333
+      },{
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200333
+      }]
     }
   },
   methods: {
     test(e){
       console.log(e)
     },
-    test1(e){
-      this.tableData.pop()
+    test1(e1,e2){
+      this.value = !this.value
     }
   }
 }

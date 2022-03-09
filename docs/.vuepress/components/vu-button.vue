@@ -1,7 +1,6 @@
 <template>
     <button 
-    :class="`vu-button_button ${size}`"
-    :style="btnColor"
+    :class="`vu-button_button size-${size} color-${color}`"
     @click="$emit('click',$event)"
     ><slot></slot></button>
 </template>
@@ -10,53 +9,72 @@
 export default {
     name: 'vu-button',
     props:{
-        color: {
-            type: String,
-            default: '#E44258'
-        },
-        size: {
+         color: {
             type: String,
             default: 'default'
-        }
-    },
-    computed:{
-        btnColor(){
-            let colors = {
-                primary: '#409EFF',
-                success: '#67C23A',
-                info: '#909399',
-                warning: '#E6A23C',
-                error: '#F56C6C'
-            }
-            return `background-color:${colors[this.color] || this.color};`
-        }
+         },
+         size: {
+            type: String,
+            default: 'default'
+         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .vu-button_button{
-   border-radius: 6px;
+   border-radius: 4px;
    border: 1px solid #e4e7ed;
    cursor: pointer;
    font-size: 14px;
    padding: 10px 20px;
    color: white;
+   transition: all linear 0.1s;
 }
-.vu-button_button.default{
+.vu-button_button.size-default{
    font-size: 14px;
    padding: 10px 20px;
    color: white;
 }
-.vu-button_button.small{
+.vu-button_button.size-small{
    font-size: 13px;
    padding: 7px 14px;
    color: white;
 }
-.vu-button_button.big{
+.vu-button_button.size-big{
    font-size: 18px;
    padding: 12px 28px;
    color: white;
+}
+
+
+.vu-button_button.color-default{
+   background-color: white;
+   color: black;
+}
+.vu-button_button.color-default:hover{
+   background-color: rgba($color: #E44258, $alpha: 0.1);
+   color: #E44258;
+}
+
+
+.vu-button_button.color-primary{
+   background-color: #409EFF;
+}
+
+.vu-button_button.color-success{
+   background-color: #67C23A;
+}
+
+.vu-button_button.color-info{
+   background-color: #909399;
+}
+.vu-button_button.color-warning{
+   background-color: #E6A23C;
+}
+
+.vu-button_button.color-error{
+   background-color: #E44258;
 }
 
 

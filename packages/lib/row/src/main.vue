@@ -8,11 +8,12 @@
 export default {
     name: 'vu-row',
     props: {
-        gap: String
+        colGap: String,
+        rowGap: String
     },
     computed: {
         gapStyle(){
-            return `grid-column-gap: ${this.gap};`
+            return `grid-column-gap: ${this.colGap};grid-row-gap: ${this.rowGap};`
         }
     }
 }

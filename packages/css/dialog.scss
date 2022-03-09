@@ -11,33 +11,40 @@
     padding-bottom: 10%;
     pointer-events: none;
     .dialog-box {
+        position: relative;
+        top: 0;
         pointer-events: auto;
         z-index: 100;
         user-select: text;
         background-color: white;
         border-radius: 5px;
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-        transition: all ease 0.3s;
-        padding: 10px 15px;
-        .title {
+        .dialog-box-title {
+            padding: 10px 15px;
             margin: 0;
             font-size: 17px;
-            position: relative;
             user-select: none;
+            display: flex;
+            .text{
+                flex: 1;
+            }
             .close-icon {
                 display: flex;
                 width: 20px;
                 height: 20px;
                 justify-content: center;
                 align-items: center;
-                position: absolute;
-                right: 10px;
-                top: 10px;
                 font-size: 23px;
                 color: #e44258;
                 cursor: pointer;
                 user-select: none;
             }
+        }
+        .dialog-box-content{
+            padding: 0 15px;
+        }
+        .dialog-box-footer{
+            padding: 10px 15px;
         }
     }
 }
@@ -49,12 +56,15 @@
 
 .vu-dialog-show-enter-active,
 .vu-dialog-show-leave-active {
-    transition: all 0.3s;
+    transition: all ease 0.3s;
+    .dialog-box {
+        transition: all ease 0.3s;
+    }
 }
 .vu-dialog-show-enter,
 .vu-dialog-show-leave-to {
     opacity: 0;
     .dialog-box {
-        transform: translateY(-50px);
+        top: -50px;
     }
 }

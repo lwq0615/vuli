@@ -1,7 +1,7 @@
 <template>
     <div 
     :class="`options-list ${value == $parent.form.value ? 'active' : ''}`" 
-    v-show="!$parent.openSearch || !$parent.showOptions || label.includes($parent.form.label || '')"
+    v-show="!$parent.search || !$parent.showOptions || label.includes($parent.form.label || '')"
     @mousedown="$event.preventDefault()"
     @click="checkOption">{{label}}</div>
 </template>

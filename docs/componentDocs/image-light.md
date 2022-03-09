@@ -4,7 +4,7 @@
 
 <br>
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <vu-button @click="image">查看大图</vu-button>
+    <vu-button @click="image" color="error">查看大图</vu-button>
 </div>
 
 <script>
@@ -21,7 +21,7 @@ export default {
 
 ### 代码
 ```html
-<vu-button @click="image">查看大图</vu-button>
+<vu-button @click="image" color="error">>查看大图</vu-button>
 
 <script>
 export default {

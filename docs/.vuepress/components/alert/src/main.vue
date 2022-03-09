@@ -10,11 +10,12 @@
                     {{option.content}}
                 </p>
                 <div class="buttons">
-                    <button
+                    <vu-button
                     v-for="(item,index) in option.buttons"
                     :key="index"
-                    :class="item.type || 'default'" 
-                    @click="buttonClick(item)">{{item.text || '按钮'}}</button>
+                    size="small"
+                    :color="item.type || 'default'" 
+                    @click="buttonClick(item)">{{item.text || '按钮'}}</vu-button>
                 </div>
             </div>
         </div>
@@ -22,7 +23,11 @@
 </template>
 
 <script>
+import vuButton from '../../vu-button.vue'
 export default {
+    components: {
+        vuButton
+    },
     data(){
         return {
             showAlert: false,
@@ -38,7 +43,7 @@ export default {
                     },
                     {
                         text: '确定',
-                        type: 'enter'
+                        type: 'error'
                     }
                 ]
             },
@@ -133,31 +138,6 @@ export default {
             text-align: right;
             button{
                 margin-left: 10px;
-                padding: 7px 14px;
-                font-size: 13px;
-                border-radius: 4px;
-                border: 1px solid #e4e7ed;
-                background-color: white;
-                cursor: pointer;
-                transition: all linear 0.1s;
-            }
-            .error{
-                background-color: #E44258;
-                color: white;
-            }
-            .default:hover{
-                background-color: rgba($color: #E44258, $alpha: 0.1);
-                color: #E44258;
-            }
-            .error:hover{
-                background-color: rgba($color: #E44258, $alpha: 0.8);
-            }
-            .enter{
-                background-color: #409eff;
-                color: white;
-            }
-            .enter:hover{
-                background-color: rgba($color: #409eff, $alpha: 0.8);
             }
         }
     }

@@ -1,14 +1,19 @@
 <template>
-    <div class="vu-switch_container" @click="$emit('click',$event)">
-        <div class="switch" @click="change()" :style="colorStyle">
-            <div class="span" :style="flexStyle"></div>
-            <div class="icon"></div>
+    <div class="vu-switch_container">
+        <div class="flex">
+            <div class="text">
+                <slot></slot>
+            </div>
+            <div class="switch" @click="click($event)" :style="colorStyle">
+                <div class="span" :style="flexStyle"></div>
+                <div class="icon"></div>
+            </div>
+            <input 
+            type="text" 
+            style="display: none;" 
+            v-model="activeValue" 
+            :name="name">
         </div>
-        <input 
-        type="text" 
-        style="display: none;" 
-        v-model="activeValue" 
-        :name="name">
     </div>
 </template>
 
@@ -29,7 +34,7 @@ export default {
             type: [Number,String,Boolean],
             default: false
         },
-        disabled: {
+        disable: {
             type: Boolean,
             default: false
         },
@@ -75,7 +80,7 @@ export default {
         },
         colorStyle(){
             let style = `background-color:${this.open ? this.openColor : this.closeColor};`
-            if(this.disabled){
+            if(this.disable){
                 style += 'opacity: 0.5;'
             }
             return style
@@ -93,7 +98,7 @@ export default {
     },
     methods: {
         change(value){
-            if(this.disabled){
+            if(this.disable){
                 return 'disable'
             }
             let newValue = null
@@ -109,6 +114,10 @@ export default {
             this.$emit('change',this.activeValue)
             this.$emit('model',this.activeValue)
             return this.open
+        },
+        click(event){
+            this.$emit('click',event)
+            this.change()
         }
     }
 }
@@ -117,28 +126,33 @@ export default {
 
 <style lang="scss" scoped>
 .vu-switch_container{
-    width: 40px;
-    height: 20px;
     display: inline-block;
-    .switch{
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        border-radius: 100px;
+    .flex{
         display: flex;
-        transition: all ease 0.3s;
-        align-items: center;
-        .span{
-            flex: 1;
-            transition: all ease 0.3s;
+        .text{
+            font-size: 15px;
+            color: #606266;
         }
-        .icon{
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            background-color: white;
-            margin: 2px;
+        .switch{
+            width: 40px;
+            height: 20px;
+            cursor: pointer;
+            border-radius: 100px;
+            display: flex;
             transition: all ease 0.3s;
+            align-items: center;
+            .span{
+                flex: 1;
+                transition: all ease 0.3s;
+            }
+            .icon{
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background-color: white;
+                margin: 2px;
+                transition: all ease 0.3s;
+            }
         }
     }
 }

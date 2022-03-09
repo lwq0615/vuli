@@ -13,7 +13,12 @@
 
         <a ref="a"></a>
 
-        <vu-button size="small" @click="inputFiles" style="margin-left:7px;" v-if="type === 'file'">
+        <vu-button 
+        size="small" 
+        @click="inputFiles" 
+        style="margin-left:7px;" 
+        v-if="type === 'file'"
+        color="error">
             上传文件
         </vu-button>
 

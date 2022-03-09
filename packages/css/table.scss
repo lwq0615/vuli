@@ -5,12 +5,13 @@
     border-spacing: 0;
     border-radius: 3px;
     position: relative;
-    border: 1px solid #dcdfe6;
+    outline: 1px solid #dcdfe6;
     .vu-table-tr {
         transition: all ease 0.1s;
         .vu-table-td,
         .vu-table-th {
             padding: 7px 5px;
+            border: none;
             border-bottom: 1px solid #dcdfe6;
             color: #606266;
             overflow: hidden;
@@ -48,6 +49,9 @@
             text-align: left;
             font-size: 14px;
             line-height: 20px;
+        }
+        .vu-table-th:last-child {
+            width: 100%;
         }
     }
     .vu-table-tr:hover {

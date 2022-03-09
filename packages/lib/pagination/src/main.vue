@@ -36,8 +36,8 @@
 
                     <div :class="`arrow ${sizeActive ? 'active' : ''}`">&lt;</div>
 
-                    <transition name="rotate-top">
-                        <div class="size-list" v-show="sizeActive">
+                    <transition :name="sizeDirection === 'bottom' ? 'rotate-top' : 'rotate-bottom'">
+                        <div :class="`size-list ${sizeDirection}`" v-show="sizeActive">
                             <div 
                             :class="`size-item ${item === page.size ? 'active' : ''}`"
                             v-for="(item,index) in sizeList || [10,20,50,100]"
@@ -81,6 +81,10 @@ export default {
         elements: {
             type: String,
             default: 'last,current,next,size,total'
+        },
+        sizeDirection: {
+            type: String,
+            default: 'top'
         }
     },
     data(){
@@ -103,6 +107,11 @@ export default {
                 if(newVal.total !== this.oldPage.total){
                     this.$emit('totalChange',newVal.total)
                 }
+                if(newVal.current !== this.oldPage.current || 
+                newVal.size !== this.oldPage.size ||
+                newVal.total !== this.oldPage.total){
+                    this.$emit('pageChange',newVal)
+                }
                 this.oldPage = {...newVal}
             }
         }
@@ -111,7 +120,7 @@ export default {
         pageList(){
             let pages = []
             let page = this.page
-            let pageCount = Math.ceil(page.total/page.size)
+            let pageCount = Math.ceil(page.total/page.size) || 1
             if(page.current < 1){
                 this.setCurrent(1)
             }

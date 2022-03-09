@@ -2,19 +2,19 @@
     <div class="vu-select_container">
         <input 
             class="show-text"
-            :placeholder="tempLabel || '请选择'"
+            :placeholder="tempLabel || placeholder"
             @click="selectClick(true)"
             @blur="selectClick(false)"
             v-model="form.label"
             :style="disableStyle+cursorStyle"
-            :readonly="!openSearch || disable"
+            :readonly="!search || disable || readonly"
             ref="showText"
         >
         <div class="options" :style="heightStyle">
             <slot></slot>
         </div>
         <div class="delete-btn" @click="deleteCheck" v-if="deleteBtn" :style="cursorStyle">×</div>
-        <div :class="`arrow-btn ${showOptions ? 'active' : ''}`" @click="deleteCheck" v-else :style="cursorStyle">></div>
+        <div :class="`arrow-btn ${showOptions ? 'active' : ''}`" :style="cursorStyle">></div>
         <input 
         type="text" 
         style="display: none;" 
@@ -33,15 +33,23 @@ export default {
             type: [String,Number],
             default: null
         },
+        placeholder: {
+            type: String,
+            default: '请选择'
+        },
         deleteBtn: {
             type: Boolean,
             default: false
         },
-        openSearch: {
+        search: {
             type: Boolean,
             default: true
         },
         disable: {
+            type: Boolean,
+            default: false
+        },
+        readonly: {
             type: Boolean,
             default: false
         },
@@ -77,7 +85,7 @@ export default {
             if(!this.showOptions){
                 return `height: 0;`
             }
-            if(this.openSearch){
+            if(this.search){
                 let len = 0
                 for(let item of this.options){
                     if(item.label.includes(this.form.label || '')){
@@ -92,6 +100,10 @@ export default {
     watch:{
         value:{
             handler(newVal){
+                if(newVal === null || newVal === undefined){
+                    this.checkOption(null)
+                    return
+                }
                 for(let item of this.options){
                     if(item.value === newVal && newVal !== this.form.value){
                         this.checkOption(item)
@@ -116,17 +128,17 @@ export default {
          */
         selectClick(open){
             open ? this.$emit('click') : null
-            if(this.disable){
+            if(this.disable || this.readonly){
                 return
             }
             if(open){
                 this.showOptions = true
-                if(this.openSearch){
+                if(this.search){
                     this.form.label = ''
                 }
             }else{
                 this.showOptions = false
-                if(this.openSearch){
+                if(this.search){
                     this.form.label = this.tempLabel
                 }
             }
@@ -153,10 +165,10 @@ export default {
             this.showOptions = false
         },
         deleteCheck(){
-            this.$emit('clear')
-            if(this.disable){
+            if(this.disable || this.readonly){
                 return
             }
+            this.$emit('clear')
             this.checkOption(null)
         }
     }

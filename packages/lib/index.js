@@ -33,6 +33,7 @@ import badge from './badge'
 import tree from './tree'
 import table from './table'
 import tableColumn from './table-column'
+import crud from './crud'
 
 const components = [
     button,
@@ -67,7 +68,8 @@ const components = [
     badge,
     tree,
     table,
-    tableColumn
+    tableColumn,
+    crud
 ]
 
 const install = function(Vue){
@@ -115,7 +117,8 @@ export {
     badge,
     tree,
     table,
-    tableColumn
+    tableColumn,
+    crud
 }
 
 export default { install }

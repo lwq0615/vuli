@@ -41,43 +41,6 @@
     </vu-table>
 </div>
 
-<script>
-export default {
-  data(){
-    return {
-      tableData: [{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200333
-      },{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200333
-      },{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200333
-      },{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200333
-      }]
-    }
-  }
-}
-</script>
 
 <br>
 <br>
@@ -195,7 +158,7 @@ export default {
         label="姓名"
         width="180px"
         v-slot="data">
-          <vu-button>
+          <vu-button color="error">
             {{data.row.name+'-'+data.index}}
           </vu-button>
         </vu-table-column>
@@ -291,7 +254,7 @@ export default {
             label="姓名"
             width="180px"
             v-slot="data">
-                <vu-button>
+                <vu-button color="error">>
                 {{data.row.name+'-'+data.index}}
                 </vu-button>
             </vu-table-column>

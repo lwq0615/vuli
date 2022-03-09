@@ -10,11 +10,12 @@
                     {{option.content}}
                 </p>
                 <div class="buttons">
-                    <button
+                    <vu-button
                     v-for="(item,index) in option.buttons"
                     :key="index"
-                    :class="item.type || 'default'" 
-                    @click="buttonClick(item)">{{item.text || '按钮'}}</button>
+                    size="small"
+                    :color="item.type || 'default'" 
+                    @click="buttonClick(item)">{{item.text || '按钮'}}</vu-button>
                 </div>
             </div>
         </div>
@@ -22,7 +23,11 @@
 </template>
 
 <script>
+import vuButton from '../../button/src/main.vue'
 export default {
+    components: {
+        vuButton
+    },
     data(){
         return {
             showAlert: false,
@@ -38,7 +43,7 @@ export default {
                     },
                     {
                         text: '确定',
-                        type: 'enter'
+                        type: 'error'
                     }
                 ]
             },

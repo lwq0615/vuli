@@ -17,7 +17,7 @@
         </vu-col>
     </vu-row>
     使用gap属性设置单元格间隔
-    <vu-row gap="5px">
+    <vu-row colGap="5px">
         <vu-col :span="6">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
         </vu-col>
@@ -32,7 +32,7 @@
         </vu-col>
     </vu-row>
     使用offset设置单元格偏移量
-    <vu-row gap="5px">
+    <vu-row colGap="5px">
         <vu-col :span="6" :offset="1">
             <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
         </vu-col>
@@ -60,7 +60,7 @@
     </vu-col>
 </vu-row>
 使用gap属性设置单元格间隔
-<vu-row gap="5px">
+<vu-row colGap="5px">
     <vu-col :span="6">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
     </vu-col>
@@ -75,7 +75,7 @@
     </vu-col>
 </vu-row>
 使用offset设置单元格偏移量
-<vu-row gap="5px">
+<vu-row colGap="5px">
     <vu-col :span="6" :offset="1">
         <div style="background-color: #E44258;border-radius:3px;height:30px;"></div>
     </vu-col>
@@ -90,13 +90,14 @@
 
 **注意**
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    每个row可容纳的最大span+offset为24，超出部分会被自动隐藏
+    每行可容纳的最大span+offset为24，超出部分会被自动换行
 </div>
 
 #### Row Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| gap | 单元格间隔大小 | String | 否 | 0px | -- |
+| colGap | 列间隔大小 | String | 否 | 0px | -- |
+| rowGap | 行间隔大小 | String | 否 | 0px | -- |
 
 #### Col Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |

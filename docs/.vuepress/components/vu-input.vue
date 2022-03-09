@@ -5,7 +5,7 @@
         :class="disableClass" 
         :style="paddingStyle"
         :type="type" 
-        :readonly="disable" 
+        :readonly="disable || readonly" 
         :placeholder="placeholder" 
         :value="value"
         :maxlength="maxlength"
@@ -23,7 +23,7 @@
         v-else
         :class="disableClass" 
         :style="textareaStyle"
-        :readonly="disable" 
+        :readonly="disable || readonly" 
         :required="required"
         :placeholder="placeholder" 
         :value="value"
@@ -50,9 +50,14 @@ export default {
     props: {
         value: {
             type: [String,Number],
+            default: '',
             required: true
         },
         disable: {
+            type: Boolean,
+            default: false
+        },
+        readonly: {
             type: Boolean,
             default: false
         },
@@ -102,7 +107,7 @@ export default {
             if(this.type === 'textarea'){
                 return ''
             }else{
-                return 'width:200px;height:35px;'
+                return 'width:200px;height:40px;'
             }
         },
         textareaStyle(){
@@ -136,6 +141,9 @@ export default {
     },
     methods: {
         clearValue(){
+            if(this.disable || this.readonly){
+                return
+            }
             this.$emit('model',"")
             this.$emit('clear')
         },
@@ -157,6 +165,7 @@ export default {
 
     input{
         width: 100%;
+        font-size: 15px;
         height: 100%;
         outline: none;
         border: 1px solid #e4e7ed;

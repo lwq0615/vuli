@@ -1,14 +1,19 @@
 <template>
-    <div class="vu-switch_container" @click="$emit('click',$event)">
-        <div class="switch" @click="change()" :style="colorStyle">
-            <div class="span" :style="flexStyle"></div>
-            <div class="icon"></div>
+    <div class="vu-switch_container">
+        <div class="flex">
+            <div class="text">
+                <slot></slot>
+            </div>
+            <div class="switch" @click="click($event)" :style="colorStyle">
+                <div class="span" :style="flexStyle"></div>
+                <div class="icon"></div>
+            </div>
+            <input 
+            type="text" 
+            style="display: none;" 
+            v-model="activeValue" 
+            :name="name">
         </div>
-        <input 
-        type="text" 
-        style="display: none;" 
-        v-model="activeValue" 
-        :name="name">
     </div>
 </template>
 
@@ -29,7 +34,7 @@ export default {
             type: [Number,String,Boolean],
             default: false
         },
-        disabled: {
+        disable: {
             type: Boolean,
             default: false
         },
@@ -75,7 +80,7 @@ export default {
         },
         colorStyle(){
             let style = `background-color:${this.open ? this.openColor : this.closeColor};`
-            if(this.disabled){
+            if(this.disable){
                 style += 'opacity: 0.5;'
             }
             return style
@@ -93,7 +98,7 @@ export default {
     },
     methods: {
         change(value){
-            if(this.disabled){
+            if(this.disable){
                 return 'disable'
             }
             let newValue = null
@@ -109,6 +114,10 @@ export default {
             this.$emit('change',this.activeValue)
             this.$emit('model',this.activeValue)
             return this.open
+        },
+        click(event){
+            this.$emit('click',event)
+            this.change()
         }
     }
 }

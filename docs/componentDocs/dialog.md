@@ -64,6 +64,9 @@ export default {
 | width | 组件宽度 | String | 否 | 500px | -- |
 | height | 组件高度 | String | 否 | auto | -- |
 | modal | 是否需要遮罩层 | Boolean | 否 | true | -- |
+| modelHide | 点击遮罩层时关闭对话框 | Boolean | 否 | true | -- |
+| moveable | 对话框是否可以拖动 | Boolean | 否 | false | -- |
+| esc | 按esc键关闭对话框 | Boolean | 否 | true | -- |
 
 #### Slots
 | name | 说明 |

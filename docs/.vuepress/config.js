@@ -14,6 +14,11 @@ module.exports = {
                 path: '/'
             },
             {
+                title: 'Crud组件',
+                collapsable: false,
+                path: '/componentDocs/crud'
+            },
+            {
                 title: 'View',
                 collapsable: false,
                 children: [
