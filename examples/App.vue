@@ -167,11 +167,11 @@
       </vu-table-column>
     </vu-table> -->
 
-    <!-- <vu-crud 
+    <vu-crud 
     ref="crud"
     :option="tableOption" 
     @pageRefresh="test"
-    :tableData="tableData"></vu-crud> -->
+    :tableData="tableData"></vu-crud>
 
   </div>
 </template>

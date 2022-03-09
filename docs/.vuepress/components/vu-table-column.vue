@@ -91,6 +91,9 @@ export default {
             this.$nextTick(() => {
                 this.refresh = true
                 this.$nextTick(() => {
+                    console.log(this.parentTr.domObj)
+                    console.log(this.parentTr.domObj[this.prop])
+                    console.log(this.$el)
                     this.parentTr.domObj[this.prop].appendChild(this.$el)
                 })
             })
