@@ -1,5 +1,5 @@
 <template>
-    <span v-if="parentTr && refresh">
+    <span v-if="parentTr">
         <slot :row="parentTr.data" :index="parentTr.index">{{parentTr.data[prop]}}</slot>
     </span>
     <span v-else v-show="false">
@@ -31,8 +31,7 @@ export default {
                 ...this._props,
                 children: [],
                 cols:0
-            },
-            refresh: true
+            }
         }
     },
     mounted(){
@@ -86,15 +85,6 @@ export default {
                     this.$parent.cutParentCol(col)
                 }
             }
-        },
-        refreshDom(){
-            this.$nextTick(() => {
-                this.refresh = true
-                this.$nextTick(() => {
-                    this.parentTr.domObj[this.prop].appendChild(this.$el)
-                })
-            })
-            this.refresh = false
         }
     }
 }

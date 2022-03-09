@@ -86,15 +86,6 @@ export default {
                     this.$parent.cutParentCol(col)
                 }
             }
-        },
-        refreshDom(){
-            this.$nextTick(() => {
-                this.refresh = true
-                this.$nextTick(() => {
-                    this.parentTr.domObj[this.prop].appendChild(this.$el)
-                })
-            })
-            this.refresh = false
         }
     }
 }
