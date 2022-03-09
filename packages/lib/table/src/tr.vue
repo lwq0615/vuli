@@ -98,7 +98,6 @@ export default {
                             if(domObj[item.prop]){
                                 domObj[item.prop].innerText = ''
                                 item.refreshDom()
-                                domObj[item.prop].appendChild(item.$el)
                             }
                         }
                     }
