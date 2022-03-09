@@ -97,8 +97,10 @@ export default {
                         }else{
                             if(domObj[item.prop]){
                                 domObj[item.prop].innerText = ''
+                                let div = document.createElement('div')
                                 item.refreshDom()
-                                domObj[item.prop].appendChild(item.$el)
+                                div.appendChild(item.$el)
+                                domObj[item.prop].appendChild(div)
                             }
                         }
                     }
