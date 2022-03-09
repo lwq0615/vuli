@@ -135,6 +135,7 @@
         <vu-table-column
         prop="name"
         label="姓名"
+        v-if="value"
         width="180px"
         v-slot="data">
           <vu-button>
@@ -166,11 +167,11 @@
       </vu-table-column>
     </vu-table> -->
 
-    <vu-crud 
+    <!-- <vu-crud 
     ref="crud"
     :option="tableOption" 
     @pageRefresh="test"
-    :tableData="tableData"></vu-crud>
+    :tableData="tableData"></vu-crud> -->
 
   </div>
 </template>

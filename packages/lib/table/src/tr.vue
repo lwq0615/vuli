@@ -96,6 +96,7 @@ export default {
                             getChild(item)
                         }else{
                             if(domObj[item.prop]){
+                                domObj[item.prop].innerText = ''
                                 item.refreshDom()
                                 domObj[item.prop].appendChild(item.$el)
                             }
