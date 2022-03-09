@@ -98,8 +98,6 @@ export default {
                             if(domObj[item.prop]){
                                 domObj[item.prop].innerText = ''
                                 item.refreshDom()
-                                console.log(domObj)
-                                console.log(domObj[item.prop])
                                 domObj[item.prop].appendChild(item.$el)
                             }
                         }
