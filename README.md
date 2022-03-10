@@ -26,3 +26,5 @@ Vue.use(button)
 ```
 
 [说明文档](https://lwq0615.github.io/vuli/)
+
+联系开发者：1072864729@qq.com
