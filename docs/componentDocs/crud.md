@@ -162,6 +162,13 @@ export default {
 }
 </script>
 
+
+
+**注意**
+<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+    组件提供了默认的新增和编辑操作，并且可以简单的配置他们。如果你需要更复杂的自定义新增或编辑窗口，可以通过设置option中的editDialog和addDialog为false来关闭默认弹窗，再通过editClick和addClick事件来编辑自己的逻辑
+</div>
+
 <br>
 
 ### 代码
@@ -374,6 +381,8 @@ export default {
 | buttons | 表格上方按钮组配置 | Object | 否 | null |具体配置查看buttons配置项|
 | operation | 表格右侧操作栏配置 | Object | 否 | null | 具体配置查看operation配置项 |
 | delAlert | 删除前是否弹窗提示 | Boolean | 否 | true | -- |
+| editDialog | 点击编辑时弹出默认的编辑面板 | Boolean | 否 | true | -- |
+| addDialog | 点击新增时弹出默认的新增面板 | Boolean | 否 | true | -- |
 | paginationSizeList | 分页器每页条数配置 | Array | 否 | [10,20,50,100] | -- |
 | paginationElements | 分页器配置 | String | 否 | last,current,<br>next,size,total | 参考Pagination组件elements属性 |
 | propOption | 表格字段配置 | Array | 是 | null | 具体配置查看propOption配置项 |

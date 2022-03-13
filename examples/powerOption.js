@@ -26,6 +26,10 @@ export default {
     },
     // 删除前是否弹窗提示(默认true)
     delAlert: true,
+    // 点击编辑时弹出默认的编辑面板(默认true)
+    editDialog: true,
+    // 点击新增时弹出默认的新增面板(默认true)
+    addDialog: true,
 
     // 表格右侧操作栏
     operation: {

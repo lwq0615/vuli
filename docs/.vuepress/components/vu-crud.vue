@@ -315,9 +315,11 @@ export default {
         },
         add(){
             this.$emit('addClick')
-            this.dialogText = '新增'
-            this.formData = {}
-            this.$refs.dialog.show()
+            if(this.option.addDialog !== false){
+                this.dialogText = '新增'
+                this.formData = {}
+                this.$refs.dialog.show()
+            }
         },
         addSubmit(){
             this.$emit('add',{...this.formData})
@@ -356,10 +358,12 @@ export default {
         edit(data,index){
             this.$emit('editClick',{...data},index)
             window.event.stopPropagation()
-            this.dialogText = '编辑'
-            this.formData = {...data}
-            this.editIndex = index
-            this.$refs.dialog.show()
+            if(this.option.editDialog !== false){
+                this.dialogText = '编辑'
+                this.formData = {...data}
+                this.editIndex = index
+                this.$refs.dialog.show()
+            }
         },
         editSubmit(){
             this.tableData.splice(this.editIndex,1,this.formData)
