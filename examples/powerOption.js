@@ -60,7 +60,9 @@ export default {
             // 必填(默认false)
             must: true,
             // 单元格内容位置（默认center，可选left，right，center）
-            align: 'left'
+            align: 'left',
+            // 输入时是否可以清空
+            clear: true
         },
         {
             name: "name",

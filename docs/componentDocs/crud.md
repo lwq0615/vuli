@@ -83,7 +83,8 @@ export default {
                 search: true,
                 span: 8,
                 must: true,
-                align: 'left'
+                align: 'left',
+                clear: true
             },
             {
                 label: "位置",
@@ -258,7 +259,8 @@ export default {
             search: true,
             span: 8,
             must: true,
-            align: 'left'
+            align: 'left',
+            clear: true
         },
         {
             label: "位置",
@@ -347,12 +349,17 @@ export default {
 | pageChange | 分页器状态发生改变 |分页器信息 |
 | reload | 点击刷新按钮 | 分页数据，搜索框数据 |
 | tableClick | 剪辑表格数据项 | 点击的数据，该数据的index |
+| addClick | 点击新增按钮 | -- |
+| editClick | 点击编辑按钮 | 将被编辑的数据，该数据的index |
+| delClick | 点击删除按钮 | 将被删除的数据 |
+| check | 点击查看按钮 | 将被查看的数据 |
 
 
 #### Methods
 | 方法名 | 说明 | 所需参数 | 参数说明 |
 |  ---  | ---  | ---  | --- |
 | loading | 表格加载中 | Boolean  | true:表格进入加载状态,false:加载状态结束 |
+| setPage | 设置分页器 | current,size,total  | 当前页，每页条数，总条数 |
 
 #### option配置项
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
@@ -402,6 +409,7 @@ export default {
 | children | 配置多级表头，最多支持三级表头 | Array | 否 | -- | 与propOption配置相同 |
 | type | 字段类型，为select时搜索与新增编辑时展示为下拉框并且必须配置对应dict字典 | String | 否 | input | select,input |
 | dict | 字段字典配置 | Array,String,Function | type='select' 时必填 | -- | 具体查看dict的三种配置方式 |
+| clear | 输入时是否可以清空 | Boolean | 否 | false | -- |
 
 
 #### dict的三种配置方式

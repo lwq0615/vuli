@@ -13,7 +13,7 @@
                     <vu-select 
                     v-if="prop.type === 'select'"
                     placeholder="请选择"
-                    deleteBtn
+                    :deleteBtn="prop.clear"
                     v-model="searchData[prop.name]" 
                     class="search-col-input">
                         <vu-select-option 
@@ -26,7 +26,7 @@
                     <vu-input
                     v-else
                     placeholder="请输入"
-                    clearable
+                    :clearable="prop.clear"
                     v-model="searchData[prop.name]" 
                     class="search-col-input"></vu-input>
                 </div>
@@ -177,7 +177,7 @@
                             <vu-select 
                             v-if="prop.type === 'select'"
                             placeholder="请选择"
-                            :deleteBtn="dialogText !== '查看'"
+                            :deleteBtn="dialogText !== '查看' && prop.clear"
                             :disable="dialogText === '编辑' && !prop.edit"
                             :readonly="dialogText === '查看'"
                             v-model="formData[prop.name]" 
@@ -192,7 +192,7 @@
                             <vu-input
                             v-else
                             placeholder="请输入"
-                            :clearable="dialogText !== '查看'"
+                            :clearable="dialogText !== '查看' && prop.clear"
                             :readonly="dialogText === '查看'"
                             :disable="dialogText === '编辑' && !prop.edit"
                             v-model="formData[prop.name]" 
@@ -276,11 +276,11 @@ export default {
         }
     },
     created(){
-        this.loadDict()
         this.switchsLoad()
-    },
+    }, 
     mounted(){
         this.tdOption = this.$refs.table.getChild(this.option.propOption)
+        this.loadDict()
     },
     methods: {
         async loadDict(){
@@ -305,6 +305,7 @@ export default {
             this.$emit('select',this.$refs.table.getSelectData())
         },
         add(){
+            this.$emit('addClick')
             this.dialogText = '新增'
             this.formData = {}
             this.$refs.dialog.show()
@@ -314,6 +315,7 @@ export default {
             this.$emit('pageRefresh',{...this.page},{...this.searchData})
         },
         del(delData){
+            this.$emit('delClick',[...delData])
             window.event.stopPropagation()
             if(!delData.length){
                 return
@@ -343,6 +345,7 @@ export default {
             }
         },
         edit(data,index){
+            this.$emit('editClick',{...data},index)
             window.event.stopPropagation()
             this.dialogText = '编辑'
             this.formData = {...data}
@@ -356,6 +359,7 @@ export default {
         },
         check(data){
             window.event.stopPropagation()
+            this.$emit('check',{...data})
             this.dialogText = '查看'
             this.formData = {...data}
             this.$refs.dialog.show()
@@ -385,7 +389,7 @@ export default {
             // localStorage.setItem(`vu-crud-switch-${name}`,e)
         },
         switchsLoad(){
-            ['border','index','selection','striped'].forEach(name => {
+             ['border','index','selection','striped'].forEach(name => {
                 // if(!this.option.switch){
                 //     this.switchs[name] = this.option[name]
                 // }
@@ -409,6 +413,17 @@ export default {
         },
         tableClick(data,index){
             this.$emit('tableClick',data,index)
+        },
+        setPage(current,size,total){
+            if(current){
+                this.page.current = current
+            }
+            if(size){
+                this.page.size = size
+            }
+            if(total || total === 0){
+                this.page.total = total
+            }
         }
     }
 }
