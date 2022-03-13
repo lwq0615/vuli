@@ -89,7 +89,7 @@
             </vu-table-column>
 
             <vu-table-column
-            v-for="(prop,index) in option.propOption"
+            v-for="(prop,index) in columns"
             :key="'th1'+index"
             :prop="prop.name"
             :align="prop.align || 'center'"
@@ -273,6 +273,15 @@ export default {
             }else if(this.dialogText === '查看'){
                 return typeof this.option.operation.check === 'string' ? this.option.operation.check : '查看'
             }
+        },
+        columns(){
+            let res = []
+            this.option.propOption.forEach(item => {
+                if(item.show !== false){
+                    res.push(item)
+                }
+            })
+            return res
         }
     },
     created(){

@@ -62,7 +62,9 @@ export default {
             // 单元格内容位置（默认center，可选left，right，center）
             align: 'left',
             // 输入时是否可以清空
-            clear: true
+            clear: true,
+            // 是否在表格内展示该字段（默认true）
+            show: true
         },
         {
             name: "name",

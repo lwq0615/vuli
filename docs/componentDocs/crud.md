@@ -400,6 +400,7 @@ export default {
 | name | 从tableData中读取数据的key,该属性不可重复 | String | 否 | -- | -- |
 | label | 表格头展示的文本 | String | 是 | -- | -- |
 | width | 表格列的宽度 | String | 否 | auto | -- |
+| show | 是否在表格内展示该字段 | Boolean | 否 | true | -- |
 | add | 新增时允许定义该字段 | Boolean | 否 | false | -- |
 | edit | 编辑时允许修改字段 | Boolean | 否 | false | -- |
 | search | 开启搜索 | Boolean | 否 | false | -- |
