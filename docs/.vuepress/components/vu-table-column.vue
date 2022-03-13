@@ -1,6 +1,6 @@
 <template>
-    <span v-if="parentTr && refresh">
-        <slot :row="parentTr.data" :index="parentTr.index">{{parentTr.data[prop]}}</slot>
+    <span v-if="parentTr">
+        <slot :row="parentTr.data" :index="parentTr.index">{{text}}</slot>
     </span>
     <span v-else v-show="false">
         <slot :row="mainNode.tableData && mainNode.tableData[0] || {}" :index="0"></slot>
@@ -21,7 +21,8 @@ export default {
             type: String,
             default: 'center'
         },
-        sticky: String
+        sticky: String,
+        dict: Array
     },
     data(){
         return {
@@ -31,8 +32,20 @@ export default {
                 ...this._props,
                 children: [],
                 cols:0
-            },
-            refresh: true
+            }
+        }
+    },
+    computed: {
+        text(){
+            if(this.dict){
+                for(let item of this.dict){
+                    if(item.value === this.parentTr.data[this.prop]){
+                        return item.label
+                    }
+                }
+            }else{
+                return this.parentTr.data[this.prop]
+            }
         }
     },
     mounted(){

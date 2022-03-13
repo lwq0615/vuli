@@ -92,6 +92,7 @@
             v-for="(prop,index) in columns"
             :key="'th1'+index"
             :prop="prop.name"
+            :dict="prop.dict"
             :align="prop.align || 'center'"
             :label="prop.label"
             :width="prop.width">
@@ -99,6 +100,7 @@
                 v-for="(prop2,index2) in prop.children"
                 :key="'th2'+index2"
                 :prop="prop2.name"
+                :dict="prop.dict"
                 :align="prop2.align || 'center'"
                 :label="prop2.label"
                 :width="prop2.width">
@@ -106,6 +108,7 @@
                     v-for="(prop3,index3) in prop2.children"
                     :key="'th3'+index3"
                     :prop="prop3.name"
+                    :dict="prop.dict"
                     :align="prop3.align || 'center'"
                     :label="prop3.label"
                     :width="prop3.width">

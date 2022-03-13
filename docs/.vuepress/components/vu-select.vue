@@ -230,6 +230,7 @@ export default {
             color: #606266;
             text-overflow: ellipsis;
             white-space: nowrap;
+            font-size: 14px;
             cursor: pointer;
         }
         .options-list.active{
