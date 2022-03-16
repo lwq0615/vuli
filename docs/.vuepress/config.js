@@ -1,4 +1,6 @@
 module.exports = {
+    title: 'Vuli',
+    description: '基于vue的组件库',
     base: '/vuli/',
     head: [
         [
@@ -78,6 +80,10 @@ module.exports = {
                     '/componentDocs/calculator'
                 ]
             }
+        ],
+        nav: [
+            { text: 'Home', link: '/' },
+            { text: 'Github', link: 'https://github.com/lwq0615/vuli' }
         ]
     }
 }

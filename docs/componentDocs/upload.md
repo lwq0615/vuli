@@ -94,11 +94,9 @@ export default {
 
 <br>
 
-**注意**
-<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    多文件上传时，每个文件都会单独调用一次上传接口，后台接收文件数据的name默认为file，也可以通过name属性指定<br>
-    使用data附带请求参数时，name为data的每个key
-</div>
+::: tip
+多文件上传时，每个文件都会单独调用一次上传接口，后台接收文件数据的name默认为file，也可以通过name属性指定，使用data附带请求参数时，name为data的每个key
+:::
 
 #### Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |

@@ -50,10 +50,9 @@ export default {
 ```
 <br>
 
-**注意**
-<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
+::: tip
     grid属性为false时，columns，rowHeight，justify属性不生效
-</div>
+:::
 
 #### Checkbox-group Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |

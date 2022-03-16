@@ -88,10 +88,9 @@
 </vu-row>
 ```
 
-**注意**
-<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    每行可容纳的最大span+offset为24，超出部分会被自动换行
-</div>
+::: tip
+每行可容纳的最大span+offset为24，超出部分会被自动换行
+:::
 
 #### Row Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |

@@ -45,11 +45,9 @@
 <br>
 <br>
 
-**注意**
-<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    配置列sticky可使该列在被左右边框隐藏时自动吸附边框,不被隐藏时则正常显示,左右最多各吸附一列<br>
-    表格数据默认可多选，多选默认占据左吸附位置，可设置selection=false关闭
-</div>
+::: tip
+配置列sticky可使该列在被左右边框隐藏时自动吸附边框,不被隐藏时则正常显示,左右最多各吸附一列，表格数据默认可多选，多选默认占据左吸附位置，可设置selection=false关闭
+:::
 
 <br>
 
@@ -229,10 +227,9 @@ export default {
 <br>
 <br>
 
-**注意**
-<div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    使用自定义模板时，可以通过v-slot获取row，index的数据，具体用法查看示例代码
-</div>
+::: tip
+使用自定义模板时，可以通过v-slot获取row，index的数据，具体用法查看示例代码
+:::
 
 
 ### 代码
