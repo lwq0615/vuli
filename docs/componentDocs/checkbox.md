@@ -51,7 +51,7 @@ export default {
 <br>
 
 ::: tip
-    grid属性为false时，columns，rowHeight，justify属性不生效
+grid属性为false时，columns，rowHeight，justify属性不生效
 :::
 
 #### Checkbox-group Attributes

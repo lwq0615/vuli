@@ -114,7 +114,7 @@
     @sizeChange="test"
     @totalChange="test"></vu-pagination> -->
 
-    <!-- <vu-cascader :option="option" v-model="value"></vu-cascader> -->
+    <!-- <vu-cascader :option="option" v-model="value" @change="test"></vu-cascader> -->
 
     <!-- <vu-badge isDot text="12">
       <vu-button>按钮</vu-button>
@@ -167,11 +167,11 @@
       </vu-table-column>
     </vu-table> -->
 
-    <vu-crud 
+    <!-- <vu-crud 
     ref="crud"
     :option="tableOption" 
     @pageRefresh="test"
-    :tableData="tableData"></vu-crud>
+    :tableData="tableData"></vu-crud> -->
 
   </div>
 </template>
@@ -183,7 +183,7 @@ export default {
   name: 'App',
   data(){
     return {
-      value: true,
+      value: [],
       tableOption,
       propDict: {},
       tableData: [{
@@ -214,7 +214,52 @@ export default {
         city: '普陀区',
         address: '上海市普陀区金沙江路 1518 弄',
         zip: 200333
-      }]
+      }],
+      option: [
+        {
+          label: '食物',
+          value: 'food',
+          children: [
+            {
+              label: '水果',
+              value: 'fruits',
+              children: [
+                {label:'香蕉',value: '3-1'},
+                {label:'苹果',value: '3-2'},
+                {label:'鸭梨',value: '3-3'},
+                {label:'荔枝',value: '3-4'},
+                {label:'栗子',value: '3-5'},
+                {label:'李子',value: '3-6'},
+                {label:'樱桃',value: '3-7'},
+                {label:'凤梨',value: '3-8'},
+                {label:'火龙果',value: '3-9'}
+              ]
+            },
+            {
+              label: '肉食',
+              value: 'meat',
+              children: [
+                {label:'牛肉',value: '3-1'},
+                {label:'鱼肉',value: '3-2'},
+                {label:'猪肉',value: '3-3'},
+              ]
+            },
+            {
+              label: '其他',
+              value: 'other'
+            }
+          ]
+        },
+        {
+          label: '饮品',
+          value: 'drinks',
+          children: [
+            {label: '芬达',value: '2-1'},
+            {label: '可乐',value: '2-2'},
+            {label: '雪碧',value: '2-3'}
+          ]
+        }
+      ]
     }
   },
   methods: {

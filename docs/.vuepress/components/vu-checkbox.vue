@@ -107,10 +107,8 @@ export default {
             if(parent){
                 if(this.all){
                     return parent.allFlg()
-                }else{
-                    if(parent.value.includes(this.value)){
-                        return true
-                    }
+                }else if(parent.value.includes(this.value)){
+                    return true
                 }
             }
             return false
@@ -118,13 +116,13 @@ export default {
     },
     created(){
         let parent = this.parent
-        if(parent){
+        if(parent && !this.all){
             parent.createCheckbox(this)
         }
     },
     destroyed(){
         let parent = this.parent
-        if(parent){
+        if(parent && !this.all){
             parent.delCheckbox(this)
         }
     },
