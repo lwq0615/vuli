@@ -1,5 +1,5 @@
 <template>
-    <div :class="`vu-image_container ${noScroll ? 'noScroll' : ''}`" ref="container" @scroll="loadImg">
+    <div :class="`vu-image_container ${noScroll ? 'noScroll' : ''}`" ref="container" @scroll="scroll">
         <div :class="type" :style="scrollStyle" ref="scroll">
             <slot></slot>
         </div>
@@ -30,7 +30,6 @@ export default {
     },
     data(){
         return {
-            imgs: [],
             o: null
         }
     },
@@ -43,18 +42,10 @@ export default {
         }
     },
     mounted(){
-        this.loadImg()
+        this.scroll()
     },
     methods: {
-        getTop(e) {
-            let dom = this.$refs.container
-            var T = e.offsetTop;
-            while((e = e.offsetParent) && e !== dom) {
-                T += e.offsetTop;
-            }
-            return T;
-        },
-        loadImg(){
+        scroll(){
             let dom = this.$refs.container
             if(!this.o){
                 this.o = setTimeout(() => {
@@ -63,20 +54,9 @@ export default {
                     if(H+S >= this.$refs.scroll.clientHeight){
                         this.$emit('scrollEnd')
                     }
-                    for (var i = 0; i < this.imgs.length; i++) {
-                        if ((H+S > this.getTop(this.imgs[i].$el) || !this.imgs[i].lazy) && !this.imgs[i].load) {
-                            this.imgs[i].loadStart()
-                        }
-                    }
                     this.o = null
                 },100)
             }
-        },
-        createImg(img){
-            this.imgs.push(img)
-        },
-        destroyeImg(img){
-            this.imgs.splice(this.imgs.indexOf(img),1)
         }
     }
 }
