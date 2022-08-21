@@ -96,13 +96,13 @@
       </vu-col>
     </vu-row> -->
 
-    <!-- <vu-image>
-      <vu-image-item :src="index%3+1+'.JPG'" v-for="(item,index) in 20" :key="index" lazy></vu-image-item>
-    </vu-image> -->
+    <vu-image @scrollEnd="test">
+      <vu-image-item :src="index%3+1+'.JPG'" v-for="(item,index) in 20" :key="index" :lazy="true"></vu-image-item>
+    </vu-image>
 
-    <vu-scroll @scrollEnd="test1">
+    <!-- <vu-scroll @scrollEnd="test1">
        <div v-for="i in value" :key="i">{{ i }}</div>
-    </vu-scroll>
+    </vu-scroll> -->
 
     <!-- <vu-dialog ref="tt">
       <div slot="content">222</div>
