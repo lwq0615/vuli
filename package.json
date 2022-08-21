@@ -1,6 +1,6 @@
 {
   "name": "vuli",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Vuli组件库",
   "main": "dist/lib/index.js",
   "keywords": [
@@ -24,12 +24,10 @@
     "git:push": "git init && git add . && git commit -m 'update' && git push origin master",
     "git:page": "vuepress build docs && cd docs/.vuepress/dist && git init && git add -A && git commit -m 'deploy' && git push -f https://github.com/lwq0615/vuli.git master:gh-pages"
   },
-  "dependencies": {
+  "devDependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-loader": "^15.9.8"
-  },
-  "devDependencies": {
+    "vue-loader": "^15.9.8",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",

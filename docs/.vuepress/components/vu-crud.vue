@@ -448,6 +448,7 @@ export default {
 <style lang="scss" scoped>
 .vu-crud_container{
     padding: 10px;
+    overflow: hidden;
     .search-col{
         display: flex;
         align-items: center;

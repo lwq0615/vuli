@@ -31,5 +31,6 @@ let request =  function(url){
         xhr.send()
     })
 }
+
 export default request
 

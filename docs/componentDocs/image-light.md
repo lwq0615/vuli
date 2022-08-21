@@ -21,7 +21,7 @@ export default {
 
 ### 代码
 ```html
-<vu-button @click="image" color="error">>查看大图</vu-button>
+<vu-button @click="image" color="error">查看大图</vu-button>
 
 <script>
 export default {

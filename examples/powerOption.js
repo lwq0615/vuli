@@ -81,7 +81,10 @@ export default {
             //         return res.data
             //     })
             // },
-            dict: 'http://localhost:8082/',
+            // dict: 'http://localhost:8082/',
+            dict: [
+                {label: "asd",value: 1}
+            ],
             edit: true,
             search: true
         },
