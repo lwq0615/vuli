@@ -1,6 +1,6 @@
 {
   "name": "vuli",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Vuli组件库",
   "main": "dist/lib/index.js",
   "keywords": [
@@ -18,7 +18,7 @@
     "lint": "vue-cli-service lint",
     "build:js": "webpack --config ./webpack.config.js",
     "build:css": "npx gulp css",
-    "publish": "npm run build:js && npm run build:css && npm publish",
+    "npm:publish": "npm run build:js && npm run build:css && npm publish",
     "docs": "vuepress dev docs",
     "git": "npm run git:page && npm run git:push",
     "git:push": "git init && git add . && git commit -m 'update' && git push origin master",
