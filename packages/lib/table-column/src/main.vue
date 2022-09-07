@@ -50,7 +50,6 @@ export default {
     },
     mounted(){
         if(!this.parentTr){
-            this.cutParentCol(1)
             let temp = []
             for(let item of this.$parent.$slots.default){
                 if(item.componentInstance instanceof this.constructor){
@@ -68,7 +67,6 @@ export default {
         if(!this.parentTr){
             if(this.$parent instanceof this.constructor){
                 this.$parent.option.children.splice(this.$parent.option.children.indexOf(this.option),1)
-                this.$parent.cutParentCol(-this.option.cols)
             }else if(this.$parent instanceof this.mainNode.constructor){
                 this.mainNode.thOption.splice(this.mainNode.thOption.indexOf(this.option),1)
             }
@@ -91,14 +89,6 @@ export default {
                 parent = parent.$parent
             }
             return null
-        },
-        cutParentCol(col){
-            if(this.$parent instanceof this.constructor){
-                this.$parent.option.cols += col
-                if(this.$parent.option.cols > 1){
-                    this.$parent.cutParentCol(col)
-                }
-            }
         }
     }
 }

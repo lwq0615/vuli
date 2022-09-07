@@ -60,7 +60,7 @@
                 </vu-button>
             </div>
 
-            <div class="switchs">
+            <div class="switchs" v-if="option.switch">
                 <vu-switch v-model="switchs['border']" @change="switchChange('border',$event)">显示边框&nbsp;</vu-switch>
                 <vu-switch v-model="switchs['index']" @change="switchChange('index',$event)">显示索引&nbsp;</vu-switch>
                 <vu-switch v-model="switchs['selection']" @change="switchChange('selection',$event)">显示复选框&nbsp;</vu-switch>
@@ -73,20 +73,13 @@
         <vu-table
         ref="table"
         width="100%"
-        :selection="switchs['selection']"
         :tableData="tableData"
+        :selection="switchs['selection']"
+        :lineIndex="switchs['index']"
         :striped="switchs['striped']"
         :border="switchs['border']"
         @select="select"
         @click="tableClick">
-            <vu-table-column
-            v-if="switchs['index']"
-            prop="vu-crud-id"
-            label="#"
-            width="50px"
-            v-slot="data">
-                {{data.index+1}}
-            </vu-table-column>
 
             <vu-table-column
             v-for="(prop,index) in columns"

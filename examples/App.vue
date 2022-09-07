@@ -96,9 +96,9 @@
       </vu-col>
     </vu-row> -->
 
-    <vu-image @scrollEnd="test">
+    <!-- <vu-image @scrollEnd="test">
       <vu-image-item :src="index%3+1+'.JPG'" v-for="(item,index) in 20" :key="index" :lazy="true"></vu-image-item>
-    </vu-image>
+    </vu-image> -->
 
     <!-- <vu-scroll @scrollEnd="test1">
        <div v-for="i in value" :key="i">{{ i }}</div>
@@ -125,6 +125,9 @@
     <!-- <vu-table
     ref="test"
     width="800px"
+    :props="props"
+    lineIndex
+    @select="test"
     :tableData="tableData">
       <vu-table-column
         prop="date"
@@ -167,11 +170,11 @@
       </vu-table-column>
     </vu-table> -->
 
-    <!-- <vu-crud 
+    <vu-crud 
     ref="crud"
     :option="tableOption" 
     @pageRefresh="test"
-    :tableData="tableData"></vu-crud> -->
+    :tableData="tableData"></vu-crud>
 
   </div>
 </template>
@@ -186,6 +189,23 @@ export default {
       value: 10,
       tableOption,
       propDict: {},
+      props: [
+        {
+          align: 'center',
+          prop: 'name',
+          label: '姓名',
+          children: [
+            {
+              prop: 'date',
+              label: '日期'
+            },
+            {
+              prop: 'address',
+              label: '地区'
+            }
+          ]
+        }
+      ],
       tableData: [{
         date: '2016-05-03',
         name: '王小虎',

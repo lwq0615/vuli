@@ -15,12 +15,21 @@
             </div>
         </td>
         <td 
+        v-show="mainNode.lineIndex" 
+        class="vu-table-td" 
+        colspan="1" 
+        style="width:auto;text-align: center;">
+            {{ index+1 }}
+        </td>
+        <td 
         class="vu-table-td"
         colspan="1"
-        :prop="item.prop"
         v-for="(item,i) in tdOption"
+        :prop="item.prop"
         :key="i"
-        :style="mainNode.tdStyle(item)"></td>
+        :style="mainNode.tdStyle(item)">
+            {{ $slots.default ? '' : data[item.prop] }}
+        </td>
         <slot></slot>
     </tr>
 </template>

@@ -6,39 +6,7 @@
 *吸附列*
 
 <div style="border:1px solid #e4e7ed;border-radius:5px;padding:10px;background-color:#FAFAFA;">
-    <vu-table :tableData="tableData" width="100%">
-        <vu-table-column
-        prop="date"
-        label="日期"
-        width="80px">
-        </vu-table-column>
-        <vu-table-column
-        prop="name"
-        label="姓名"
-        width="180px">
-        </vu-table-column>
-        <vu-table-column
-        prop="province"
-        label="省份"
-        width="180px">
-        </vu-table-column>
-        <vu-table-column
-        prop="city"
-        label="市区"
-        width="180px">
-        </vu-table-column>
-        <vu-table-column
-        prop="address"
-        label="地址"
-        width="280px">
-        </vu-table-column>
-        <vu-table-column
-        prop="zip"
-        sticky="right"
-        label="邮编"
-        width="80px">
-        </vu-table-column>
-    </vu-table>
+    <vu-table :tableData="tableData" :props="props" width="100%"></vu-table>
 </div>
 
 
@@ -54,49 +22,33 @@
 
 ### 代码
 ```html
-<vu-table :tableData="tableData" width="100%">
-    <vu-table-column
-    prop="date"
-    label="日期"
-    width="80px">
-    </vu-table-column>
-
-    <vu-table-column
-    prop="name"
-    label="姓名"
-    width="180px">
-    </vu-table-column>
-
-    <vu-table-column
-    prop="province"
-    label="省份"
-    width="180px">
-    </vu-table-column>
-
-    <vu-table-column
-    prop="city"
-    label="市区"
-    width="180px">
-    </vu-table-column>
-
-    <vu-table-column
-    prop="address"
-    label="地址"
-    width="280px">
-    </vu-table-column>
-
-    <vu-table-column
-    prop="zip"
-    sticky="right"
-    label="邮编"
-    width="80px">
-    </vu-table-column>
-</vu-table>
+<vu-table :tableData="tableData" :props="props" width="100%"></vu-table>
 
 <script>
 export default {
   data(){
     return {
+      props:[
+        {
+          prop: 'name',
+          label: '姓名',
+          width: "80px"
+        }, 
+        {
+          prop: 'date',
+          label: '日期',
+          width: "120px"
+        }, 
+        {
+          prop: 'province',
+          label: '地址',
+          width: "80px"
+        },
+        {
+          prop: 'zip',
+          label: '邮编'
+        }
+      ],
       tableData: [{
         date: '2016-05-03',
         name: '王小虎',
@@ -190,6 +142,27 @@ export default {
 export default {
   data(){
     return {
+      props:[
+        {
+          prop: 'name',
+          label: '姓名',
+          width: "80px"
+        }, 
+        {
+          prop: 'date',
+          label: '日期',
+          width: "120px"
+        }, 
+        {
+          prop: 'province',
+          label: '地址',
+          width: "80px"
+        },
+        {
+          prop: 'zip',
+          label: '邮编'
+        }
+      ],
       tableData: [{
         date: '2016-05-03',
         name: '王小虎',
@@ -228,7 +201,7 @@ export default {
 <br>
 
 ::: tip
-使用自定义模板时，可以通过v-slot获取row，index的数据，具体用法查看示例代码
+通过vu-table-column组件配置表头时，可以使用自定义模板，通过v-slot获取row，index的数据，具体用法查看示例代码
 :::
 
 
@@ -328,10 +301,12 @@ export default {
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
 | tableData | 表格数据 | Array | 是 | -- | -- |
+| props | 表头配置，如果使用vu-table-column组件配置表头，该属性不生效 | Array[Object:TableColumn] | 否 | -- | Object属性查看下表Table-column Attributes |
 | border | 开启垂直边框 | Boolean | 否 | true | -- |
 | striped | 斑马纹 | Boolean | 否 | true | -- |
 | checkable | 行可选 | Boolean | 否 | true | -- |
 | selection | 开启多选(开启后默认作为左吸附列) | Boolean | 否 | true | -- |
+| lineIndex | 开启行索引| Boolean | 否 | false | -- |
 | lineHeight | 表格行高 | String | 否 | 25px | -- |
 | width | 表格宽度 | String | 否 | auto | -- |
 | height | 表格高度 | String | 否 | auto | -- |
@@ -340,11 +315,12 @@ export default {
 #### Table-column Attributes
 | 参数 | 说明 | 类型 | 是否必填 | 默认值 | 可选值 |
 | ---  | --- | ---  | ---      | ---   | ---   |
-| prop | 单元格属性名 | String | 否 | -- | -- |
-| label | 表头展示文本 | String | 否 | -- | -- |
+| prop | 单元格属性名 | String | 是 | -- | -- |
+| label | 表头展示文本 | String | 是 | -- | -- |
 | width | 单元格宽度 | String | 否 | auto | -- |
 | align | 单元格内容位置 | String | 否 | center | left,center,right |
-| sticky | 单元格吸附边框(left与right各自只能存在一个) | String | 否 | -- | left,right |
+| sticky | 单元格吸附边框(左右各自只能吸附一个字段，且在配置了多级表头时，不要在父级表头配置sticky) | String | 否 | -- | left,right |
+| children | 子表头(Table-column)配置 | Array[Object:TableColumn] | 否 | -- | -- |
 
 
 #### Table Events

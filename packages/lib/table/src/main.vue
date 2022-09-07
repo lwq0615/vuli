@@ -15,6 +15,14 @@
                     {{checked ? '√' : ''}}
                 </div>
             </th>
+            <th 
+            style="width:auto;padding-left:20px;padding-right:20px;"
+            v-show="mainNode.lineIndex && index === 0" 
+            class="vu-table-th" 
+            :rowspan="levelTh.length"
+            colspan="1">
+                #
+            </th>
             <th
             class="vu-table-th"
             v-for="(th,i) in item"
@@ -47,6 +55,7 @@ export default {
     },
     props: {
         tableData: Array,
+        props: Array,
         border: {
             type: Boolean,
             default: true
@@ -62,6 +71,10 @@ export default {
         selection: {
             type: Boolean,
             default: true
+        },
+        lineIndex: {
+            type: Boolean,
+            default: false
         },
         lineHeight: {
             type: String,
@@ -97,8 +110,14 @@ export default {
             deep: true,
             handler(newVal){
                 this.tdOption = this.getChild(newVal)
+                this.setCol(newVal)
                 this.levelTh = this.getLevelTh(newVal)
             }
+        }
+    },
+    mounted(){
+        if(this.props && !this.$slots.default){
+            this.thOption = this.props
         }
     },
     methods: {
@@ -166,6 +185,9 @@ export default {
             let i = 0
             while(levelTh[i] && levelTh[i].length){
                 for(let item of levelTh[i]){
+                    if(!Array.isArray(item.children)){
+                        item.children = []
+                    }
                     for(let child of item.children){
                         if(!levelTh[i+1]){
                             levelTh[i+1] = []
@@ -176,6 +198,26 @@ export default {
                 i++
             }
             return levelTh
+        },
+        //设置表头需要的列数
+        setCol(thOption){
+            function getCol(th){
+                if(Array.isArray(th.children) && th.children.length){
+                    let col = 0
+                    for(let child of th.children){
+                        col += getCol(child)
+                    }
+                    return col
+                }else{
+                    return 1
+                }
+            }
+            for(let th of thOption){
+                th.cols = getCol(th)
+                if(Array.isArray(th.children)){
+                    this.setCol(th.children)
+                }
+            }
         }
     }
 }
