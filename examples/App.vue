@@ -170,11 +170,11 @@
       </vu-table-column>
     </vu-table> -->
 
-    <vu-crud 
+    <!-- <vu-crud 
     ref="crud"
     :option="tableOption" 
     @pageRefresh="test"
-    :tableData="tableData"></vu-crud>
+    :tableData="tableData"></vu-crud> -->
 
   </div>
 </template>
@@ -186,7 +186,7 @@ export default {
   name: 'App',
   data(){
     return {
-      value: 10,
+      value: true,
       tableOption,
       propDict: {},
       props: [
@@ -287,7 +287,7 @@ export default {
       console.log(e)
     },
     test1(e1,e2){
-      this.$refs.crud.value = !this.$refs.crud.value
+      this.value = false
     }
   }
 }

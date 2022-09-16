@@ -34,6 +34,7 @@ import tree from './tree'
 import table from './table'
 import tableColumn from './table-column'
 import crud from './crud'
+import drag from './drag'
 
 const components = [
     button,
@@ -79,6 +80,7 @@ const install = function(Vue){
     Vue.prototype.$message = message
     Vue.prototype.$alert = alert
     Vue.prototype.$imageLight = imageLight
+    Vue.directive("drag", drag)
 }
 
 export {

@@ -16,6 +16,11 @@ module.exports = {
                 path: '/'
             },
             {
+                title: 'Directive指令',
+                collapsable: false,
+                path: '/componentDocs/directive'
+            },
+            {
                 title: 'Crud组件',
                 collapsable: false,
                 path: '/componentDocs/crud'
