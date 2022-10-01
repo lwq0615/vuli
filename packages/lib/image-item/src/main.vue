@@ -18,7 +18,7 @@ export default {
     return {
       load: false,
       loading: "",
-      observer: null
+      observer: null,
     };
   },
   computed: {
@@ -36,15 +36,8 @@ export default {
         }
       });
       this.observer.observe(this.$refs.img);
-    }else{
-        this.loadStart();
-    }
-  },
-  beforeDestroy() {
-    // 因为有消耗性能，所以在页面卸载之前必须要停止监听，解绑元素。
-    if (this.observer) {
-      this.observer.unobserve(this.$refs.img); //解绑元素
-      this.observer.disconnect(); //停止监听
+    } else {
+      this.loadStart();
     }
   },
   methods: {
@@ -52,6 +45,11 @@ export default {
       if (!this.load) {
         this.loading = "loading";
         this.load = true;
+        // 因为有消耗性能，所以在图片开始加载必须要停止监听，解绑元素。
+        if (this.observer) {
+          this.observer.unobserve(this.$refs.img); //解绑元素
+          this.observer.disconnect(); //停止监听
+        }
       }
     },
     loadEnd() {
