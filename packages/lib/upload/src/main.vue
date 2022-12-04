@@ -89,10 +89,7 @@ export default {
             default: false
         },
         name: String,
-        action: {
-            type: String,
-            required: true
-        },
+        action: String,
         type: {
             type: String,
             default: 'file'
