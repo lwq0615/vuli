@@ -68,9 +68,9 @@
 
     <!-- <vu-sider :step="10" :stepPoint="true" v-model="value" @change="test"></vu-sider> -->
 
-    <!-- <vu-upload :fileList="fileList" type="file" accept="png">
+    <vu-upload :fileList="fileList" type="file" accept="jpg" autoUpload action="loo">
       上传文件
-    </vu-upload> -->
+    </vu-upload>
 
     <!-- <vu-row rowGap="5px" colGap="25px">
       <vu-col :span="8">
@@ -188,6 +188,7 @@ export default {
     return {
       value: true,
       tableOption,
+      fileList: [],
       propDict: {},
       props: [
         {
@@ -284,9 +285,9 @@ export default {
   },
   methods: {
     test(e){
-      console.log(e)
     },
     test1(e1,e2){
+      this.fileList.push(1)
       this.value = false
     }
   }
