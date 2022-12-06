@@ -119,7 +119,7 @@ export default {
     watch: {
         fileList(newVal,oldVal){
             if(newVal !== oldVal){
-                throw new Error("files is readonly")
+                throw new Error("prop fileList is readonly")
             }
             this.$emit('change',newVal)
         }

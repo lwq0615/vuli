@@ -287,8 +287,7 @@ export default {
     test(e){
     },
     test1(e1,e2){
-      this.fileList.push(1)
-      this.value = false
+      this.fileList = []
     }
   }
 }
