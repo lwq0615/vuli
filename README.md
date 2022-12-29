@@ -12,7 +12,7 @@ npm install vuli
 #### 全部引入
 ```js
 //main.js
-import 'vuli/dist/css/index.css'
+import 'vuli/dist/css/index.css' 
 import Vuli from 'vuli'
 Vue.use(Vuli)
 ```
