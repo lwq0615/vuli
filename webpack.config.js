@@ -17,6 +17,7 @@ async function makeList(dirPath,list){
 
 makeList('packages/lib',list)
 
+
 module.exports = {
     entry: list,
     mode: 'development',

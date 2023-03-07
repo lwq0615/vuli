@@ -8,21 +8,11 @@ npm install vuli
 ```
 
 ### 2.引用组件库
-
-#### 全部引入
 ```js
 //main.js
 import 'vuli/dist/css/index.css' 
 import Vuli from 'vuli'
 Vue.use(Vuli)
-```
-
-#### 按需引入
-```js
-//main.js
-import 'vuli/dist/css/index.css'
-import { button } from 'vuli'
-Vue.use(button)
 ```
 
 [说明文档](https://lwq0615.github.io/vuli/)
